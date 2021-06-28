@@ -1,0 +1,150 @@
+@charset "UTF-8";
+
+/*--------------------------------------
+  フォーム
+---------------------------------------*/
+.u-form{
+  label{
+    display: block;
+    span{
+      display: block;
+      position: relative;
+      padding-left: 30px;
+      padding: 10px 10px 10px 40px;
+      background-color: #FFF;
+      border-radius: 4px;
+      &:before{
+        content: "";
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        border: 1px solid#BEBBB5;
+        position: absolute;
+        left: 10px;
+        top: 50%;
+        margin-top: -10px;
+        background-color: #FFF;
+      }
+      &:after{
+        content: "";
+        display: inline-block;
+        width: 12px;
+        height: 6px;
+        border-bottom: 2px solid #FFF;
+        border-left: 2px solid #FFF;
+        position: absolute;
+        transform: rotate(-45deg);
+        left: 14px;
+        top: 50%;
+        margin-top: -6px;
+      }
+    }
+    input{
+      position: absolute;
+      opacity: 0;
+      &:checked + span{
+        background-color: $brown3;
+        &:before{
+        background-color: $brown1;
+        }
+      }
+    }
+  }
+  .inner{
+    padding: 0 20px ;
+    margin-bottom: 20px;
+    .list{
+      li{
+        margin: .3em 0;
+      }
+    }
+  }
+  dl{
+    dt{
+      font-weight: bold;
+      margin-bottom: 4px;
+
+    }
+    dd{
+      padding-bottom: 16px;
+      margin-bottom: 16px;
+      border-bottom: 1px solid rgba(112, 112, 112, .2);
+      &:last-of-type{
+        border-bottom: 0px;
+      }
+      .notes{
+        color: rgba(75, 65, 45, .7);
+        font-size: 1.4rem;
+        margin-top: 5px;
+      }
+      .col2{
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        dl{
+          width: 48%;
+          margin-top: 0px;
+        }
+      }
+      .kyouka{
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        label{
+          width: 48%;
+          margin-bottom: 4%;
+          span{
+            text-align: right;
+          }
+        }
+      }
+      .kiyaku{
+        background-color: #FFF;
+        border-radius: 10px;
+        padding: 16px;
+        box-sizing: border-box;
+        max-height: 173px;
+        overflow-y: auto;
+      }
+    }
+    
+    dl,&.isType2{
+      margin-top:16px ;
+      dt{
+        font-weight: normal;
+      }
+      dd{
+        padding-bottom: 0px;
+        border-bottom: 0px;
+        &:last-of-type{
+          margin-bottom: 0px;
+        }
+      }
+      &.kamokuList{
+        display: flex;
+        align-items: center;
+        margin-top: 8px;
+        padding-bottom: 0px;
+        dt{
+          font-size: 1.6rem;
+          background-color: #FFF;
+          border-radius: 50px;
+          width: 55px;
+          height: 28px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin-right: 6px;
+        }
+      }
+    }
+  }
+  .douiBox{
+    width: 176px;
+    margin: 0 auto 32px auto;
+
+    span{
+      text-align: center;
+    }
+  }
+}

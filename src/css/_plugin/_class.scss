@@ -1,0 +1,95 @@
+@charset "UTF-8";
+/*--------------------------------------
+  クラス用scss
+---------------------------------------*/
+
+.pcL{/* 1199px以下は非表示 */}
+.pcS{/* 1200px以上は非表示 */}
+.pc{/* 767px以下は非表示 */}
+.sp{/* 768px以上は非表示 */}
+
+
+//共通ループ記述箇所
+//ここに記述すると1つの指定につき5つのクラスが吐き出される
+@mixin class1{
+  //マージン
+  $iM : 0;
+  @while $iM <= 100{
+    &M{
+      &T#{$iM}{margin-top: $iM * 1px !important;}
+      &B#{$iM}{margin-bottom: $iM * 1px !important;}
+    }
+    $iM: $iM+8;
+  }
+  $iP : 0;
+  @while $iP <= 100{
+    &P{
+      &T#{$iP}{padding-top: $iP * 1px !important;}
+      &B#{$iP}{padding-bottom: $iP * 1px !important;}
+    }
+    $iP: $iP+8;
+  }
+
+  //フォントの大きさ
+  &fz11e{font-size: 1.1em !important;}
+  &fz12e{font-size: 1.2em !important;}
+
+  //フォントの太さ
+  &fwR{font-weight: 400 !important;}
+  &fwM{font-weight: 500 !important;}
+  &fwB{font-weight: 700 !important;}
+  &fwBlk{font-weight: 900 !important;}
+
+  //テキスト寄せ
+  &taL{text-align: left !important;}
+  &taC{text-align: center !important;}
+  &taR{text-align: right !important;}
+
+  &red{color:$red2 }
+}
+
+
+/*---------- 全サイズに適用 ----------*/
+.c-{
+  @include class1;
+}
+
+
+/*---------- 768px以上に適用 ----------*/
+@include pc{
+  .sp{display: none !important;}
+
+  /*----- 要素別 -----*/
+  .c_pc-{
+    //共通ループ
+    @include class1;
+
+    //個別
+    //----- Margin -----
+//    $MBs:
+//      0,
+//      64;
+//    @each $MB in $MBs{
+//      &MB#{$MB}{margin-bottom: #{$MB}px !important;}
+//    }
+
+  }
+}
+
+
+/*---------- 767px以下に適用 ----------*/
+@include mq{
+  .pc{display: none !important;}
+
+  /*----- 要素別 -----*/
+  .c_sp-{
+    //共通ループ
+    @include class1;
+
+    //個別
+
+  }
+
+}
+
+

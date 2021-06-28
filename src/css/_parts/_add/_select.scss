@@ -1,0 +1,38 @@
+@charset "UTF-8";
+
+/*--------------------------------------
+  セレクト
+---------------------------------------*/
+.u-{
+  &selectWrap{
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    box-sizing: border-box;
+    position: relative;
+    &:after{
+  //    content: "";
+      display: block;
+      background: url($pathImg + "icon_arrow_down_gry.svg") 0 0 no-repeat;
+      width: 16px;
+      height: 10px;
+      margin: auto;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 16px;
+    }
+    select{
+      width: 100%;
+      padding: 8px 16px;
+      position: relative;
+      z-index: 1;
+      &.ph{
+        @include phStyle;
+      }
+      option{
+        color: #ccc;
+      }
+    }
+  }//selectWrap
+}

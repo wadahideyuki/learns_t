@@ -1,0 +1,37 @@
+@charset "UTF-8";
+
+/*--------------------------------------
+  ラジオ
+---------------------------------------*/
+.u-{
+  &rdo1{
+    display: block;
+    input{
+      display: none;
+    }
+    .wrap{
+      display: flex;
+      align-items: flex-start;
+      &:before{
+        flex-shrink: 0;
+        content: "";
+        display: block;
+        background: url($pathImg + "rdo1_off.svg") 0 0 no-repeat;
+        width: 20px;
+        height: 20px;
+        margin: 4px 6px 0 0;
+      }
+      .txt{
+        width: 100%;
+      }
+    }
+    input:checked{
+      + span{
+        color: #00f;
+        &:before{
+          background-image: url($pathImg + "rdo1_on.svg");
+        }
+      }
+    }
+  }//rdo1
+}

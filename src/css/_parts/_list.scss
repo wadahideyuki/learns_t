@@ -1,0 +1,172 @@
+@charset "UTF-8";
+
+/*--------------------------------------
+  リスト
+---------------------------------------*/
+.u-{
+  &list1{
+  }//list1
+  &msgList1{
+    > li{
+      border-bottom: 1px solid #C6C6C6;
+      &.unread{
+        background-color: $brown2;
+      }
+      a{
+        display: flex;
+        align-items: center;
+        padding: 11px 40px 8px 20px;
+        position: relative;
+        &:after{
+          content: "";
+          display: block;
+          background: url($pathImg + "arw1_r.svg") 0 0 no-repeat;
+          width: 7px;
+          height: 12px;
+          margin: auto;
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          right: 20px;
+        }
+      }
+      .txts{
+        width: 100%;
+        .ttl{
+          margin-bottom: 5px;
+        }
+        .who{
+          display: flex;
+          align-items: center;
+          i{
+            flex-shrink: 0;
+            margin-right: 6px;
+          }
+          p{
+            color: $brown4;
+          }
+        }
+      }
+      .date{
+        flex-shrink: 0;
+        color: $brown1_a60;
+        font-size: 1.4rem;
+      }
+    }
+  }//msgList1
+  &acrdList1{
+    > li{
+    }
+    .btn{
+      display: block;
+      padding: em(19/16) em(19/16) em(19/16) em(20/16);
+      position: relative;
+      &:after{
+        content: "";
+        display: block;
+        background-position: 0 0;
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        width: em(7/16);
+        height: em(12/16);
+        margin: auto;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: em(18/16);
+      }
+      &[data-acrd="on"]{
+        &:after{
+          transform: translate(em(0/16), 0) rotate(90deg);
+        }
+        &[data-show="show"]{
+          &:after{
+            transform: translate(em(0/16), 0) rotate(-90deg);
+          }
+        }//&[data-show="show"]
+      }//&[data-acrd="on"]
+      &[data-layer="1"]{
+        background-color: #F6F4EF;
+        border-bottom: 1px solid #C6C6C6;
+        &:after{
+          background-image: url($pathImg + "arw1_r.svg");
+        }
+      }//&[data-layer="1"]
+      &[data-layer="2"]{
+        border-bottom: 1px solid #C6C6C6;
+        &:after{
+          background-image: url($pathImg + "arw1_r_ylw3.svg");
+        }
+      }//&[data-layer="2"]
+      &[data-layer="3"]{
+        background-color: #ffe7b2;
+        padding-left: em(37/16);
+        border-bottom: 1px solid #f4b13e;
+        &:before{
+          content: "";
+          display: block;
+          background-color: $ylw4;
+          width: em(10/16);
+          height: em(10/16);
+          border-radius: 50%;
+          position: absolute;
+          top: em(24/16);
+          left: em(17/16);
+        }
+        &:after{
+          background-image: url($pathImg + "arw1_r_ylw2.svg");
+        }
+      }//&[data-layer="3"]
+      &[data-layer="4"]{
+        border-bottom: 1px solid #707070;
+        &:after{
+          background-image: url($pathImg + "arw1_r_brwn.svg");
+        }
+      }//&[data-layer="4"]
+    }//.btn
+    .acrdCont{
+      display: none;
+      &[data-show="show"]{
+        display: block;
+      }//&[data-layer="2"]
+      &[data-layer="2"]{
+        padding-left: 20px;
+        > li{
+        }
+      }//&[data-layer="2"]
+      &[data-layer="3"]{
+        > li{
+        }
+      }//&[data-layer="3"]
+      &[data-layer="4"]{
+        padding-left: 48px;
+        > li{
+        }
+      }//&[data-layer="4"]
+    }//.acrdCont
+    &.mybox{
+      .btn[data-layer="2"]{
+        
+        &:after{
+          background-image: url(../img/arw1_r_blue.svg);
+        }
+      }
+      .btn[data-layer="3"]{
+        background-color: #CFE8F5;
+        border-bottom: 1px solid #59A2C9;
+        &:before{
+          background-color: #59A2C9;
+        }
+        &:after{
+          background-image: url(../img/arw1_r_blue.svg);
+        }
+      }
+    }
+  }//acrdList1
+  &txtList1{//テキスト
+  }//txtList1
+  &thumList1{//画像
+  }//thumList1
+  &thumTxtList1{//画像とテキスト
+  }//thumTxtList1
+}

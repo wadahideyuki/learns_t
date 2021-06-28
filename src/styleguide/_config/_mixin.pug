@@ -1,0 +1,102 @@
+//- ---------------------
+        Mixin用pug
+  -----------------------
+include _var.pug
+
+//- ----- メタ --------------------//
+//- og
+mixin og(prop, cont)
+  meta(property='og:' + prop, content=cont)
+
+
+//- ----- 読み込み --------------------//
+//- css読み込み
+mixin css(fileName)
+  link(href=fileName, rel='stylesheet', type='text/css', media='all')
+//- common内のcss読み込み
+mixin cssCommon(fileName)
+  link(href=cssPath + fileName, rel='stylesheet', type='text/css', media='all')
+//- js読み込み
+mixin js(fileName)
+  script(src=fileName, type='text/javascript')
+//- common内のjs読み込み
+mixin jsCommon(fileName)
+  script(src=jsPath + fileName, type='text/javascript')
+
+
+
+//- ----- ページパーツ --------------------//
+//- img
+mixin img(fileName, alt, className)
+  img(class=className, src=imgPath + fileName, alt=alt)
+mixin pageImg(fileName, alt, className)
+  img(class=className, src=pageImgPath + fileName, alt=alt)
+mixin dmyImg(w, h, bg, c, className)
+  img(class=className, src="https://placehold.jp/" + bg + "/" + c + "/" + w +"x" + h + ".png", alt="")
+
+mixin pic(fileName, fileNameSp, alt, className)
+  picture
+    source(srcset=imgPath + fileNameSp media=spW)
+    +img(fileName, alt, className)
+
+mixin pagePic(fileName, fileNameSp, alt, className)
+  picture
+    source(srcset=pageImgPath + fileNameSp media=spW)
+    +pageImg(fileName, alt, className)
+
+//- figure
+mixin fig(fileName, alt, className)
+  figure(class=className)
+    +img(fileName, alt)
+mixin pageFig(fileName, alt, className)
+  figure(class=className)
+    +pageImg(fileName, alt)
+
+
+//- 動画
+mixin mov(url)
+  iframe(src='https://www.youtube.com/embed/' + url + '?rel=0&wmode=transparent', allowfullscreen='', frameborder='0')
+
+//- 箱
+
+
+//- ページャー
+mixin pager1
+  .u-pager1
+    ul
+      li: a.prev(href="")
+      li: a(href="") 1
+      li.ellipsis …
+      li: a(href="") 4
+      li: a(href="") 5
+      li: span.here 6
+      li: a(href="") 7
+      li: a(href="") 8
+      li.ellipsis …
+      li: a(href="") 10
+      li: a.next(href="")
+
+//- フォームパーツ
+mixin rdo1(name, txt, val, chk)
+  label.u-rdo1
+    if chk == 1
+      input(type="radio" name=name value=val checked)
+    else
+      input(type="radio" name=name value=val)
+    span.wrap
+      span.txt!= txt
+mixin chk1(name, txt, val, chk)
+  label.u-chk1
+    if chk == 1
+      input(type="checkbox" name=name value=val checked)
+    else
+      input(type="checkbox" name=name value=val)
+    span.wrap
+      span.txt!= txt
+
+
+
+
+
+
+

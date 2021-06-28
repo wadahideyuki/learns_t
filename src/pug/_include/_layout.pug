@@ -1,0 +1,34 @@
+include /_include/_mixin.pug
+
+doctype html
+block varsFix
+  -
+    var title = siteTitle
+    var desc = siteDesc
+block varsEdit
+unless layer == "top"
+  - var title = pageTitle +  " | " + siteTitle
+- var pageImgPath = imgPath + pageName + "/"
+
+html(lang="ja")
+  head
+    block head
+      include /_include/_head.pug
+
+  body(class=(pageColor == "lBrown" ? "u-bgLBrown" : ""))
+    .l-wrapper(class=(layer == "top" ? "pageTop" : pageClass))
+      block header
+        include /_include/_header.pug
+
+      main.l-cont
+        block content
+          h1 タイトルが入る
+
+      block footer
+        include /_include/_footer.pug
+
+    nav.l-sidenav(data-show="")
+      include /_include/_sidenav.pug
+
+    block loading
+

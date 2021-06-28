@@ -1,0 +1,37 @@
+extends /_include/_layout.pug
+
+block varsEdit
+  -
+    var layer = "other"
+    //↓編集領域↓
+    var pageName = "このページのファイル名(.html付けない)"
+    var pageUrl = pageName + ".html"
+    var pageTitle = "01_ユーザーアカウント管理_アカウント登録（メールアドレス入力）"
+    var pageClass = "pageOther"
+    var pageColor = "lBrown"
+    //↑編集領域↑
+
+block header
+  include /_include/_header2.pug
+
+block content
+  .u-inner
+    p.u-txtLead1 アカウント情報を登録するために，#[br]メールアドレスとエントリーキーを入力して#[br]送信ください。
+  .u-form
+    .inner
+      dl.isType2  
+        dt メールアドレス
+        dd: input(type="email" placeholder="メールアドレス" )
+        dt エントリーキー
+        dd: input(type="text" placeholder="エントリーキー" )
+      .u-txtNotes  ※メールアドレスを持っていない人は,先生にアカウント作成を依頼してください。
+      .u-btnWrap1.c-taC
+        button(onclick="location.href='02.html'").u-btn2.clr1.sz1 登録
+
+
+
+
+  script.
+    $(function(){
+      console.log("必要なjsはページ毎に個別で記述");
+    });

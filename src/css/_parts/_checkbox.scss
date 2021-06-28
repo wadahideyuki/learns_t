@@ -1,0 +1,37 @@
+@charset "UTF-8";
+
+/*--------------------------------------
+  チェックボックス
+---------------------------------------*/
+.u-{
+  &chk1{
+    display: block;
+    input{
+      display: none;
+    }
+    .wrap{
+      display: flex;
+      align-items: flex-start;
+      &:before{
+        flex-shrink: 0;
+        content: "";
+        display: block;
+        background: url($pathImg + "chk1_off.svg") 0 0 no-repeat;
+        width: 24px;
+        height: 24px;
+        margin: 2px 8px 0 0;
+      }
+      .txt{
+        width: 100%;
+      }
+    }
+    input:checked{
+      + .wrap{
+        color: #00f;
+        &:before{
+          background-image: url($pathImg + "chk1_on.svg");
+        }
+      }
+    }
+  }//chk1
+}

@@ -1,0 +1,8 @@
+時間が有る時に
+_class.scssと_class2.scssを統合
+
+【_class.scss】
+メディアクエリと一つのクラスを各メディアクエリに複製
+
+【_class2.scss】
+ループや各プロパティ

@@ -1,0 +1,432 @@
+extends /_include/_layout.pug
+
+block varsEdit
+  -
+    var layer = "lower"
+    //↓編集領域↓
+    var pageUrl = ""
+    var pageTitle = "ページ一覧"
+    var pageDesc = "ページ管理用のファイル"
+    var pageClass = "pagePage"
+    //↑編集領域↑
+    var desc = pageDesc
+
+block content
+  .pageList1
+    h1 #{siteTitle} ページ一覧
+    p: a(target="_blank" href="src/styleguide/") スタイルガイド
+
+    table
+      thead
+        tr
+          th 済
+          th 期限
+          th ページ名
+          th 備考
+      tbody
+        tr
+          - var no = "01"
+          - var thisName = "ユーザーアカウント管理_アカウント登録（メールアドレス入力）"
+          td ✓
+          td
+          th: a(target="_blank" href= no + ".html") #{no}_#{thisName}
+          td
+        tr
+          - var no = "02"
+          - var thisName = "ユーザーアカウント管理_アカウント登録メール送信完了"
+          td ✓
+          td
+          th: a(target="_blank" href= no + ".html") #{no}_#{thisName}
+          td
+        tr
+          - var no = "03"
+          - var thisName = "ユーザーアカウント管理_アカウント登録"
+          td ✓
+          td
+          th: a(target="_blank" href= no + ".html") #{no}_#{thisName}
+          td
+        tr
+          - var no = "04"
+          - var thisName = "ユーザーアカウント管理_アカウント登録確認"
+          td ✓
+          td
+          th: a(target="_blank" href= no + ".html") #{no}_#{thisName}
+          td
+        tr
+          - var no = "05"
+          - var thisName = "ユーザーアカウント管理_アカウント登録完了"
+          td ✓
+          td
+          th: a(target="_blank" href= no + ".html") #{no}_#{thisName}
+          td
+        tr
+          - var no = "06"
+          - var thisName = "ユーザーアカウント管理_ログイン（生徒）"
+          td ✓
+          td
+          th: a(target="_blank" href= no + ".html") #{no}_#{thisName}
+          td
+        tr
+          - var no = "07"
+          - var thisName = "ユーザーアカウント管理_生徒用ログイン情報再設定（メールアドレス入力）"
+          td ✓
+          td
+          th: a(target="_blank" href= no + ".html") #{no}_#{thisName}
+          td
+        tr
+          - var no = "08"
+          - var thisName = "ユーザーアカウント管理_生徒用ログイン情報再設定メール送信完了"
+          td ✓
+          td
+          th: a(target="_blank" href= no + ".html") #{no}_#{thisName}
+          td
+        tr
+          - var no = "09"
+          - var thisName = "ユーザーアカウント管理_生徒用ログイン情報再設定"
+          td ✓
+          td
+          th: a(target="_blank" href= no + ".html") #{no}_#{thisName}
+          td
+        tr
+          - var no = "10"
+          - var thisName = "ユーザーアカウント管理_生徒用ログイン情報再設定完了"
+          td ✓
+          td
+          th: a(target="_blank" href= no + ".html") #{no}_#{thisName}
+          td
+        tr
+          - var no = "11"
+          - var thisName = "生徒Top"
+          td 
+          td
+          th: a(target="_blank" href= no + ".html") #{no}_#{thisName}
+          td 
+        tr
+          - var no = "12"
+          - var thisName = "ハンバーガーメニュー"
+          td ✓
+          td
+          th: a(target="_blank" href= no + ".html") #{no}_#{thisName}
+          td 各ページに入っている
+        tr
+          - var no = "13"
+          - var thisName = "アカウント詳細"
+          td ✓
+          td
+          th: a(target="_blank" href= no + ".html") #{no}_#{thisName}
+          td
+        tr
+          - var no = "14"
+          - var thisName = "アカウント情報変更"
+          td ✓
+          td
+          th: a(target="_blank" href= no + ".html") #{no}_#{thisName}
+          td
+        tr
+          - var no = "15"
+          - var thisName = "アカウント情報確認"
+          td ✓
+          td
+          th: a(target="_blank" href= no + ".html") #{no}_#{thisName}
+          td
+        tr
+          - var no = "16"
+          - var thisName = "アカウント情報変更完了"
+          td ✓
+          td
+          th: a(target="_blank" href= no + ".html") #{no}_#{thisName}
+          td
+        tr
+          - var no = "17"
+          - var thisName = "メッセージ一覧（受信）"
+          td ✓
+          td
+          th: a(target="_blank" href= no + ".html") #{no}_#{thisName}
+          td
+        tr
+          - var no = "18"
+          - var thisName = "メッセージ詳細（受信）"
+          td ✓
+          td
+          th: a(target="_blank" href= no + ".html") #{no}_#{thisName}
+          td
+        tr
+          - var no = "19"
+          - var thisName = "Links Top"
+          td ✓
+          td
+          th: a(target="_blank" href= no + ".html") #{no}_#{thisName}
+          td
+        tr
+          - var no = "20"
+          - var thisName = "Links 採点結果確認（実施回）"
+          td ✓
+          td
+          th: a(target="_blank" href= no + ".html") #{no}_#{thisName}
+          td
+        tr
+          - var no = "21"
+          - var thisName = "Links 採点結果確認（実施回）"
+          td ✓
+          td
+          th: a(target="_blank" href= no + ".html") #{no}_#{thisName}
+          td
+        tr
+          - var no = "22"
+          - var thisName = "Links 解答修正"
+          td ✓
+          td
+          th: a(target="_blank" href= no + ".html") #{no}_#{thisName}
+          td
+        tr
+          - var no = "23"
+          - var thisName = "Links 解答修正（解答入力）"
+          td ✓
+          td
+          th: a(target="_blank" href= no + ".html") #{no}_#{thisName}
+          td
+        tr
+          - var no = "24"
+          - var thisName = "Links 採点"
+          td ✓
+          td
+          th: a(target="_blank" href= no + ".html") #{no}_#{thisName}
+          td
+        tr
+          - var no = "25"
+          - var thisName = "Links 採点(ファイル選択後)"
+          td ✓
+          td
+          th: a(target="_blank" href= no + ".html") #{no}_#{thisName}
+          td
+        tr
+          - var no = "26"
+          - var thisName = "Links 採点(撮影方法について)"
+          td 
+          td
+          th: a(target="_blank" href= no + ".html") #{no}_#{thisName}
+          td
+        tr
+          - var no = "27"
+          - var thisName = "Links 採点(マーク位置解析) "
+          td ✓
+          td
+          th: a(target="_blank" href= no + ".html") #{no}_#{thisName}
+          td
+        tr
+          - var no = "28"
+          - var thisName = "Links 採点 マークシート読取り結果"
+          td ✓
+          td
+          th: a(target="_blank" href= no + ".html") #{no}_#{thisName}
+          td
+        tr
+          - var no = "29"
+          - var thisName = "Links 採点 マークシート読取り結果（解答入力）"
+          td ✓
+          td
+          th: a(target="_blank" href= no + ".html") #{no}_#{thisName}
+          td
+        tr
+          - var no = "30"
+          - var thisName = "Links 採点 マークシート読取り結果（解答入力_採点中)"
+          td ✓
+          td
+          th: a(target="_blank" href= no + ".html") #{no}_#{thisName}
+          td
+        tr
+          - var no = "31"
+          - var thisName = "Links 採点 解答入力 (教材選択)"
+          td ✓
+          td
+          th: a(target="_blank" href= no + ".html") #{no}_#{thisName}
+          td
+        tr
+          - var no = "32"
+          - var thisName = "Links 採点 解答入力(解答入力) "
+          td ✓
+          td
+          th: a(target="_blank" href= no + ".html") #{no}_#{thisName}
+          td
+        tr
+          - var no = "33"
+          - var thisName = "Links 採点 解答入力(解答入力＿採点中) "
+          td ✓
+          td
+          th: a(target="_blank" href= no + ".html") #{no}_#{thisName}
+          td
+        tr
+          - var no = "34"
+          - var thisName = "MyBox Top"
+          td ✓
+          td
+          th: a(target="_blank" href= no + ".html") #{no}_#{thisName}
+          td
+        tr
+          - var no = "35"
+          - var thisName = "MyBox 教材連携チェック"
+          td ✓
+          td
+          th: a(target="_blank" href= no + ".html") #{no}_#{thisName}
+          td
+        tr
+          - var no = "36"
+          - var thisName = "MyBox 教材連携チェック"
+          td ✓
+          td
+          th: a(target="_blank" href= no + ".html") #{no}_#{thisName}
+          td
+        tr
+          - var no = "37"
+          - var thisName = "MyBox 学習画面（教材連携チェック）"
+          td ✓
+          td
+          th: a(target="_blank" href= no + ".html") #{no}_#{thisName}
+          td
+        tr
+          - var no = "38"
+          - var thisName = "MyBox 学習画面（教材連携チェック）OK"
+          td ✓
+          td
+          th #{no}_#{thisName}
+          td 37の中
+        tr
+          - var no = "39"
+          - var thisName = "MyBox 学習画面（教材連携チェック）NG"
+          td ✓
+          td
+          th #{no}_#{thisName}
+          td 37の中
+        tr
+          - var no = "40"
+          - var thisName = "MyBox 学習画面（教材連携チェック）処理中"
+          td ✓
+          td
+          th: a(target="_blank" href= no + ".html") #{no}_#{thisName}
+          td
+        tr
+          - var no = "41"
+          - var thisName = "MyBox 学習画面（教材連携チェック）学習完了"
+          td ✓
+          td
+          th: a(target="_blank" href= no + ".html") #{no}_#{thisName}
+          td
+        tr
+          - var no = "42"
+          - var thisName = "MyBox 学習完了（教材連携チェック）"
+          td ✓
+          td
+          th: a(target="_blank" href= no + ".html") #{no}_#{thisName}
+          td
+
+
+        tr
+          th(colspan="4" style="background-color: #ccc;") テンプレ
+        tr
+          td 
+          td
+          th: a(target="_blank" href="index.html") topページ
+          td
+        tr
+          td 
+          td
+          th: a(target="_blank" href="other.html") topと同階層のページ
+          td
+        tr
+          td 
+          td
+          th: a(target="_blank" href="other_header2.html") topと同階層のページ(ヘッダーtype2)
+          td
+        tr
+          td 
+          td
+          th: a(target="_blank" href="other_loading.html") ローディング画面のサンプル
+          td
+            pre.
+              block loading
+                +loading("テキスト")
+            |ローディングはdata-show属性でshow/hideする
+            br
+            |最初からshowの状態にするには
+            pre.
+              +loading("テキスト", "1")
+            |と"1"にする
+            br
+            |キャンセルボタンをclickでローディングが消える
+
+        tr
+          td 
+          td
+          th: a(target="_blank" href="lower/index.html") 下層ページ
+          td
+
+
+
+
+
+  style.
+    html{
+      max-width: none;
+    }
+    .pageList1{
+      padding: 5.0rem;
+      color: #333;
+    }
+    .pageList1 h1{
+      margin-bottom: 1.0em;
+      font-size: 3.0rem;
+    }
+    .pageList1 p{
+      margin-bottom: 0.5em;
+      font-size: 2.4rem;
+    }
+    .pageList1 table{
+      width: 100%;
+      margin-top: 1.5em;
+      font-size: 2.0rem;
+    }
+    .pageList1 tr{
+      border-top: solid 1px #ccc;
+    }
+    .pageList1 th, .pageList1 td{
+      padding: 5px;
+    }
+    .pageList1 th:nth-child(2), .pageList1 td:nth-child(2){
+      white-space: nowrap;
+    }
+    .pageList1 * + th, .pageList1 * + td{
+      border-left: dotted 1px #aaa;
+    }
+    .pageList1 thead th{
+      font-weight: bold;
+      text-align: center;
+    }
+    .pageList1 td:nth-child(1){
+      text-align: center;
+    }
+    .pageList1 tbody{
+    }
+    .pageList1 tbody th[colspan="4"]{
+      text-align: center;
+      font-weight: bold;
+    }
+    .pageList1 a{text-decoration: underline;}
+    .pageList1 a:hover{text-decoration: none;}
+    @media screen and (max-width: 767px) {
+      html{
+        font-size: 3.125vw;
+      }
+      .pageList1{
+        padding: 1.0rem;
+      }
+      .pageList1 h1{
+        margin-bottom: 0.5em;
+      }
+      .pageList1 table{
+        font-size: 1.2rem;
+      }
+      .pageList1 th:nth-child(4), .pageList1 td:nth-child(4){
+        font-size: 1.0rem;
+      }
+    }
+    

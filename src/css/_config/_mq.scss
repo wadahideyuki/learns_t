@@ -1,0 +1,77 @@
+@charset "UTF-8";
+//メディアクエリ用scss
+
+@import "var";
+
+@mixin mq($bp: m) {
+  @if $bp == xs {
+    @media screen and (max-width: 320px) {
+      @content;
+    }
+  } @else if $bp == s {
+    @media screen and (max-width: 600px) {
+      @content;
+    }
+  } @else if $bp == m {
+    @media screen and (max-width: px($breakPoint)) {
+      @content;
+    }
+  } @else if $bp == l {
+    @media screen and (max-width: 1024px) {
+      @content;
+    }
+  } @else if $bp == xl {
+    @media screen and (max-width: 1280px) {
+        @content;
+    }
+  }
+}
+
+//PCのブレイクポイント
+@mixin pcS {
+	@media screen and (max-width: px($pcBP)) {
+		@content;
+	}
+}
+//PC・大の幅の時
+@mixin pcL {
+	@media screen and (min-width: px($pcBP + 1)) {
+		@content;
+	}
+}
+//PC幅の時
+@mixin pc {
+	@media screen and (min-width: px($breakPoint + 1)) {
+		@content;
+	}
+}
+//タブレット幅の時
+@mixin tb {
+	@media screen and (max-width: px($tabBP)) {
+		@content;
+	}
+}
+
+@mixin mqMaxW($bp: 1000px) {
+	@media screen and (max-width: $bp) {
+		@content;
+	}
+}
+@mixin mqMinW($bp: 1000px) {
+	@media screen and (min-width: $bp) {
+		@content;
+	}
+}
+@mixin mqMinMaxW($bp: 768px, $bp2: 1199px) {
+	@media screen and (min-width: $bp) and (max-width: $bp2) {
+		@content;
+	}
+}
+
+//IE用
+@mixin ie {
+	@at-root _:-ms-fullscreen, :root & {
+		@content;
+	}
+}
+

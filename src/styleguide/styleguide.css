@@ -1,0 +1,583 @@
+@charset "UTF-8";
+/* スタイルガイド用 */
+/* リセット
+---------------------------------------------------- */
+*:focus {
+  outline: none;
+}
+
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, textarea, p, blockquote, th, td, hr, figure, button {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  color: #4B412D;
+  font-size: 10px;
+  letter-spacing: 0;
+}
+
+body {
+  font: 10px/1.4 'Noto Sans JP', "メイリオ", Meiryo, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", Osaka, "ＭＳ Ｐゴシック", "MS PGothic", "sans-serif";
+  font-size: 1.6rem;
+  font-weight: 500;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+@media screen and (max-width: 767px) {
+  body {
+    -webkit-text-size-adjust: 100%;
+  }
+}
+
+*:first-child + html body {
+  font-size: 87%;
+}
+
+main {
+  display: block;
+}
+
+h1, h2, h3, h4, h5, h6, small {
+  font-size: 100%;
+  font-weight: inherit;
+}
+
+fieldset, img, svg {
+  border: 0;
+  vertical-align: top;
+}
+
+img, svg {
+  max-width: 100%;
+  height: auto;
+}
+
+address, caption, cite, code, dfn, em, strong, th, var {
+  font-style: normal;
+  font-weight: inherit;
+}
+
+li {
+  list-style: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  font-size: 100%;
+}
+
+caption, th {
+  text-align: left;
+}
+
+q:before, q:after {
+  content: '';
+}
+
+abbr, acronym {
+  border: 0;
+  font-variant: normal;
+}
+
+br {
+  letter-spacing: normal;
+}
+
+hr {
+  border: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+/* to preserve line-height and selector appearance */
+sup {
+  vertical-align: text-top;
+}
+
+sub {
+  vertical-align: text-bottom;
+}
+
+input[type="text"],
+input[type="submit"],
+input[type="reset"],
+input[type="button"],
+textarea,
+button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: none;
+  border: none;
+}
+
+input, textarea, select {
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+/*to enable resizing for IE*/
+input, textarea, select {
+  *font-size: 100%;
+}
+
+input[type="text"],
+input[type="password"],
+textarea {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus,
+textarea:focus {
+  border-color: #aaa;
+}
+
+input[type="text"]::-webkit-input-placeholder,
+input[type="password"]::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder {
+  /* WebKit, Blink, Edge */
+  color: #ccc;
+  opacity: 1;
+}
+
+input[type="text"]::-moz-input-placeholder,
+input[type="password"]::-moz-input-placeholder,
+textarea::-moz-input-placeholder {
+  /* Fox */
+  color: #ccc;
+  opacity: 1;
+}
+
+input[type="text"]:-ms-input-placeholder,
+input[type="password"]:-ms-input-placeholder,
+textarea:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: #ccc;
+  opacity: 1;
+}
+
+input[type="text"]::placeholder,
+input[type="password"]::placeholder,
+textarea::placeholder {
+  /* Others */
+  color: #ccc;
+  opacity: 1;
+}
+
+input[type="text"],
+textarea {
+  width: 100%;
+}
+
+input[type="text"] {
+  padding: 8px 16px;
+}
+
+input[type="text"]::-ms-clear {
+  visibility: hidden;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+input[type="number"]::-webkit-outer-spin-button, input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+select {
+  box-sizing: border-box;
+}
+
+select::-ms-expand {
+  display: none;
+}
+
+textarea {
+  padding: 16px;
+  vertical-align: baseline;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+.clearfix:after {
+  content: ".";
+  /* 新しい要素を作る */
+  display: block;
+  /* ブロックレベル要素に */
+  clear: both;
+  height: 0;
+  visibility: hidden;
+}
+
+.clearfix {
+  min-height: 1px;
+}
+
+* html .clearfix {
+  height: 1px;
+  /*\*/
+  /*/
+  height: auto;
+  overflow: hidden;
+  /**/
+}
+
+.clear {
+  clear: both;
+}
+
+.none {
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
+html {
+  max-width: none;
+}
+
+.styleguide .sgPageTtl {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 150px;
+  font-size: 3.0rem;
+  text-align: center;
+  line-height: 1;
+}
+
+@media screen and (max-width: 767px) {
+  .styleguide .sgPageTtl {
+    height: 14.49275vw;
+  }
+}
+
+.styleguide .sgColWrap {
+  padding-left: 300px;
+}
+
+@media screen and (max-width: 767px) {
+  .styleguide .sgColWrap {
+    padding: 0 0 48.30918vw;
+  }
+}
+
+.styleguide .sgColSide {
+  width: 300px;
+  padding: 20px;
+  font-size: 2.0rem;
+  border-right: 1px solid #000;
+  box-sizing: border-box;
+  position: fixed;
+  top: 150px;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+}
+
+@media screen and (max-width: 767px) {
+  .styleguide .sgColSide {
+    background-color: #fff;
+    width: 100%;
+    height: 57.97101vw;
+    padding: 2.41546vw;
+    border-top: 1px solid #000;
+    border-right: none;
+    top: auto;
+  }
+}
+
+.styleguide .sgColSide .scrlBox {
+  height: 100%;
+  overflow: scroll;
+}
+
+.styleguide .sgColSide ul {
+  margin: 0 0.5em 1.0em 0;
+  padding: 0 0 1.0em 1.0em;
+  border-bottom: 1px solid #ddd;
+}
+
+@media screen and (max-width: 767px) {
+  .styleguide .sgColSide ul {
+    margin-right: 0;
+    padding-left: 2.0em;
+  }
+}
+
+.styleguide .sgColSide li {
+  list-style: disc;
+}
+
+.styleguide .sgColSide li a {
+  display: block;
+  color: #000;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.styleguide .sgColSide li a:hover {
+  opacity: 0.5;
+}
+
+.styleguide .sgColSide p {
+  margin: 0 0.5em 0.8em 0;
+  font-size: 0.8em;
+}
+
+@media screen and (max-width: 767px) {
+  .styleguide .sgColSide p {
+    margin-right: 0;
+  }
+}
+
+.styleguide .sgColMain {
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+@media screen and (max-width: 767px) {
+  .styleguide .sgColMain {
+    padding: 2.41546vw;
+  }
+}
+
+.styleguide .sgColMain .sgSec {
+  padding: 50px 0;
+}
+
+@media screen and (max-width: 767px) {
+  .styleguide .sgColMain .sgSec {
+    padding: 7.24638vw 0;
+  }
+}
+
+.styleguide .sgColMain .sgLink1 {
+  color: #00e;
+  text-decoration: underline;
+}
+
+.styleguide .sgColMain .sgLink1:hover {
+  text-decoration: none;
+}
+
+.styleguide .sgColMain .sgColors {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.styleguide .sgColMain .sgColors li {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 18%;
+  height: 10vw;
+  margin: 0 2.5% 2.5% 0;
+}
+
+@media screen and (max-width: 767px) {
+  .styleguide .sgColMain .sgColors li {
+    width: 32%;
+    height: 15vw;
+    margin: 0 2% 2% 0;
+  }
+}
+
+.styleguide .sgColMain .sgColors li:nth-child(5n) {
+  margin-right: 0;
+}
+
+@media screen and (max-width: 767px) {
+  .styleguide .sgColMain .sgColors li:nth-child(5n) {
+    margin-right: 2%;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .styleguide .sgColMain .sgColors li:nth-child(3n) {
+    margin-right: 0;
+  }
+}
+
+.styleguide .sgColMain .sgTtl {
+  margin-bottom: 2.0em;
+  padding: 0;
+  color: #000;
+  font-size: 3.0rem;
+  font-weight: bold;
+  text-align: center;
+  border-top: 1px solid #000;
+  border-bottom: 1px solid #000;
+}
+
+.styleguide .sgColMain .sgTtl2 {
+  margin-top: 3.0em;
+  margin-bottom: 2.0em;
+  font-size: 2.4rem;
+  font-weight: bold;
+  text-align: center;
+  position: relative;
+}
+
+.styleguide .sgColMain .sgTtl2:before {
+  content: "";
+  display: block;
+  background-color: #000;
+  width: 100%;
+  height: 1px;
+  margin: auto;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.styleguide .sgColMain .sgTtl2 span {
+  display: inline-block;
+  background-color: #fff;
+  padding: 0 1.0em;
+  border-bottom: none;
+  position: relative;
+}
+
+.styleguide .sgColMain .sgTtl3 {
+  margin: 2.0em 0 1.0em;
+  padding-left: 0.5em;
+  font-size: 2.0rem;
+  font-weight: bold;
+  border-left: 6px solid #666;
+  position: relative;
+}
+
+.styleguide .sgColMain .sgTxtList1 {
+  margin-bottom: 2.0em;
+  padding-left: 2.3em;
+}
+
+.styleguide .sgColMain .sgTxtList1 > li {
+  list-style-type: disc;
+}
+
+.styleguide .sgColMain .sgTxtList1 .sgTxtList1 {
+  margin-bottom: 0;
+  padding-left: 1.0em;
+}
+
+.styleguide .sgColMain .sgTxtList1 .sgTxtList1 > li {
+  list-style-type: circle;
+}
+
+.styleguide .sgColMain .sgTxtList1 .c-fwB {
+  color: #900;
+  animation-name: tdU;
+  animation-duration: 2.0s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+.styleguide .sgColMain .sgDl + .sgDl {
+  margin-top: 1.0em;
+}
+
+.styleguide .sgColMain .sgDl dt {
+  font-weight: bold;
+}
+
+.styleguide .sgColMain .sgDl dd {
+  padding-left: 2.0em;
+}
+
+.styleguide .sgColMain .sgTbl {
+  width: 100%;
+  text-align: center;
+}
+
+.styleguide .sgColMain .sgTbl + .sgTbl {
+  margin-top: 20px;
+}
+
+.styleguide .sgColMain .sgTbl th, .styleguide .sgColMain .sgTbl td {
+  padding: 10px;
+  text-align: center;
+  border: 1px dotted #aaa;
+}
+
+.styleguide .sgColMain .sgTbl th.taL, .styleguide .sgColMain .sgTbl td.taL {
+  text-align: left;
+}
+
+.styleguide .sgColMain .sgTbl th {
+  font-weight: bold;
+}
+
+.styleguide .sgColMain .sgTbl.icns img {
+  max-width: 50px;
+  max-height: 50px;
+}
+
+.styleguide .sgColMain .sgTdU {
+  animation-name: tdU;
+  animation-duration: 2.0s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+@keyframes tdU {
+  0% {
+    text-decoration: none;
+  }
+  100% {
+    text-decoration: underline;
+  }
+}
+
+.codeBox {
+  background-color: #eee;
+  margin: 20px;
+  padding: 10px 20px;
+  border-left: 3px solid #ccc;
+  white-space: pre-wrap;
+}
+
+@media screen and (max-width: 767px) {
+  .codeBox {
+    margin: 4.83092vw;
+    padding: 2.41546vw 4.83092vw;
+  }
+}
+
+.codeBox:before {
+  content: "pugの表記";
+  display: block;
+  margin-bottom: 0.2em;
+  font-size: 2.2rem;
+  font-weight: bold;
+}
+
+.codeBox.scss:before {
+  content: "scssの表記";
+}
+
+.codeBox + .sgTtl2 {
+  margin-top: 3.0em;
+}

@@ -1,0 +1,17 @@
+@charset "UTF-8";
+
+/*--------------------------------------
+  テキスト
+---------------------------------------*/
+.u-{
+  &txtLead1{
+    margin: 24px 0;
+    text-align: center;
+    line-height: (22/16);
+  }//txtLead1
+  &txtNotes{
+    color: $red2;
+    margin: 16px 0 ;
+    font-size:1.4rem ;
+  }
+}

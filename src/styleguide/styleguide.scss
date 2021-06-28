@@ -1,0 +1,286 @@
+@charset "UTF-8";
+/* スタイルガイド用 */
+@import "init/reset";//リセット
+html{
+  max-width: none;
+}
+.styleguide{
+  .sgPageTtl{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 150px;
+    font-size: 3.0rem;
+    text-align: center;
+    line-height: 1;
+    @include mq{
+      height: vw(60);
+    }
+  }
+  .sgColWrap{
+    padding-left: 300px;
+    @include mq{
+      padding: 0 0 vw(200);
+    }
+  }
+  .sgColSide{
+    width: 300px;
+    padding: 20px;
+    font-size: 2.0rem;
+    border-right: 1px solid #000;
+    box-sizing: border-box;
+    position: fixed;
+    top: 150px;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    @include mq{
+      background-color: #fff;
+      width: 100%;
+      height: vw(240);
+      padding: vw(10);
+      border-top: 1px solid #000;
+      border-right: none;
+      top: auto;
+    }
+    .scrlBox{
+      height: 100%;
+      overflow: scroll;
+    }
+    ul{
+      margin: 0 0.5em 1.0em 0;
+      padding: 0 0 1.0em 1.0em;
+      border-bottom: 1px solid #ddd;
+      @include mq{
+        margin-right: 0;
+        padding-left: 2.0em;
+      }
+    }
+    li{
+      list-style: disc;
+      a{
+        display: block;
+        color: #000;
+        text-decoration: none;
+        transition: 0.3s;
+        &:hover{
+          opacity: 0.5;
+        }
+      }
+    }
+    p{
+      margin: 0 0.5em 0.8em 0;
+      font-size: 0.8em;
+      @include mq{
+        margin-right: 0;
+      }
+    }
+  }
+  .sgColMain{
+    padding: 20px;
+    box-sizing: border-box;
+    @include mq{
+      padding: vw(10);
+    }
+    .sgSec{
+      padding: 50px 0;
+      @include mq{
+        padding: vw(30) 0;
+      }
+    }
+    .sgLink1{
+      color: #00e;
+      text-decoration: underline;
+      &:hover{
+        text-decoration: none;
+      }
+    }
+    .sgColors{
+      display: flex;
+      flex-wrap: wrap;
+      li{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 18%;
+        height: 10vw;
+        margin: 0 2.5% 2.5% 0;
+        @include mq{
+          width: 32%;
+          height: 15vw;
+          margin: 0 2% 2% 0;
+        }
+        &:nth-child(5n){
+          margin-right: 0;
+          @include mq{
+            margin-right: 2%;
+          }
+        }
+        &:nth-child(3n){
+          @include mq{
+            margin-right: 0;
+          }
+        }
+      }
+    }
+    .sgTtl{
+      margin-bottom: 2.0em;
+      padding: 0;
+      color: #000;
+      font-size: 3.0rem;
+      font-weight: bold;
+      text-align: center;
+      border-top: 1px solid #000;
+      border-bottom: 1px solid #000;
+    }
+    .sgTtl2{
+      margin-top: 3.0em;
+      margin-bottom: 2.0em;
+      font-size: 2.4rem;
+      font-weight: bold;
+      text-align: center;
+      position: relative;
+      &:before{
+        content: "";
+        display: block;
+        background-color: #000;
+        width: 100%;
+        height: 1px;
+        margin: auto;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+      }
+      span{
+        display: inline-block;
+        background-color: #fff;
+        padding: 0 1.0em;
+        border-bottom: none;
+        position: relative;
+      }
+    }
+    .sgTtl3{
+      margin: 2.0em 0 1.0em;
+      padding-left: 0.5em;
+      font-size: 2.0rem;
+      font-weight: bold;
+      border-left: 6px solid #666;
+      position: relative;
+    }
+    .sgTxtList1{
+      margin-bottom: 2.0em;
+      padding-left: 2.3em;
+      @include mq{
+      }
+      > li{
+        list-style-type: disc;
+      }
+      .sgTxtList1{
+        margin-bottom: 0;
+        padding-left: 1.0em;
+        > li{
+          list-style-type: circle;
+        }
+      }
+      .c-fwB{
+        color: #900;
+        animation-name: tdU;
+        animation-duration: 2.0s;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+      }
+    }
+    .sgDl{
+      + .sgDl{
+        margin-top: 1.0em;
+      }
+      dt{
+        font-weight: bold;
+      }
+      dd{
+        padding-left: 2.0em;
+      }
+    }
+    .sgTbl{
+      width: 100%;
+      text-align: center;
+      + .sgTbl{
+        margin-top: 20px;
+      }
+      tr{
+      }
+      th, td{
+        padding: 10px;
+        text-align: center;
+        border: 1px dotted #aaa;
+        &.taL{
+          text-align: left;
+        }
+      }
+      th{
+        font-weight: bold;
+      }
+      td{
+      }
+      thead{
+        th{
+        }
+        td{
+        }
+      }
+      tbody{
+        th{
+        }
+        td{
+        }
+      }
+      &.icns{
+        img{
+          max-width: 50px;
+          max-height: 50px;
+        }
+      }
+    }
+    .sgTdU{
+      animation-name: tdU;
+      animation-duration: 2.0s;
+      animation-timing-function: linear;
+      animation-iteration-count: infinite;
+    }
+    @keyframes tdU{
+      0%{text-decoration: none;}
+      100%{text-decoration: underline;}
+    }
+  }
+}
+.codeBox{
+  background-color: #eee;
+  margin: 20px;
+  padding: 10px 20px;
+  border-left: 3px solid #ccc;
+  white-space: pre-wrap;
+  @include mq{
+    margin: vw(20);
+    padding: vw(10) vw(20);
+  }
+  &:before{
+    content: "pugの表記";
+    display: block;
+    margin-bottom: 0.2em;
+    font-size: 2.2rem;
+    font-weight: bold;
+  }
+  &.scss{
+    &:before{
+      content: "scssの表記";
+    }
+  }
+  + .sgTtl2{
+    margin-top: 3.0em;
+  }
+}
+
+
+

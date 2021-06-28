@@ -1,0 +1,75 @@
+@charset "UTF-8";
+
+/*--------------------------------------
+  箱
+---------------------------------------*/
+.u-{
+  &box1{
+  }//box1
+  &boxName{
+    background-color: #FFF;
+    padding:24px ;
+    display: flex;
+    justify-content: space-between;
+    .name{
+      font-weight: bold;
+      span{
+        font-size: 2.6rem;
+      }
+    }
+  }//boxName
+  &msgBox1{
+    margin-top: 24px;
+    .ttl{
+      font-size: 1.8rem;
+    }
+    .info{
+      display: flex;
+      align-items: center;
+      margin-top: 19px;
+      padding-top: 13px;
+      border-top: 1px solid $brown1;
+      .who{
+        display: flex;
+        align-items: center;
+        width: 100%;
+        i{
+          flex-shrink: 0;
+          margin-right: 5px;
+        }
+        p{
+          color: $brown4;
+        }
+      }
+      .date{
+        flex-shrink: 0;
+        color: $brown1_a60;
+      }
+    }
+    .txts{
+      margin-top: 19px;
+      background-color: #fff;
+      padding: 15px 17px;
+      font-size: 1.4rem;
+      line-height: (22/14);
+      border-radius: 10px;
+    }
+  }//msgBox1
+  &DLineBox1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $brown2;
+    padding: 11px 20px;
+    line-height: 1;
+    span{
+      background-color: #fff;
+      margin-right: 10px;
+      padding: 6px 10px;
+      border-radius: 100px;
+    }
+    p{
+      
+    }
+  }//DLineBox1
+}

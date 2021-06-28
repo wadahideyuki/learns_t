@@ -1,0 +1,972 @@
+section.sgSec#secMemo
+  h2.sgTtl コーディングメモ
+  ul.sgTxtList1
+    li SPからコーディングする
+    li PCはSPのデザインを広げただけで、コンテンツの幅をmax-widthで指定する
+    li jsは先方でやるので、こちらでは#[strong.c-fwB テスト用に]記述するだけ#[br]メニューの開閉などはクラス、または属性の付け外しで対応する#[br]付け外しは#[strong.c-fwB 仮のjs]で対応する
+    li アコーディオンなどはアニメーションにする必要は無く、#[strong.c-fwB 単純なshow/hide]で良い
+    li ハンバーガーメニューなどlayout的な物はcommon.jsに記述し、#[strong.c-fwB それ以外はページ毎に個別で]記述する#[br](ファイルを先方に渡した時に個別で記述したjsは勝手に消してくれる想定)
+    li ページ全体が薄茶色の時は#[strong.c-fwB 「var pageColor = "lBrown"」]を付けるとbodyに「class="u-bgLBrown"」が付く
+
+
+
+section.sgSec#secRes
+  h2.sgTtl レスポンシブ
+  ul.sgTxtList1
+    li fontと余白は#[strong.c-fwB サイズ固定]
+    li SPからコーディングするので、メディアクエリは主にPC用を使用する
+    li PCに切り替わるbreakpointは#[strong.c-fwB 768px]
+
+  table.sgTbl
+    thead
+      tr
+        th 大きさ
+        th scss
+        th 画面幅
+        th 対応するクラス
+    tbody
+      tr
+        td PCのみ
+        td #[strong.c-fwB @include pc]#[br](min-width: 768px;)
+        td 768px以上
+        td #[strong.c-fwB .sp]#[br]768px以上は非表示
+      tr
+        td SPのみ
+        td #[strong.c-fwB @include mq]#[br](max-width: 767px;)
+        td 767px以下
+        td #[strong.c-fwB .pc]#[br]767px以下は非表示
+      tr
+        th(colspan="3") 任意の値
+        td 備考
+      tr
+        td 任意の値以下
+        td(colspan="2") #[strong.c-fwB @include mqMaxW(値)]#[br](max-width: 任意の値;)
+        td 
+      tr
+        td 任意の値以上
+        td(colspan="2") #[strong.c-fwB @include mqMinW(値)]#[br](min-width: 任意の値;)
+        td 
+      tr
+        td 任意の値以下～以上
+        td(colspan="2") #[strong.c-fwB @include mqMinMaxW(値1, 値2)]#[br](min-width: 任意の値;) ～ (max-width: 任意の値;)
+        td デフォルトは768px～1199px
+  pre.codeBox.scss.
+    #[strong.c-fwB //PCのみ min-width: 768px;]
+    @include pc{
+    }
+    #[strong.c-fwB //SPのみ max-width: 767px;]
+    @include mq{
+    }
+    #[strong.c-fwB //任意 max-width]
+    @include mqMaxW(値[pxなどの単位を忘れずに]){
+    }
+    #[strong.c-fwB //任意 min-width]
+    @include mqMinW(値[pxなどの単位を忘れずに]){
+    }
+    #[strong.c-fwB //任意 min-width ～ max-width]
+    @include mqMinMaxW(値1[pxなどの単位を忘れずに], 値2[pxなどの単位を忘れずに]){
+    }
+
+
+section.sgSec#secHeader
+  h2.sgTtl ヘッダー
+  ul.sgTxtList1
+    li ヘッダーは2タイプある
+    li type2を使用の際はページ毎に_header2.pugを読み込む
+    li type1を使用の際は何もしなくて良い
+
+
+  table.sgTbl
+    thead
+      tr
+        th(colspan="2") ヘッダー
+    tbody
+      tr
+        th 使用例
+        td
+          header.l-header
+            .u-inner
+              .colL
+                .btnNav
+                  +img("icn_hamb.svg", "")
+                h1.logo
+                  a(href=""): +img("logo.svg", "")
+
+              .colR
+                .userName 竹内 健一 さん
+                i.btnMsg
+                  +img("icn_msg.svg", "")
+                  small 1
+      tr
+        th include
+        td include /_include/_header.pug
+      tr
+        th 備考
+        td ハンバーガーメニューとサイドナビがある
+
+  table.sgTbl
+    thead
+      tr
+        th(colspan="2") ヘッダー type2
+    tbody
+      tr
+        th 使用例
+        td
+          header.l-header.type2
+            .u-inner
+              h1.logo
+                a(href=""): +img("logo.svg", "")
+      tr
+        th include
+        td include /_include/_header2.pug
+      tr
+        th 備考
+        td ロゴだけ
+
+  pre.codeBox.
+    #[strong.c-fwB //headerのタイプ2を使用の時]
+    block header
+      include /_include/_header#[strong.c-fwB 2].pug
+
+
+section.sgSec#secInner
+  h2.sgTtl インナー
+
+  dl.sgDl.u-inner(style="background: rgba(255,0,0,0.1);")
+    dt .u-inner
+    dd 
+      p 左右にpaddingを20px
+  pre.codeBox.
+    .u-inner
+
+
+section.sgSec#secColor
+  h2.sgTtl 色
+  ul.sgTxtList1
+    li 色の名前は変数名で指定可能
+
+  ul.sgColors
+    -
+      var colorList = [
+        {
+          name: "$brown1",
+          color: "#4B412D",
+          txt: "wht"
+        },
+        {
+          name: "$brown1_a60",
+          color: "rgba(75, 65, 45, 0.6)",
+          txt: "wht"
+        },
+        {
+          name: "$brown2",
+          color: "#EDE9DF",
+          color2: "rgba(237, 233, 223, 1.0)"
+        },
+        {
+          name: "$brown2_a60",
+          color: "rgba(237, 233, 223, 0.6)"
+        },
+        {
+          name: "$brown3",
+          color: "#D8D0BD"
+        },
+        {
+          name: "$brown4",
+          color: "#8B7364",
+          txt: "wht"
+        },
+        {
+          name: "$brown5",
+          color: "#553C04",
+          txt: "wht"
+        },
+        {
+          name: "$brown6",
+          color: "#8E7D50",
+          txt: "wht"
+        },
+        {
+          name: "$red1",
+          color: "#FF4D42"
+        },
+        {
+          name: "$blue1",
+          color: "#2B81AF",
+          txt: "wht"
+        },
+        {
+          name: "$lBlue1",
+          color: "#59A2C9",
+          txt: "wht"
+        },
+        {
+          name: "$ylw1",
+          color: "#F2AD13"
+        },
+        {
+          name: "$ylw2",
+          color: "#C78B04"
+        },
+        {
+          name: "$ylw3",
+          color: "#A77609"
+        },
+        {
+          name: "$ylw4",
+          color: "rgba(255,175,0,1.0)"
+        },
+        {
+          name: "$ylw4_a30",
+          color: "rgba(255,175,0,0.3)"
+        },
+        {
+          name: "$ylw5",
+          color: "rgba(232,175,64,1.0)"
+        },
+        {
+          name: "$ylw5_a30",
+          color: "rgba(232,175,64,0.3)"
+        }
+      ]
+    each item, idx in colorList
+      if item.txt == "wht"
+        li(style="background-color:" + item.color + ";color: #fff")
+          span #{item.name}
+          span #{item.color}
+          if item.color2
+            span #{item.color2}
+      else
+        li(style="background-color:" + item.color + ";")
+          span #{item.name}
+          span #{item.color}
+          if item.color2
+            span #{item.color2}
+
+
+//section.sgSec#secTxt
+  h2.sgTtl フォントサイズ
+  ul.sgTxtList1
+    li フォントサイズは各cssファイルで設定しても、このサイズクラスを使っても良い
+
+  dl.sgDl.u-size-XL
+    dt .u-size-XL
+    dd 
+      p タイトル(PC)#[br]Size:36px#[br]Line-height:1.5#[br]font-weight: bold;
+  pre.codeBox.
+    .u-size-XL タイトル(PC)
+
+
+section.sgSec#secFw
+  h2.sgTtl フォントの太さ
+  ul.sgTxtList1
+    li 太さはRegular、Medium、Bold、Blackの4種類
+    li cssで指定する上での変数が下記
+
+  -
+    var fw = [
+      {
+        name: "$fwR",
+        wight: 400
+      },
+      {
+        name: "$fwM",
+        wight: 500
+      },
+      {
+        name: "$fwB",
+        wight: 700
+      },
+      {
+        name: "$fwBlk",
+        wight: 900
+      }
+    ]
+  each item, idx in fw
+    dl.sgDl(style="font-weight: " + item.wight + ";")
+      dt #{item.name}
+      dd font-weight: #{item.wight};
+
+
+section.sgSec#secTtl
+  h2.sgTtl タイトル
+
+  table.sgTbl
+    thead
+      tr
+        th(colspan="3") .u-ttl1
+      tr
+        th クラス
+        th(style="width: 30%;") 使用例
+        th 備考
+    tbody
+      tr
+        th .u-ttl1
+        td.taL: .u-ttl1 テキスト
+        td.taL font-size: 1.6rem;#[br]背景色#[strong.c-fwB 「#4B412D」]
+      tr
+        th(colspan="3" style="background-color: #ddd;") .clrを追加
+      tr
+        th クラス
+        th(style="width: 30%;") 使用例
+        th 備考
+      tr
+        th .u-ttl1.clr2
+        td.taL: .u-ttl1.clr2 テキスト
+        td.taL 背景色#[strong.c-fwB 「#F2AD13」]
+      tr
+        th .u-ttl1.clr3
+        td.taL: .u-ttl1.clr3 テキスト
+        td.taL 背景色#[strong.c-fwB 「#8B7364」]
+      tr
+        th .u-ttl1.clr4
+        td.taL: .u-ttl1.clr4 テキスト
+        td.taL 背景色#[strong.c-fwB 「#59A2C9」]
+      tr
+        th .u-ttl1.clr5
+        td.taL: .u-ttl1.clr5 テキスト
+        td.taL 背景色#[strong.c-fwB 「#8E7D50」]
+      tr
+        th(colspan="3" style="background-color: #ddd;") .c-taCを追加
+      tr
+        th クラス
+        th(style="width: 30%;") 使用例
+        th 備考
+      tr
+        th .u-ttl1.c-taC
+        td.taL: .u-ttl1.c-taC テキスト
+        td.taL テキストを真ん中寄せにする時はclass.cssの#[strong.c-fwB 「.c-taC」]を使用する
+      tr
+        th(colspan="3" style="background-color: #ddd;") .sz2を追加
+      tr
+        th クラス
+        th(style="width: 30%;") 使用例
+        th 備考
+      tr
+        th .u-ttl1.sz2.c-taC
+        td.taL: .u-ttl1.sz2.c-taC テキスト
+        td.taL #[strong.c-fwB 「.sz2」]を使用すると高さが高くなる
+      tr
+        th(colspan="3" style="background-color: #ddd;") .withBtnを追加
+      tr
+        th クラス
+        th(style="width: 30%;") 使用例
+        th 備考
+      tr
+        th .u-ttl1.clr5.withBtn
+        td.taL
+          .u-ttl1.clr5.withBtn
+            |テキスト
+            a.u-btn1.clr3(href="") #[span]Linksトップ
+        td.taL(rowspan="3") タイトルの中にボタンがある時は#[strong.c-fwB 「.withBtn」]を使用する#[br]タイトルとボタンそれぞれで色を選ぶ#[br]ボタンのサイズは自動で決まるので#[strong.c-fwB .szは不必要]
+      tr
+        th .u-ttl1.clr2.withBtn
+        td.taL
+          .u-ttl1.clr2.withBtn
+            |テキスト
+            a.u-btn1.clr2(href="") #[span]Linksトップ
+      tr
+        th .u-ttl1.clr3.withBtn
+        td.taL
+          .u-ttl1.clr3.withBtn
+            |テキスト
+            a.u-btn1.clr1(href="") #[span]Linksトップ
+  pre.codeBox.
+    .u-ttl1 テキスト
+    .u-ttl1.clr2 テキスト
+    .u-ttl1.clr3 テキスト
+    .u-ttl1.clr4 テキスト
+    .u-ttl1.c-taC テキスト
+    .u-ttl1.sz2.c-taC テキスト
+    .u-ttl1.clr5.withBtn
+      |テキスト
+      a.u-btn1.clr3(href="")
+        span
+        |Button
+    .u-ttl1.clr2.withBtn
+      |テキスト
+      a.u-btn1.clr2(href="")
+        span
+        |Button
+    .u-ttl1.clr3.withBtn
+      |テキスト
+      a.u-btn1.clr1(href="")
+        span
+        |Button
+
+  table.sgTbl
+    thead
+      tr
+        th(colspan="3") .u-ttl2
+      tr
+        th クラス
+        th(style="width: 30%;") 使用例
+        th 備考
+    tbody
+      tr
+        th .u-ttl2
+        td.taL: .u-ttl2 テキスト
+        td.taL font-size: 1.6rem;#[br]背景色#[strong.c-fwB 「#EDE9DF」]
+  pre.codeBox.
+    .u-ttl2 テキスト
+
+  table.sgTbl
+    thead
+      tr
+        th(colspan="3") .u-ttl3
+      tr
+        th クラス
+        th(style="width: 30%;") 使用例
+        th 備考
+    tbody
+      tr
+        th .u-ttl3
+        td.taL
+          .u-ttl3
+            i: +img("icn_deco_ylw.svg", "")
+            |テキスト
+        td.taL アイコン付き#[br]アイコンはimgタグ
+  pre.codeBox.
+    .u-ttl3
+      i: +img("icn_deco_ylw.svg", "")
+      |テキスト
+
+
+section.sgSec#secTxt
+  h2.sgTtl テキスト
+  h3.sgTtl2: span リード文
+
+  table.sgTbl
+    thead
+      tr
+        th クラス
+        th(style="width: 30%;") 使用例
+        th 備考
+    tbody
+      tr
+        th .u-txtLead1
+        td.taL: p.u-txtLead1 テキスト
+        td.taL marginを上下に24px;#[br]中央寄せ#[br]行高1.375
+  pre.codeBox.
+    p.u-txtLead1 テキスト
+
+//section.sgSec#secLink
+  h2.sgTtl リンク
+  h3.sgTtl2: span .u-link1
+
+  table.sgTbl
+    thead
+      tr
+        th クラス
+        th 使用例
+        th 備考
+    tbody
+      tr
+        th .u-link1
+        td: .u-link1: a(href=""): span リンク
+        td 
+  pre.codeBox.
+    .u-link1: a(href=""): span リンク
+
+
+section.sgSec#secBtn
+  h2.sgTtl ボタン
+  h3.sgTtl2: span .u-btn系
+  ul.sgTxtList1
+    li aタグかbuttonタグにクラスを設定
+    li aタグなら#[strong.c-fwB href=""]を、buttonタグなら#[strong.c-fwB type=""]を忘れずに
+    li 使用不能は#[strong.c-fwB 「disabled」属性]
+
+  table.sgTbl
+    thead
+      tr
+        th(colspan="3") .u-btn1
+    tbody
+      tr
+        th(colspan="3" style="background-color: #ddd;") .szを追加
+      tr
+        th クラス
+        th 表示
+        th 備考
+      tr
+        th .sz1
+        td: button.u-btn1.sz1.clr1 #[span]Button
+        td
+      tr
+        th .sz2
+        td: //button.u-btn1.sz2.clr1 #[span]Button
+        td
+      tr
+        th(colspan="3" style="background-color: #ddd;") .clrを追加
+      tr
+        th クラス
+        th 表示
+        th 備考
+      tr
+        th .clr1
+        td: button.u-btn1.sz1.clr1 #[span]Button
+        td
+      tr
+        th .clr2
+        td: button.u-btn1.sz1.clr2 #[span]Button
+        td
+      tr
+        th .clr3
+        td: button.u-btn1.sz1.clr3 #[span]Button
+        td
+
+  pre.codeBox.
+    .u-btn1.sz1.clr1 Button
+    .u-btn1.sz1.clr1(disabled) Button
+
+  table.sgTbl
+    thead
+      tr
+        th(colspan="5") .u-btn2
+    tbody
+      tr
+        th(colspan="5" style="background-color: #ddd;") .szを追加
+      tr
+        th クラス
+        th(colspan="3") 表示
+        th 備考
+      tr
+        th .sz1
+        td(colspan="3"): button.u-btn2.sz1.clr1 Button
+        td.taL SP時、画面幅414pxでwidth: 300px;になるようにvwで設定#[br]PC時、width: 80%;
+      tr
+        th .sz2
+        td(colspan="3"): button.u-btn2.sz2.clr1 Button
+        td.taL width: 46%;
+      tr
+        th .sz3
+        td(colspan="3"): button.u-btn2.sz3.clr1 Button
+        td.taL width: 100%;
+      tr
+        th(colspan="5" style="background-color: #ddd;") .clrを追加
+      tr
+        th クラス
+        th .clr1
+        th .clr2
+        th .clr3
+        th 
+      tr
+        th 表示
+        td: button.u-btn2.sz1.clr1 Button
+        td: button.u-btn2.sz1.clr2 Button
+        td: button.u-btn2.sz1.clr3 Button
+        td 
+      tr
+        th Disabled
+        td: button.u-btn2.sz1.clr1(disabled) Button
+        td
+        td
+        td
+      tr
+        th 備考
+        td.taL 
+        td.taL 
+        td.taL 
+        td.taL 
+
+  pre.codeBox.
+    .u-btn2.sz1.clr1 Button
+    .u-btn2.sz1.clr1(disabled) Button
+    .u-btn2.sz1.clr2 Button
+    .u-btn2.sz1.clr3 Button
+
+  table.sgTbl
+    thead
+      tr
+        th(colspan="3") .u-btn3
+    tbody
+      tr
+        th(colspan="2") 表示
+        th 備考
+      tr
+        td(colspan="2")
+          button.u-btn3
+            i: +img("icn_chk_ylw.svg", "")
+            |Button
+        td.taL アイコンはimgタグで指定
+        td.taL 
+      tr
+        th(colspan="3" style="background-color: #ddd;") .withArw
+      tr
+        th .withArw
+        td
+          button.u-btn3.withArw
+            i: +img("icn_chk_ylw.svg", "")
+            |Button
+        td.taL .withArwを追加で矢印が付く
+
+  pre.codeBox.
+    button.u-btn3
+      i: +img("icn_chk_ylw.svg", "")
+      |Button
+    button.u-btn3.withArw
+      i: +img("icn_chk_ylw.svg", "")
+      |Button
+
+  h3.sgTtl2: span.type2 .u-btnWrap系
+  ul.sgTxtList1
+    li ボタンを包むクラス
+    li 余白を指定したい時などに使用する
+    li 余白などは#[strong.c-fwB 個別で指定する]
+    li 使いたければ使う、くらいのものなので、必要が無ければ#[strong.c-fwB 別のクラスを使用しても良い]
+
+  table.sgTbl
+    thead
+      tr
+        th クラス
+        th 使用例
+        th 備考
+    tbody
+      tr
+        th .u-btnWrap1
+        td: .u-btnWrap1: button.u-btn1.sz1.clr1 #[span]Button
+        td
+      tr
+        th .u-btnWrap2
+        td
+          .u-btnWrap2
+            button.u-btn2.clr2.sz2 戻る
+            button.u-btn2.clr1.sz2 登録
+        td flexでspace-between
+      tr
+        th .u-form .u-btnWrap2
+        td
+          .u-form
+            .u-btnWrap2
+              button.u-btn2.clr2.sz2 戻る
+              button.u-btn2.clr1.sz2 登録
+        td .u-formの中ではborder-topが付く
+      tr
+        th .u-btnWrap3
+        td
+          .u-btnWrap3
+            button.u-btn3.withArw
+              i: +img("icn_chk_ylw.svg", "")
+              |Button
+        td 背景色「#F6F4EF」#[br]余白有り
+  pre.codeBox.
+    .u-btnWrap1
+      button.u-btn1.sz1.clr1 #[span]Button
+    .u-btnWrap2
+      button.u-btn2.clr2.sz2 戻る
+      button.u-btn2.clr1.sz2 登録
+    .u-form
+      .u-btnWrap2
+        button.u-btn2.clr2.sz2 戻る
+        button.u-btn2.clr1.sz2 登録
+
+
+//section.sgSec#secLbl
+  h2.sgTtl ラベル
+  table.sgTbl.icns
+    thead
+      tr
+        th クラス
+        th 使用例
+        th 備考
+    tbody
+      tr
+        th .u-tag1
+        td: .u-tag1 タグ名
+        td spanでもaタグでも良い
+  pre.codeBox.
+    .u-tag1 タグ名
+
+
+section.sgSec#secIcn
+  h2.sgTtl アイコン
+  table.sgTbl.icns
+    thead
+      tr
+        th 画像
+        th 名称
+        th 備考
+    tbody
+      tr
+        - var name = "arw1_r.svg"
+        td: +img(name, "")
+        td #{name}
+        td #656D78
+      tr
+        - var name = "arw1_r_wht.svg"
+        td(style="background-color: #999;"): +img(name, "")
+        td #{name}
+        td #fff
+      tr
+        - var name = "arw1_r_ylw.svg"
+        td: +img(name, "")
+        td #{name}
+        td #FFAF00
+      tr
+        - var name = "arw1_r_ylw2.svg"
+        td: +img(name, "")
+        td #{name}
+        td #D38B00
+      tr
+        - var name = "arw1_r_ylw3.svg"
+        td: +img(name, "")
+        td #{name}
+        td #F2AD13
+      tr
+        - var name = "arw1_r_brwn.svg"
+        td: +img(name, "")
+        td #{name}
+        td #4B412D
+      tr
+        - var name = "loading.svg"
+        td(style="background-color: #999;"): +img(name, "")
+        td #{name}
+        td #fff
+      tr
+        - var name = "icn_chk_ylw.svg"
+        td: +img(name, "")
+        td #{name}
+        td #FFAF00
+      tr
+        - var name = "icn_deco_ylw.svg"
+        td: +img(name, "")
+        td #{name}
+        td #FFAF00
+      tr
+        - var name = "icn_pht.svg"
+        td(style="background-color: #999;"): +img(name, "")
+        td #{name}
+        td #fff
+      tr
+        - var name = "icn_camera.svg"
+        td(style="background-color: #999;"): +img(name, "")
+        td #{name}
+        td #fff
+      tr
+        - var name = "icn_pen.svg"
+        td(style="background-color: #999;"): +img(name, "")
+        td #{name}
+        td #fff
+      tr
+        - var name = "icn_reload_ylw.svg"
+        td: +img(name, "")
+        td #{name}
+        td #FFAF00
+
+
+section.sgSec#secBox
+  h2.sgTtl 箱
+
+  table.sgTbl
+    thead
+      tr
+        th クラス
+        th 使用例
+        th 備考
+    tbody
+      tr
+        td .u-boxName
+        td(style="background-color: rgba(237, 233, 223, 0.6);")
+          .u-boxName
+            .name #[span 岡山 太郎] さん
+            button.u-btnEdit 変更
+        td 
+      tr
+        td .u-msgBox1
+        td.taL(style="background-color: rgba(237, 233, 223, 0.6);")
+          .u-msgBox1
+            .u-inner
+              h3.ttl メンテナンスのお知らせ
+              .info
+                .who
+                  i: +img("icn_user.svg", "")
+                  p ラーンズ
+                .date 2021/04/19
+              .txts テキストテキストテキストテキスト
+        td メッセージ詳細（受信）で使用
+      tr
+        td .u-DLineBox1
+        td.taL
+          .u-DLineBox1
+            span 受講期限日
+            p 2022年3月31日
+        td 11_生徒Topで使用
+
+  pre.codeBox.
+    .u-boxName
+      .name #[span 岡山 太郎] さん
+      button.u-btnEdit 変更
+    .u-msgBox1
+      .u-inner
+        h3.ttl メンテナンスのお知らせ
+        .info
+          .who
+            i: +img("icn_user.svg", "")
+            p ラーンズ
+          .date 2021/04/19
+        .txts テキストテキストテキストテキスト
+    .u-DLineBox1
+      span 受講期限日
+      p 2022年3月31日
+
+
+section.sgSec#secList
+  h2.sgTtl リスト
+  ul.sgTxtList1
+    li メッセージ一覧（受信）のリスト
+
+  table.sgTbl
+    thead
+      tr
+        th クラス
+        th 使用例
+        th 備考
+    tbody
+      tr
+        td .u-msgList1
+        td.taL 
+          ul.u-msgList1
+            -for(var i = 1; i <= 3; i++)
+              li(class = i <= 1 ? "unread" : "")
+                a(href="")
+                  .txts
+                    h3.ttl メンテナンスのお知らせ
+                    .who
+                      i: +img("icn_user.svg", "")
+                      p ラーンズ
+                  .date 2021/04/19
+        td liに.unreadを付けると背景色が付く
+      tr
+        td .u-acrdList1
+        td.taL 
+          ul.u-acrdList1
+        td 
+  pre.codeBox.
+    ul.u-msgList1
+      -for(var i = 1; i <= 3; i++)
+        li(class = i <= 1 ? "unread" : "")
+          a(href="")
+            .txts
+              h3.ttl メンテナンスのお知らせ
+              .who
+                i: +img("icn_user.svg", "")
+                p ラーンズ
+            .date 2021/04/19
+
+
+//section.sgSec#secPager
+  h2.sgTtl ページャー
+
+  table.sgTbl
+    thead
+      tr
+        th クラス
+        th mixin
+        th 使用例
+        th 備考
+    tbody
+      tr
+        th .u-pager1
+        th +pager1
+        td: +pager1
+        td.taL 
+  pre.codeBox.
+    +pager1
+
+
+section.sgSec#secForm
+  h2.sgTtl フォームパーツ
+  h3.sgTtl2: span 個別パーツ
+  ul.sgTxtList1
+    li .u-formの中で使う
+
+  table.sgTbl
+    thead
+      tr
+        th(colspan="3") .u-form内で使用
+      tr
+        th 要素とクラス
+        th 使用例
+        th 備考
+    tbody
+      tr
+        th 
+        td: input(type="text" placeholder="ヒントテキスト")
+        td 
+      tr
+        th.taL label#[br]　input#[br]　span
+        td.taL
+          label
+            input(type="checkbox")
+            span チェックボックス
+        td.taL 
+  pre.codeBox.
+    label
+      input(type="checkbox")
+      span チェックボックス
+
+  h3.sgTtl2: span フォームボックス
+  .u-form
+    h4.sgTtl3 ttltlttl
+  pre.codeBox.
+    .u-form
+
+
+
+//section.sgSec#secCombo
+  h2.sgTtl 組み合わせによる大きいパーツ
+  h3.sgTtl2: span 関連してよく読まれる記事#[br].u-XXX
+  dl.sgDl
+    dt 使用ページ
+    dd
+      p 00/XXX
+  dl.sgDl
+    dt 使用パーツ
+    dd
+      p .u-inner
+      p .u-ttl1
+      p .u-thumTxtList1
+  dl.sgDl
+    dt 備考
+    dd
+      p 備考が入る
+
+  section.u-secXXX
+    .u-inner
+
+
+
+section.sgSec#secXXX
+  h2.sgTtl: span 複製用
+  h3.sgTtl2: span 複製用
+  h4.sgTtl3 複製用
+  p.sgTxt 複製用
+  ul.sgTxtList1
+    li 複製用
+    li 複製用
+  dl.sgDl
+    dt 複製用
+    dd 
+      p 複製用
+  table.sgTbl
+    thead
+      tr
+        th 複製用
+        th 複製用
+        th 複製用
+        th 複製用
+    tbody
+      tr
+        td 複製用
+        td 複製用
+        td 複製用
+        td 複製用
+  pre.codeBox.
+    複製用
+  pre.codeBox.scss.
+    複製用
+
+
+
+
+

@@ -1,0 +1,1175 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="content-script-type" content="text/javascript"/>
+    <meta http-equiv="content-script-type" content="text/css"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no"/>
+    <title>スタイルガイド</title>
+    <meta name="description" content=""/>
+    <meta name="keywords" content=""/>
+    <link href="https://fonts.googleapis.com/earlyaccess/notosansjapanese.css" rel="stylesheet" type="text/css" media="all"/>
+      <link href="../../htdocs/common/css/style.css" rel="stylesheet" type="text/css" media="all"/>
+      <script src="../../htdocs/common/js/jquery-1.11.1.min.js" type="text/javascript"></script>
+      <script src="../../htdocs/common/js/slick.min.js" type="text/javascript"></script>
+      <script src="../../htdocs/common/js/common.js" type="text/javascript"></script>
+    <link href="styleguide.css" rel="stylesheet" type="text/css" media="all"/>
+  </head>
+  <body>
+    <!-- wrapper-->
+    <div id="wrapper">
+      <main class="styleguide">
+        <h1 class="sgPageTtl">スタイルガイド用</h1>
+        <div class="sgColWrap">
+          <aside class="sgColSide">
+            <div class="scrlBox">
+              <ul>
+                <li><a class="clkScrl" href="#secMemo">コーディングメモ</a></li>
+                <li><a class="clkScrl" href="#secRes">レスポンシブ</a></li>
+                <li><a class="clkScrl" href="#secHeader">ヘッダー</a></li>
+                <li><a class="clkScrl" href="#secInner">インナー</a></li>
+                <li><a class="clkScrl" href="#secColor">色</a></li>
+                <!--li: a.clkScrl(href="#secTxt") フォントサイズ-->
+                <li><a class="clkScrl" href="#secFw">フォントの太さ</a></li>
+                <li><a class="clkScrl" href="#secTtl">タイトル</a></li>
+                <li><a class="clkScrl" href="#secTxt">テキスト</a></li>
+                <li><a class="clkScrl" href="#secLink">リンク</a></li>
+                <li><a class="clkScrl" href="#secBtn">ボタン</a></li>
+                <!--li: a.clkScrl(href="#secLbl") ラベル-->
+                <li><a class="clkScrl" href="#secIcn">アイコン</a></li>
+                <li><a class="clkScrl" href="#secBox">箱</a></li>
+                <li><a class="clkScrl" href="#secList">リスト</a></li>
+                <!--li: a.clkScrl(href="#secPager") ページャー-->
+                <li><a class="clkScrl" href="#secForm">フォームパーツ</a></li>
+                <!--li: a.clkScrl(href="#secCombo") 組み合わせによる大きいパーツ-->
+              </ul>
+              <!--p クリックでスクロールは
+              br
+              |aタグに.clkScrlを設定する
+              br
+              |移動先はhref="#～"で指定
+              -->
+              <!--p .clkScrlの停止位置を調整する場合は.clkScrl2など増やしていく-->
+            </div>
+          </aside>
+          <article class="sgColMain">
+            <section class="sgSec" id="secMemo">
+              <h2 class="sgTtl">コーディングメモ</h2>
+              <ul class="sgTxtList1">
+                <li>SPからコーディングする</li>
+                <li>PCはSPのデザインを広げただけで、コンテンツの幅をmax-widthで指定する</li>
+                <li>jsは先方でやるので、こちらでは<strong class="c-fwB">テスト用に</strong>記述するだけ<br/>メニューの開閉などはクラス、または属性の付け外しで対応する<br/>付け外しは<strong class="c-fwB">仮のjs</strong>で対応する</li>
+                <li>アコーディオンなどはアニメーションにする必要は無く、<strong class="c-fwB">単純なshow/hide</strong>で良い</li>
+                <li>ハンバーガーメニューなどlayout的な物はcommon.jsに記述し、<strong class="c-fwB">それ以外はページ毎に個別で</strong>記述する<br/>(ファイルを先方に渡した時に個別で記述したjsは勝手に消してくれる想定)</li>
+                <li>ページ全体が薄茶色の時は<strong class="c-fwB">「var pageColor = "lBrown"」</strong>を付けるとbodyに「class="u-bgLBrown"」が付く</li>
+              </ul>
+            </section>
+            <section class="sgSec" id="secRes">
+              <h2 class="sgTtl">レスポンシブ</h2>
+              <ul class="sgTxtList1">
+                <li>fontと余白は<strong class="c-fwB">サイズ固定</strong></li>
+                <li>SPからコーディングするので、メディアクエリは主にPC用を使用する</li>
+                <li>PCに切り替わるbreakpointは<strong class="c-fwB">768px</strong></li>
+              </ul>
+              <table class="sgTbl">
+                <thead>
+                  <tr>
+                    <th>大きさ</th>
+                    <th>scss</th>
+                    <th>画面幅</th>
+                    <th>対応するクラス</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>PCのみ</td>
+                    <td><strong class="c-fwB">@include pc</strong><br/>(min-width: 768px;)</td>
+                    <td>768px以上</td>
+                    <td><strong class="c-fwB">.sp</strong><br/>768px以上は非表示</td>
+                  </tr>
+                  <tr>
+                    <td>SPのみ</td>
+                    <td><strong class="c-fwB">@include mq</strong><br/>(max-width: 767px;)</td>
+                    <td>767px以下</td>
+                    <td><strong class="c-fwB">.pc</strong><br/>767px以下は非表示</td>
+                  </tr>
+                  <tr>
+                    <th colspan="3">任意の値</th>
+                    <td>備考</td>
+                  </tr>
+                  <tr>
+                    <td>任意の値以下</td>
+                    <td colspan="2"><strong class="c-fwB">@include mqMaxW(値)</strong><br/>(max-width: 任意の値;)</td>
+                    <td> </td>
+                  </tr>
+                  <tr>
+                    <td>任意の値以上</td>
+                    <td colspan="2"><strong class="c-fwB">@include mqMinW(値)</strong><br/>(min-width: 任意の値;)</td>
+                    <td> </td>
+                  </tr>
+                  <tr>
+                    <td>任意の値以下～以上</td>
+                    <td colspan="2"><strong class="c-fwB">@include mqMinMaxW(値1, 値2)</strong><br/>(min-width: 任意の値;) ～ (max-width: 任意の値;)</td>
+                    <td>デフォルトは768px～1199px</td>
+                  </tr>
+                </tbody>
+              </table>
+              <pre class="codeBox scss"><strong class="c-fwB">//PCのみ min-width: 768px;</strong>
+@include pc{
+}
+<strong class="c-fwB">//SPのみ max-width: 767px;</strong>
+@include mq{
+}
+<strong class="c-fwB">//任意 max-width</strong>
+@include mqMaxW(値[pxなどの単位を忘れずに]){
+}
+<strong class="c-fwB">//任意 min-width</strong>
+@include mqMinW(値[pxなどの単位を忘れずに]){
+}
+<strong class="c-fwB">//任意 min-width ～ max-width</strong>
+@include mqMinMaxW(値1[pxなどの単位を忘れずに], 値2[pxなどの単位を忘れずに]){
+}
+
+</pre>
+            </section>
+            <section class="sgSec" id="secHeader">
+              <h2 class="sgTtl">ヘッダー</h2>
+              <ul class="sgTxtList1">
+                <li>ヘッダーは2タイプある</li>
+                <li>type2を使用の際はページ毎に_header2.pugを読み込む</li>
+                <li>type1を使用の際は何もしなくて良い</li>
+              </ul>
+              <table class="sgTbl">
+                <thead>
+                  <tr>
+                    <th colspan="2">ヘッダー</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th>使用例</th>
+                    <td>
+                      <header class="l-header">
+                        <div class="u-inner">
+                          <div class="colL">
+                            <div class="btnNav"><img src="../../htdocs/common/img/icn_hamb.svg" alt=""/>
+                            </div>
+                            <h1 class="logo"><a href=""><img src="../../htdocs/common/img/logo.svg" alt=""/></a></h1>
+                          </div>
+                          <div class="colR">
+                            <div class="userName">竹内 健一 さん</div><i class="btnMsg"><img src="../../htdocs/common/img/icn_msg.svg" alt=""/><small>1</small></i>
+                          </div>
+                        </div>
+                      </header>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th>include</th>
+                    <td>include /_include/_header.pug</td>
+                  </tr>
+                  <tr>
+                    <th>備考</th>
+                    <td>ハンバーガーメニューとサイドナビがある</td>
+                  </tr>
+                </tbody>
+              </table>
+              <table class="sgTbl">
+                <thead>
+                  <tr>
+                    <th colspan="2">ヘッダー type2</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th>使用例</th>
+                    <td>
+                      <header class="l-header type2">
+                        <div class="u-inner">
+                          <h1 class="logo"><a href=""><img src="../../htdocs/common/img/logo.svg" alt=""/></a></h1>
+                        </div>
+                      </header>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th>include</th>
+                    <td>include /_include/_header2.pug</td>
+                  </tr>
+                  <tr>
+                    <th>備考</th>
+                    <td>ロゴだけ</td>
+                  </tr>
+                </tbody>
+              </table>
+              <pre class="codeBox"><strong class="c-fwB">//headerのタイプ2を使用の時</strong>
+block header
+  include /_include/_header<strong class="c-fwB">2</strong>.pug
+
+</pre>
+            </section>
+            <section class="sgSec" id="secInner">
+              <h2 class="sgTtl">インナー</h2>
+              <dl class="sgDl u-inner" style="background: rgba(255,0,0,0.1);">
+                <dt>.u-inner</dt>
+                <dd> 
+                  <p>左右にpaddingを20px</p>
+                </dd>
+              </dl>
+              <pre class="codeBox">.u-inner
+
+</pre>
+            </section>
+            <section class="sgSec" id="secColor">
+              <h2 class="sgTtl">色</h2>
+              <ul class="sgTxtList1">
+                <li>色の名前は変数名で指定可能</li>
+              </ul>
+              <ul class="sgColors">
+                <li style="background-color:#4B412D;color: #fff"><span>$brown1</span><span>#4B412D</span>
+                </li>
+                <li style="background-color:rgba(75, 65, 45, 0.6);color: #fff"><span>$brown1_a60</span><span>rgba(75, 65, 45, 0.6)</span>
+                </li>
+                <li style="background-color:#EDE9DF;"><span>$brown2</span><span>#EDE9DF</span><span>rgba(237, 233, 223, 1.0)</span>
+                </li>
+                <li style="background-color:rgba(237, 233, 223, 0.6);"><span>$brown2_a60</span><span>rgba(237, 233, 223, 0.6)</span>
+                </li>
+                <li style="background-color:#D8D0BD;"><span>$brown3</span><span>#D8D0BD</span>
+                </li>
+                <li style="background-color:#8B7364;color: #fff"><span>$brown4</span><span>#8B7364</span>
+                </li>
+                <li style="background-color:#553C04;color: #fff"><span>$brown5</span><span>#553C04</span>
+                </li>
+                <li style="background-color:#8E7D50;color: #fff"><span>$brown6</span><span>#8E7D50</span>
+                </li>
+                <li style="background-color:#FF4D42;"><span>$red1</span><span>#FF4D42</span>
+                </li>
+                <li style="background-color:#2B81AF;color: #fff"><span>$blue1</span><span>#2B81AF</span>
+                </li>
+                <li style="background-color:#59A2C9;color: #fff"><span>$lBlue1</span><span>#59A2C9</span>
+                </li>
+                <li style="background-color:#F2AD13;"><span>$ylw1</span><span>#F2AD13</span>
+                </li>
+                <li style="background-color:#C78B04;"><span>$ylw2</span><span>#C78B04</span>
+                </li>
+                <li style="background-color:#A77609;"><span>$ylw3</span><span>#A77609</span>
+                </li>
+                <li style="background-color:rgba(255,175,0,1.0);"><span>$ylw4</span><span>rgba(255,175,0,1.0)</span>
+                </li>
+                <li style="background-color:rgba(255,175,0,0.3);"><span>$ylw4_a30</span><span>rgba(255,175,0,0.3)</span>
+                </li>
+                <li style="background-color:rgba(232,175,64,1.0);"><span>$ylw5</span><span>rgba(232,175,64,1.0)</span>
+                </li>
+                <li style="background-color:rgba(232,175,64,0.3);"><span>$ylw5_a30</span><span>rgba(232,175,64,0.3)</span>
+                </li>
+              </ul>
+            </section>
+            <!--section.sgSec#secTxt
+            h2.sgTtl フォントサイズ
+            ul.sgTxtList1
+              li フォントサイズは各cssファイルで設定しても、このサイズクラスを使っても良い
+            
+            dl.sgDl.u-size-XL
+              dt .u-size-XL
+              dd 
+                p タイトル(PC)<br/>Size:36px<br/>Line-height:1.5<br/>font-weight: bold;
+            pre.codeBox.
+              .u-size-XL タイトル(PC)
+            
+            
+            -->
+            <section class="sgSec" id="secFw">
+              <h2 class="sgTtl">フォントの太さ</h2>
+              <ul class="sgTxtList1">
+                <li>太さはRegular、Medium、Bold、Blackの4種類</li>
+                <li>cssで指定する上での変数が下記</li>
+              </ul>
+              <dl class="sgDl" style="font-weight: 400;">
+                <dt>$fwR</dt>
+                <dd>font-weight: 400;</dd>
+              </dl>
+              <dl class="sgDl" style="font-weight: 500;">
+                <dt>$fwM</dt>
+                <dd>font-weight: 500;</dd>
+              </dl>
+              <dl class="sgDl" style="font-weight: 700;">
+                <dt>$fwB</dt>
+                <dd>font-weight: 700;</dd>
+              </dl>
+              <dl class="sgDl" style="font-weight: 900;">
+                <dt>$fwBlk</dt>
+                <dd>font-weight: 900;</dd>
+              </dl>
+            </section>
+            <section class="sgSec" id="secTtl">
+              <h2 class="sgTtl">タイトル</h2>
+              <table class="sgTbl">
+                <thead>
+                  <tr>
+                    <th colspan="3">.u-ttl1</th>
+                  </tr>
+                  <tr>
+                    <th>クラス</th>
+                    <th style="width: 30%;">使用例</th>
+                    <th>備考</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th>.u-ttl1</th>
+                    <td class="taL">
+                      <div class="u-ttl1">テキスト</div>
+                    </td>
+                    <td class="taL">font-size: 1.6rem;<br/>背景色<strong class="c-fwB">「#4B412D」</strong></td>
+                  </tr>
+                  <tr>
+                    <th colspan="3" style="background-color: #ddd;">.clrを追加</th>
+                  </tr>
+                  <tr>
+                    <th>クラス</th>
+                    <th style="width: 30%;">使用例</th>
+                    <th>備考</th>
+                  </tr>
+                  <tr>
+                    <th>.u-ttl1.clr2</th>
+                    <td class="taL">
+                      <div class="u-ttl1 clr2">テキスト</div>
+                    </td>
+                    <td class="taL">背景色<strong class="c-fwB">「#F2AD13」</strong></td>
+                  </tr>
+                  <tr>
+                    <th>.u-ttl1.clr3</th>
+                    <td class="taL">
+                      <div class="u-ttl1 clr3">テキスト</div>
+                    </td>
+                    <td class="taL">背景色<strong class="c-fwB">「#8B7364」</strong></td>
+                  </tr>
+                  <tr>
+                    <th>.u-ttl1.clr4</th>
+                    <td class="taL">
+                      <div class="u-ttl1 clr4">テキスト</div>
+                    </td>
+                    <td class="taL">背景色<strong class="c-fwB">「#59A2C9」</strong></td>
+                  </tr>
+                  <tr>
+                    <th>.u-ttl1.clr5</th>
+                    <td class="taL">
+                      <div class="u-ttl1 clr5">テキスト</div>
+                    </td>
+                    <td class="taL">背景色<strong class="c-fwB">「#8E7D50」</strong></td>
+                  </tr>
+                  <tr>
+                    <th colspan="3" style="background-color: #ddd;">.c-taCを追加</th>
+                  </tr>
+                  <tr>
+                    <th>クラス</th>
+                    <th style="width: 30%;">使用例</th>
+                    <th>備考</th>
+                  </tr>
+                  <tr>
+                    <th>.u-ttl1.c-taC</th>
+                    <td class="taL">
+                      <div class="u-ttl1 c-taC">テキスト</div>
+                    </td>
+                    <td class="taL">テキストを真ん中寄せにする時はclass.cssの<strong class="c-fwB">「.c-taC」</strong>を使用する</td>
+                  </tr>
+                  <tr>
+                    <th colspan="3" style="background-color: #ddd;">.sz2を追加</th>
+                  </tr>
+                  <tr>
+                    <th>クラス</th>
+                    <th style="width: 30%;">使用例</th>
+                    <th>備考</th>
+                  </tr>
+                  <tr>
+                    <th>.u-ttl1.sz2.c-taC</th>
+                    <td class="taL">
+                      <div class="u-ttl1 sz2 c-taC">テキスト</div>
+                    </td>
+                    <td class="taL"><strong class="c-fwB">「.sz2」</strong>を使用すると高さが高くなる</td>
+                  </tr>
+                  <tr>
+                    <th colspan="3" style="background-color: #ddd;">.withBtnを追加</th>
+                  </tr>
+                  <tr>
+                    <th>クラス</th>
+                    <th style="width: 30%;">使用例</th>
+                    <th>備考</th>
+                  </tr>
+                  <tr>
+                    <th>.u-ttl1.clr5.withBtn</th>
+                    <td class="taL">
+                      <div class="u-ttl1 clr5 withBtn">テキスト<a class="u-btn1 clr3" href=""><span></span>Linksトップ</a></div>
+                    </td>
+                    <td class="taL" rowspan="3">タイトルの中にボタンがある時は<strong class="c-fwB">「.withBtn」</strong>を使用する<br/>タイトルとボタンそれぞれで色を選ぶ<br/>ボタンのサイズは自動で決まるので<strong class="c-fwB">.szは不必要</strong></td>
+                  </tr>
+                  <tr>
+                    <th>.u-ttl1.clr2.withBtn</th>
+                    <td class="taL">
+                      <div class="u-ttl1 clr2 withBtn">テキスト<a class="u-btn1 clr2" href=""><span></span>Linksトップ</a></div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th>.u-ttl1.clr3.withBtn</th>
+                    <td class="taL">
+                      <div class="u-ttl1 clr3 withBtn">テキスト<a class="u-btn1 clr1" href=""><span></span>Linksトップ</a></div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              <pre class="codeBox">.u-ttl1 テキスト
+.u-ttl1.clr2 テキスト
+.u-ttl1.clr3 テキスト
+.u-ttl1.clr4 テキスト
+.u-ttl1.c-taC テキスト
+.u-ttl1.sz2.c-taC テキスト
+.u-ttl1.clr5.withBtn
+  |テキスト
+  a.u-btn1.clr3(href="")
+    span
+    |Button
+.u-ttl1.clr2.withBtn
+  |テキスト
+  a.u-btn1.clr2(href="")
+    span
+    |Button
+.u-ttl1.clr3.withBtn
+  |テキスト
+  a.u-btn1.clr1(href="")
+    span
+    |Button
+</pre>
+              <table class="sgTbl">
+                <thead>
+                  <tr>
+                    <th colspan="3">.u-ttl2</th>
+                  </tr>
+                  <tr>
+                    <th>クラス</th>
+                    <th style="width: 30%;">使用例</th>
+                    <th>備考</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th>.u-ttl2</th>
+                    <td class="taL">
+                      <div class="u-ttl2">テキスト</div>
+                    </td>
+                    <td class="taL">font-size: 1.6rem;<br/>背景色<strong class="c-fwB">「#EDE9DF」</strong></td>
+                  </tr>
+                </tbody>
+              </table>
+              <pre class="codeBox">.u-ttl2 テキスト
+</pre>
+              <table class="sgTbl">
+                <thead>
+                  <tr>
+                    <th colspan="3">.u-ttl3</th>
+                  </tr>
+                  <tr>
+                    <th>クラス</th>
+                    <th style="width: 30%;">使用例</th>
+                    <th>備考</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th>.u-ttl3</th>
+                    <td class="taL">
+                      <div class="u-ttl3"><i><img src="../../htdocs/common/img/icn_deco_ylw.svg" alt=""/></i>テキスト</div>
+                    </td>
+                    <td class="taL">アイコン付き<br/>アイコンはimgタグ</td>
+                  </tr>
+                </tbody>
+              </table>
+              <pre class="codeBox">.u-ttl3
+  i: +img("icn_deco_ylw.svg", "")
+  |テキスト
+
+</pre>
+            </section>
+            <section class="sgSec" id="secTxt">
+              <h2 class="sgTtl">テキスト</h2>
+              <h3 class="sgTtl2"><span>リード文</span></h3>
+              <table class="sgTbl">
+                <thead>
+                  <tr>
+                    <th>クラス</th>
+                    <th style="width: 30%;">使用例</th>
+                    <th>備考</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th>.u-txtLead1</th>
+                    <td class="taL">
+                      <p class="u-txtLead1">テキスト</p>
+                    </td>
+                    <td class="taL">marginを上下に24px;<br/>中央寄せ<br/>行高1.375</td>
+                  </tr>
+                </tbody>
+              </table>
+              <pre class="codeBox">p.u-txtLead1 テキスト
+</pre>
+            </section>
+            <!--section.sgSec#secLink
+            h2.sgTtl リンク
+            h3.sgTtl2: span .u-link1
+            
+            table.sgTbl
+              thead
+                tr
+                  th クラス
+                  th 使用例
+                  th 備考
+              tbody
+                tr
+                  th .u-link1
+                  td: .u-link1: a(href=""): span リンク
+                  td 
+            pre.codeBox.
+              .u-link1: a(href=""): span リンク
+            
+            
+            -->
+            <section class="sgSec" id="secBtn">
+              <h2 class="sgTtl">ボタン</h2>
+              <h3 class="sgTtl2"><span>.u-btn系</span></h3>
+              <ul class="sgTxtList1">
+                <li>aタグかbuttonタグにクラスを設定</li>
+                <li>aタグなら<strong class="c-fwB">href=""</strong>を、buttonタグなら<strong class="c-fwB">type=""</strong>を忘れずに</li>
+                <li>使用不能は<strong class="c-fwB">「disabled」属性</strong></li>
+              </ul>
+              <table class="sgTbl">
+                <thead>
+                  <tr>
+                    <th colspan="3">.u-btn1</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th colspan="3" style="background-color: #ddd;">.szを追加</th>
+                  </tr>
+                  <tr>
+                    <th>クラス</th>
+                    <th>表示</th>
+                    <th>備考</th>
+                  </tr>
+                  <tr>
+                    <th>.sz1</th>
+                    <td>
+                      <button class="u-btn1 sz1 clr1"><span></span>Button</button>
+                    </td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <th>.sz2</th>
+                    <td>
+                      <!--button.u-btn1.sz2.clr1 #[span]Button-->
+                    </td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <th colspan="3" style="background-color: #ddd;">.clrを追加</th>
+                  </tr>
+                  <tr>
+                    <th>クラス</th>
+                    <th>表示</th>
+                    <th>備考</th>
+                  </tr>
+                  <tr>
+                    <th>.clr1</th>
+                    <td>
+                      <button class="u-btn1 sz1 clr1"><span></span>Button</button>
+                    </td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <th>.clr2</th>
+                    <td>
+                      <button class="u-btn1 sz1 clr2"><span></span>Button</button>
+                    </td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <th>.clr3</th>
+                    <td>
+                      <button class="u-btn1 sz1 clr3"><span></span>Button</button>
+                    </td>
+                    <td></td>
+                  </tr>
+                </tbody>
+              </table>
+              <pre class="codeBox">.u-btn1.sz1.clr1 Button
+.u-btn1.sz1.clr1(disabled) Button
+</pre>
+              <table class="sgTbl">
+                <thead>
+                  <tr>
+                    <th colspan="5">.u-btn2</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th colspan="5" style="background-color: #ddd;">.szを追加</th>
+                  </tr>
+                  <tr>
+                    <th>クラス</th>
+                    <th colspan="3">表示</th>
+                    <th>備考</th>
+                  </tr>
+                  <tr>
+                    <th>.sz1</th>
+                    <td colspan="3">
+                      <button class="u-btn2 sz1 clr1">Button</button>
+                    </td>
+                    <td class="taL">SP時、画面幅414pxでwidth: 300px;になるようにvwで設定<br/>PC時、width: 80%;</td>
+                  </tr>
+                  <tr>
+                    <th>.sz2</th>
+                    <td colspan="3">
+                      <button class="u-btn2 sz2 clr1">Button</button>
+                    </td>
+                    <td class="taL">width: 46%;</td>
+                  </tr>
+                  <tr>
+                    <th>.sz3</th>
+                    <td colspan="3">
+                      <button class="u-btn2 sz3 clr1">Button</button>
+                    </td>
+                    <td class="taL">width: 100%;</td>
+                  </tr>
+                  <tr>
+                    <th colspan="5" style="background-color: #ddd;">.clrを追加</th>
+                  </tr>
+                  <tr>
+                    <th>クラス</th>
+                    <th>.clr1</th>
+                    <th>.clr2</th>
+                    <th>.clr3</th>
+                    <th> </th>
+                  </tr>
+                  <tr>
+                    <th>表示</th>
+                    <td>
+                      <button class="u-btn2 sz1 clr1">Button</button>
+                    </td>
+                    <td>
+                      <button class="u-btn2 sz1 clr2">Button</button>
+                    </td>
+                    <td>
+                      <button class="u-btn2 sz1 clr3">Button</button>
+                    </td>
+                    <td> </td>
+                  </tr>
+                  <tr>
+                    <th>Disabled</th>
+                    <td>
+                      <button class="u-btn2 sz1 clr1" disabled="disabled">Button</button>
+                    </td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <th>備考</th>
+                    <td class="taL"> </td>
+                    <td class="taL"> </td>
+                    <td class="taL"> </td>
+                    <td class="taL"> </td>
+                  </tr>
+                </tbody>
+              </table>
+              <pre class="codeBox">.u-btn2.sz1.clr1 Button
+.u-btn2.sz1.clr1(disabled) Button
+.u-btn2.sz1.clr2 Button
+.u-btn2.sz1.clr3 Button
+</pre>
+              <table class="sgTbl">
+                <thead>
+                  <tr>
+                    <th colspan="3">.u-btn3</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th colspan="2">表示</th>
+                    <th>備考</th>
+                  </tr>
+                  <tr>
+                    <td colspan="2">
+                      <button class="u-btn3"><i><img src="../../htdocs/common/img/icn_chk_ylw.svg" alt=""/></i>Button</button>
+                    </td>
+                    <td class="taL">アイコンはimgタグで指定</td>
+                    <td class="taL"> </td>
+                  </tr>
+                  <tr>
+                    <th colspan="3" style="background-color: #ddd;">.withArw</th>
+                  </tr>
+                  <tr>
+                    <th>.withArw</th>
+                    <td>
+                      <button class="u-btn3 withArw"><i><img src="../../htdocs/common/img/icn_chk_ylw.svg" alt=""/></i>Button</button>
+                    </td>
+                    <td class="taL">.withArwを追加で矢印が付く</td>
+                  </tr>
+                </tbody>
+              </table>
+              <pre class="codeBox">button.u-btn3
+  i: +img("icn_chk_ylw.svg", "")
+  |Button
+button.u-btn3.withArw
+  i: +img("icn_chk_ylw.svg", "")
+  |Button
+</pre>
+              <h3 class="sgTtl2"><span class="type2">.u-btnWrap系</span></h3>
+              <ul class="sgTxtList1">
+                <li>ボタンを包むクラス</li>
+                <li>余白を指定したい時などに使用する</li>
+                <li>余白などは<strong class="c-fwB">個別で指定する</strong></li>
+                <li>使いたければ使う、くらいのものなので、必要が無ければ<strong class="c-fwB">別のクラスを使用しても良い</strong></li>
+              </ul>
+              <table class="sgTbl">
+                <thead>
+                  <tr>
+                    <th>クラス</th>
+                    <th>使用例</th>
+                    <th>備考</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th>.u-btnWrap1</th>
+                    <td>
+                      <div class="u-btnWrap1">
+                        <button class="u-btn1 sz1 clr1"><span></span>Button</button>
+                      </div>
+                    </td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <th>.u-btnWrap2</th>
+                    <td>
+                      <div class="u-btnWrap2">
+                        <button class="u-btn2 clr2 sz2">戻る</button>
+                        <button class="u-btn2 clr1 sz2">登録</button>
+                      </div>
+                    </td>
+                    <td>flexでspace-between</td>
+                  </tr>
+                  <tr>
+                    <th>.u-form .u-btnWrap2</th>
+                    <td>
+                      <div class="u-form">
+                        <div class="u-btnWrap2">
+                          <button class="u-btn2 clr2 sz2">戻る</button>
+                          <button class="u-btn2 clr1 sz2">登録</button>
+                        </div>
+                      </div>
+                    </td>
+                    <td>.u-formの中ではborder-topが付く</td>
+                  </tr>
+                  <tr>
+                    <th>.u-btnWrap3</th>
+                    <td>
+                      <div class="u-btnWrap3">
+                        <button class="u-btn3 withArw"><i><img src="../../htdocs/common/img/icn_chk_ylw.svg" alt=""/></i>Button</button>
+                      </div>
+                    </td>
+                    <td>背景色「#F6F4EF」<br/>余白有り</td>
+                  </tr>
+                </tbody>
+              </table>
+              <pre class="codeBox">.u-btnWrap1
+  button.u-btn1.sz1.clr1 <span></span>Button
+.u-btnWrap2
+  button.u-btn2.clr2.sz2 戻る
+  button.u-btn2.clr1.sz2 登録
+.u-form
+  .u-btnWrap2
+    button.u-btn2.clr2.sz2 戻る
+    button.u-btn2.clr1.sz2 登録
+
+</pre>
+            </section>
+            <!--section.sgSec#secLbl
+            h2.sgTtl ラベル
+            table.sgTbl.icns
+              thead
+                tr
+                  th クラス
+                  th 使用例
+                  th 備考
+              tbody
+                tr
+                  th .u-tag1
+                  td: .u-tag1 タグ名
+                  td spanでもaタグでも良い
+            pre.codeBox.
+              .u-tag1 タグ名
+            
+            
+            -->
+            <section class="sgSec" id="secIcn">
+              <h2 class="sgTtl">アイコン</h2>
+              <table class="sgTbl icns">
+                <thead>
+                  <tr>
+                    <th>画像</th>
+                    <th>名称</th>
+                    <th>備考</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><img src="../../htdocs/common/img/arw1_r.svg" alt=""/>
+                    </td>
+                    <td>arw1_r.svg</td>
+                    <td>#656D78</td>
+                  </tr>
+                  <tr>
+                    <td style="background-color: #999;"><img src="../../htdocs/common/img/arw1_r_wht.svg" alt=""/>
+                    </td>
+                    <td>arw1_r_wht.svg</td>
+                    <td>#fff</td>
+                  </tr>
+                  <tr>
+                    <td><img src="../../htdocs/common/img/arw1_r_ylw.svg" alt=""/>
+                    </td>
+                    <td>arw1_r_ylw.svg</td>
+                    <td>#FFAF00</td>
+                  </tr>
+                  <tr>
+                    <td><img src="../../htdocs/common/img/arw1_r_ylw2.svg" alt=""/>
+                    </td>
+                    <td>arw1_r_ylw2.svg</td>
+                    <td>#D38B00</td>
+                  </tr>
+                  <tr>
+                    <td><img src="../../htdocs/common/img/arw1_r_ylw3.svg" alt=""/>
+                    </td>
+                    <td>arw1_r_ylw3.svg</td>
+                    <td>#F2AD13</td>
+                  </tr>
+                  <tr>
+                    <td><img src="../../htdocs/common/img/arw1_r_brwn.svg" alt=""/>
+                    </td>
+                    <td>arw1_r_brwn.svg</td>
+                    <td>#4B412D</td>
+                  </tr>
+                  <tr>
+                    <td style="background-color: #999;"><img src="../../htdocs/common/img/loading.svg" alt=""/>
+                    </td>
+                    <td>loading.svg</td>
+                    <td>#fff</td>
+                  </tr>
+                  <tr>
+                    <td><img src="../../htdocs/common/img/icn_chk_ylw.svg" alt=""/>
+                    </td>
+                    <td>icn_chk_ylw.svg</td>
+                    <td>#FFAF00</td>
+                  </tr>
+                  <tr>
+                    <td><img src="../../htdocs/common/img/icn_deco_ylw.svg" alt=""/>
+                    </td>
+                    <td>icn_deco_ylw.svg</td>
+                    <td>#FFAF00</td>
+                  </tr>
+                  <tr>
+                    <td style="background-color: #999;"><img src="../../htdocs/common/img/icn_pht.svg" alt=""/>
+                    </td>
+                    <td>icn_pht.svg</td>
+                    <td>#fff</td>
+                  </tr>
+                  <tr>
+                    <td style="background-color: #999;"><img src="../../htdocs/common/img/icn_camera.svg" alt=""/>
+                    </td>
+                    <td>icn_camera.svg</td>
+                    <td>#fff</td>
+                  </tr>
+                  <tr>
+                    <td style="background-color: #999;"><img src="../../htdocs/common/img/icn_pen.svg" alt=""/>
+                    </td>
+                    <td>icn_pen.svg</td>
+                    <td>#fff</td>
+                  </tr>
+                  <tr>
+                    <td><img src="../../htdocs/common/img/icn_reload_ylw.svg" alt=""/>
+                    </td>
+                    <td>icn_reload_ylw.svg</td>
+                    <td>#FFAF00</td>
+                  </tr>
+                </tbody>
+              </table>
+            </section>
+            <section class="sgSec" id="secBox">
+              <h2 class="sgTtl">箱</h2>
+              <table class="sgTbl">
+                <thead>
+                  <tr>
+                    <th>クラス</th>
+                    <th>使用例</th>
+                    <th>備考</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>.u-boxName</td>
+                    <td style="background-color: rgba(237, 233, 223, 0.6);">
+                      <div class="u-boxName">
+                        <div class="name"><span>岡山 太郎</span> さん</div>
+                        <button class="u-btnEdit">変更</button>
+                      </div>
+                    </td>
+                    <td> </td>
+                  </tr>
+                  <tr>
+                    <td>.u-msgBox1</td>
+                    <td class="taL" style="background-color: rgba(237, 233, 223, 0.6);">
+                      <div class="u-msgBox1">
+                        <div class="u-inner">
+                          <h3 class="ttl">メンテナンスのお知らせ</h3>
+                          <div class="info">
+                            <div class="who"><i><img src="../../htdocs/common/img/icn_user.svg" alt=""/></i>
+                              <p>ラーンズ</p>
+                            </div>
+                            <div class="date">2021/04/19</div>
+                          </div>
+                          <div class="txts">テキストテキストテキストテキスト</div>
+                        </div>
+                      </div>
+                    </td>
+                    <td>メッセージ詳細（受信）で使用</td>
+                  </tr>
+                  <tr>
+                    <td>.u-DLineBox1</td>
+                    <td class="taL">
+                      <div class="u-DLineBox1"><span>受講期限日</span>
+                        <p>2022年3月31日</p>
+                      </div>
+                    </td>
+                    <td>11_生徒Topで使用</td>
+                  </tr>
+                </tbody>
+              </table>
+              <pre class="codeBox">.u-boxName
+  .name <span>岡山 太郎</span> さん
+  button.u-btnEdit 変更
+.u-msgBox1
+  .u-inner
+    h3.ttl メンテナンスのお知らせ
+    .info
+      .who
+        i: +img("icn_user.svg", "")
+        p ラーンズ
+      .date 2021/04/19
+    .txts テキストテキストテキストテキスト
+.u-DLineBox1
+  span 受講期限日
+  p 2022年3月31日
+
+</pre>
+            </section>
+            <section class="sgSec" id="secList">
+              <h2 class="sgTtl">リスト</h2>
+              <ul class="sgTxtList1">
+                <li>メッセージ一覧（受信）のリスト</li>
+              </ul>
+              <table class="sgTbl">
+                <thead>
+                  <tr>
+                    <th>クラス</th>
+                    <th>使用例</th>
+                    <th>備考</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>.u-msgList1</td>
+                    <td class="taL"> 
+                      <ul class="u-msgList1">
+                        <li class="unread"><a href="">
+                            <div class="txts">
+                              <h3 class="ttl">メンテナンスのお知らせ</h3>
+                              <div class="who"><i><img src="../../htdocs/common/img/icn_user.svg" alt=""/></i>
+                                <p>ラーンズ</p>
+                              </div>
+                            </div>
+                            <div class="date">2021/04/19</div></a></li>
+                        <li><a href="">
+                            <div class="txts">
+                              <h3 class="ttl">メンテナンスのお知らせ</h3>
+                              <div class="who"><i><img src="../../htdocs/common/img/icn_user.svg" alt=""/></i>
+                                <p>ラーンズ</p>
+                              </div>
+                            </div>
+                            <div class="date">2021/04/19</div></a></li>
+                        <li><a href="">
+                            <div class="txts">
+                              <h3 class="ttl">メンテナンスのお知らせ</h3>
+                              <div class="who"><i><img src="../../htdocs/common/img/icn_user.svg" alt=""/></i>
+                                <p>ラーンズ</p>
+                              </div>
+                            </div>
+                            <div class="date">2021/04/19</div></a></li>
+                      </ul>
+                    </td>
+                    <td>liに.unreadを付けると背景色が付く</td>
+                  </tr>
+                  <tr>
+                    <td>.u-acrdList1</td>
+                    <td class="taL"> 
+                      <ul class="u-acrdList1"></ul>
+                    </td>
+                    <td> </td>
+                  </tr>
+                </tbody>
+              </table>
+              <pre class="codeBox">ul.u-msgList1
+  -for(var i = 1; i <= 3; i++)
+    li(class = i <= 1 ? "unread" : "")
+      a(href="")
+        .txts
+          h3.ttl メンテナンスのお知らせ
+          .who
+            i: +img("icn_user.svg", "")
+            p ラーンズ
+        .date 2021/04/19
+
+</pre>
+            </section>
+            <!--section.sgSec#secPager
+            h2.sgTtl ページャー
+            
+            table.sgTbl
+              thead
+                tr
+                  th クラス
+                  th mixin
+                  th 使用例
+                  th 備考
+              tbody
+                tr
+                  th .u-pager1
+                  th +pager1
+                  td: +pager1
+                  td.taL 
+            pre.codeBox.
+              +pager1
+            
+            
+            -->
+            <section class="sgSec" id="secForm">
+              <h2 class="sgTtl">フォームパーツ</h2>
+              <h3 class="sgTtl2"><span>個別パーツ</span></h3>
+              <ul class="sgTxtList1">
+                <li>.u-formの中で使う</li>
+              </ul>
+              <table class="sgTbl">
+                <thead>
+                  <tr>
+                    <th colspan="3">.u-form内で使用</th>
+                  </tr>
+                  <tr>
+                    <th>要素とクラス</th>
+                    <th>使用例</th>
+                    <th>備考</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th> </th>
+                    <td>
+                      <input type="text" placeholder="ヒントテキスト"/>
+                    </td>
+                    <td> </td>
+                  </tr>
+                  <tr>
+                    <th class="taL">label<br/>　input<br/>　span</th>
+                    <td class="taL">
+                      <label>
+                        <input type="checkbox"/><span>チェックボックス</span>
+                      </label>
+                    </td>
+                    <td class="taL"> </td>
+                  </tr>
+                </tbody>
+              </table>
+              <pre class="codeBox">label
+  input(type="checkbox")
+  span チェックボックス
+</pre>
+              <h3 class="sgTtl2"><span>フォームボックス</span></h3>
+              <div class="u-form">
+                <h4 class="sgTtl3">ttltlttl</h4>
+              </div>
+              <pre class="codeBox">.u-form
+
+
+</pre>
+            </section>
+            <!--section.sgSec#secCombo
+            h2.sgTtl 組み合わせによる大きいパーツ
+            h3.sgTtl2: span 関連してよく読まれる記事<br/>.u-XXX
+            dl.sgDl
+              dt 使用ページ
+              dd
+                p 00/XXX
+            dl.sgDl
+              dt 使用パーツ
+              dd
+                p .u-inner
+                p .u-ttl1
+                p .u-thumTxtList1
+            dl.sgDl
+              dt 備考
+              dd
+                p 備考が入る
+            
+            section.u-secXXX
+              .u-inner
+            
+            
+            
+            -->
+            <section class="sgSec" id="secXXX">
+              <h2 class="sgTtl"><span>複製用</span></h2>
+              <h3 class="sgTtl2"><span>複製用</span></h3>
+              <h4 class="sgTtl3">複製用</h4>
+              <p class="sgTxt">複製用</p>
+              <ul class="sgTxtList1">
+                <li>複製用</li>
+                <li>複製用</li>
+              </ul>
+              <dl class="sgDl">
+                <dt>複製用</dt>
+                <dd> 
+                  <p>複製用</p>
+                </dd>
+              </dl>
+              <table class="sgTbl">
+                <thead>
+                  <tr>
+                    <th>複製用</th>
+                    <th>複製用</th>
+                    <th>複製用</th>
+                    <th>複製用</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>複製用</td>
+                    <td>複製用</td>
+                    <td>複製用</td>
+                    <td>複製用</td>
+                  </tr>
+                </tbody>
+              </table>
+              <pre class="codeBox">複製用</pre>
+              <pre class="codeBox scss">複製用</pre>
+            </section>
+          </article>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>
