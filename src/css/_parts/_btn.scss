@@ -5,10 +5,14 @@
 ---------------------------------------*/
 .u-{
   &btn1{
-    display: inline-block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     border-radius: 3px;
     position: relative;
     box-sizing: border-box;
+    width: 260px;
+    height: 40px;
     &[disabled]{
       cursor: default;
     }
@@ -27,9 +31,50 @@
     &.sz1{
     }
     &.clr1{
+      background-color: $brown2;
+      color: #FFF;
+      &:disabled{
+        background-color: #aaaaaa;
+        opacity: .6;
+      }
+    }
+  }//btn1
+  &btn2{
+    display: inline-block;
+    border-radius: 3px;
+    position: relative;
+    box-sizing: border-box;
+    background-color: #E8E7E2;
+    color: $brown3;
+    padding: .3em 1em;
+    border-radius: 50px;
+    
+    &[disabled]{
+      cursor: default;
+    }
+    span,em{
+      display: flex;
+      align-items: center;
+        &:after{
+          margin-left: .2em;
+          content: "";
+          display: inline-block;
+          width: .5em;
+          height: .5em;
+          border-top: 1px solid $brown3;
+          border-right: 1px solid $brown3;
+          transform: rotate(45deg);
+        }
+    }
+    &.sz1{
+    }
+    &.clr1{
     }
   }//btn1
   /* ボタン包み */
   &btnWrap1{
+    text-align: center;
+    display: flex;
+    justify-content: center;
   }//btnWrap1
 }
