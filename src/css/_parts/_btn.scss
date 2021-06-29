@@ -23,28 +23,10 @@
       top: 0;
       bottom: 0;
       right: 6px;
-      &:after{
-        content: "";
-        background: url($pathImg + "arw1_r_wht.svg") center center no-repeat;
-        background-size: 100% 100%;
-        $scale: 1.2;
-        width: px(4*$scale);
-        height: px(5*$scale);
-        margin: -2.9px 0 0 -1.6px;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-      }
     }
     &.sz1{
     }
     &.clr1{
-      background-color: $blue1;
-      color: #fff;
-      @include hvr;
-      &[disabled]{
-        background-color: #ccc;
-      }
     }
   }//btn1
   /* ボタン包み */
