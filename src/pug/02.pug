@@ -1,0 +1,28 @@
+extends /_include/_layout.pug
+
+block varsEdit
+  -
+    var layer = "other"
+    //↓編集領域↓
+    var pageName = "このページのファイル名(.html付けない)"
+    var pageUrl = pageName + ".html"
+    var pageTitle = "02_アカウント 登録メール 送信完了"
+    var pageClass = "pageOther"
+    var pageColor = "lBrown"
+    //↑編集領域↑
+
+block header
+  include /_include/_header.pug
+
+block content
+  .u-inner
+    p.u-txtLead1 メールアドレスへアカウント登録についての#[br]メールを送信いたしました。#[br]メールの内容をご確認の上、#[br]アカウント登録に進んでください。
+
+
+
+
+  script.
+    $(function(){
+      console.log("必要なjsはページ毎に個別で記述");
+    });
+
