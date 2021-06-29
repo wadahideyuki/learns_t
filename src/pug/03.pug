@@ -1,0 +1,71 @@
+extends /_include/_layout.pug
+
+block varsEdit
+  -
+    var layer = "other"
+    //↓編集領域↓
+    var pageName = "このページのファイル名(.html付けない)"
+    var pageUrl = pageName + ".html"
+    var pageTitle = "02_アカウント 登録メール 送信完了"
+    var pageClass = "pageOther"
+    var pageColor = "lBrown"
+    //↑編集領域↑
+
+block header
+  include /_include/_header.pug
+
+block content
+  .u-form.width1
+    .u-boxError
+      ul 
+        li ・エラーメッセージを表示 
+        li ・エラーメッセージを表示エラーメッセージを表示 
+        li ・エラーメッセージを表示エラーメッセージを表示エラーメッセージを表示
+    section
+      h2.u-ttl2 学校情報
+      ul.txtR 
+        li ラーンズ高等学校
+        li 私立
+        li 123-4567東京都渋谷区代々木1-2-3
+        li 普通科コース
+        li 1学年(2021年度)
+    section
+      h2.u-ttl2 アカウント情報
+      dl 
+        dt 名前#[em.c-red *]
+        dd
+          .col2
+            dl 
+              dt 姓
+              dd: input(type="text" placeholder="姓")
+            dl 
+              dt 名
+              dd: input(type="text" placeholder="名")
+      dl 
+        dt メールアドレス#[em.c-red *]
+        dd
+          .txtR sample@learn-s.co.jp
+      dl 
+        dt ログインID#[em.c-red *]
+        dd: input(type="text" placeholder="ログインID" )
+      dl 
+        dt パスワード
+        dd
+          label
+            input(type="checkbox")
+            span パスワードを変更する
+          dl 
+            dt パスワード#[em.c-red *]
+            dd: input(type="password" placeholder="パスワード")
+            dt パスワード(確認用)#[em.c-red *]
+            dd: input(type="password" placeholder="パスワード(確認用)")
+      dl 
+        dt ニックネーム#[em.c-red *]
+        dd: input(type="text" placeholder="ニックネーム" value="イースト")
+
+  script.
+    $(function(){
+      console.log("必要なjsはページ毎に個別で記述");
+    });
+
+

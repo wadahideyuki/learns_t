@@ -6,4 +6,12 @@
 .u-{
   &box1{
   }
+  &boxError{
+    background: #F5E7E7;
+    border-radius: 6px;
+    padding: 16px 20px;
+    color:rgba(211, 57, 65, .8) ;
+    font-size: 1.3rem;
+    margin-bottom: 32px;
+  }
 }
