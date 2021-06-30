@@ -1,0 +1,43 @@
+extends /_include/_layout.pug
+
+block varsEdit
+  -
+    var layer = "other"
+    //↓編集領域↓
+    var pageName = "このページのファイル名(.html付けない)"
+    var pageUrl = pageName + ".html"
+    var pageTitle = "06_アカウント登録完了"
+    var pageClass = "pageOther"
+    var pageColor = "lBrown"
+    //↑編集領域↑
+
+block header
+  include /_include/_header.pug
+
+block content
+  .u-ttlBox1.clr1
+    .u-inner.sz1
+      .col.is_L
+        .ttl
+          i: +img("icn_chkbox1.svg", "")
+          h1 アカウント登録
+          h2 アカウント登録
+      .col.is_R
+        ul.status
+          li 登録
+          li 確認
+          li.here 完了
+
+  p.u-txtLead1.c-MB60 アカウント登録が完了しました。
+
+  .u-btnWrap1
+    a.u-btn1.sz1.clr1(href="") ログイン画面へ進む
+
+
+
+
+  script.
+    $(function(){
+      console.log("必要なjsはページ毎に個別で記述");
+    });
+

@@ -1,0 +1,39 @@
+extends /_include/_layout.pug
+
+block varsEdit
+  -
+    var layer = "other"
+    //↓編集領域↓
+    var pageName = "このページのファイル名(.html付けない)"
+    var pageUrl = pageName + ".html"
+    var pageTitle = "09_先生用ログイン情報再設定メール送信完了"
+    var pageClass = "pageOther"
+    var pageColor = "lBrown"
+    //↑編集領域↑
+
+block header
+  include /_include/_header.pug
+
+block content
+  .u-ttlBox1.clr2
+    .u-inner.sz1
+      .col.is_L
+        .ttl
+          i: +img("icn_unlock1.svg", "")
+          h1 ID・パスワード・秘密の質問の答えを忘れた方
+          h2 メールアドレス入力
+      .col.is_R
+        ul.status
+          li 入力
+          li.here 完了
+
+  p.u-txtLead1 sample@learn-s.co.jpのメールアドレスへ#[br]変更手続きについてのメールを送信しました。#[br]メールの内容をご確認ください。
+
+
+
+
+  script.
+    $(function(){
+      console.log("必要なjsはページ毎に個別で記述");
+    });
+
