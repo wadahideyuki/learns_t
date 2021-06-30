@@ -13,6 +13,7 @@
 //ここに記述すると1つの指定につき5つのクラスが吐き出される
 @mixin class1{
   //マージン
+  .MT0{margin: 0 !important;}
   $iM : 0;
   @while $iM <= 100{
     &M{
@@ -21,6 +22,7 @@
     }
     $iM: $iM+5;
   }
+  .PT0{padding: 0 !important;}
   $iP : 0;
   @while $iP <= 100{
     &P{

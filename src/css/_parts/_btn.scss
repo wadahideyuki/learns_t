@@ -94,11 +94,16 @@
     &.clr5{
       background-color: $brown3;
       color: #FFF;
-      @include hvrBrt(1.5);
+      @include hvrBrt;
       &:disabled{
         background-color: #aaaaaa;
         opacity: .6;
       }
+    }
+    &.clr6{
+      background-color: $grey2;
+      color: #FFF;
+      @include hvrBrt(1.2);
     }
   }//btn1
   &btn2{
@@ -147,6 +152,9 @@
       + li{
         margin-left: 34px;
       }
+    }
+    .u-btn1{
+      margin: 0;
     }
   }//btnsWrap
 }

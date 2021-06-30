@@ -4,8 +4,6 @@
   箱
 ---------------------------------------*/
 .u-{
-  &box1{
-  }
   &boxError{
     background: #F5E7E7;
     border-radius: 6px;
@@ -14,5 +12,16 @@
     font-size: 1.3rem;
     margin-bottom: 32px;
     transform: rotate(.1deg);
-  }
+  }//boxError
+  &inputsBox1{
+    .inputs{
+      > li{
+        margin-bottom: 25px;
+      }
+    }
+    input{
+      max-width: 260px;
+      margin: auto;
+    }
+  }//inputsBox1
 }

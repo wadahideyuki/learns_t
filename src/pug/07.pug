@@ -6,7 +6,7 @@ block varsEdit
     //↓編集領域↓
     var pageName = "このページのファイル名(.html付けない)"
     var pageUrl = pageName + ".html"
-    var pageTitle = "01_ユーザーアカウント管理_アカウント登録（メールアドレス入力）"
+    var pageTitle = "07_先生用ログイン"
     var pageClass = "pageOther"
     var pageColor = "lBrown"
     //↑編集領域↑
@@ -15,18 +15,6 @@ block header
   include /_include/_header.pug
 
 block content
-  .u-ttlBox1.clr1
-    .u-inner.sz1
-      .col.is_L
-        .ttl
-          i: +img("icn_chkbox1.svg", "")
-          h1 アカウント登録
-          h2 メールアドレス入力
-      .col.is_R
-        ul.status
-          li.here 入力
-          li 完了
-
   .u-inner.sz1
     p.u-txtLead1 アカウント情報を登録するために，#[br]メールアドレスとエントリーキーを入力して#[br]送信ください。
 
@@ -36,6 +24,10 @@ block content
       li: input(type="text" placeholder="エントリーキー" )
     .u-btnWrap1
       button.u-btn1.clr1(type="submit" onclick="location.href='02.html'") 送信
+
+    ul.u-btnsWrap
+      li: a.u-btn1.sz2.clr5(href="") TOP
+      li: a.u-btn1.sz2.clr2(href="") アカウント詳細へ
 
 
   script.
