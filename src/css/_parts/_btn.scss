@@ -37,11 +37,11 @@
     }
     &.sz1{
       height: 36px;
-      font-size: 1.6rem;
     }
     &.sz2{
       width: 180px;
       height: 34px;
+      font-size: 1.4rem;
     }
     &.clr1{
       background-color: $brown2;
@@ -71,6 +71,33 @@
       background-color: $green2;
       &:disabled{
         background-color: #aaaaaa;
+      }
+    }
+    &.clr3{
+      background-color: $orange2;
+      color: #FFF;
+      @include hvrBrt(1.3);
+      &:disabled{
+        background-color: #aaaaaa;
+        opacity: .6;
+      }
+    }
+    &.clr4{
+      background-color: $pink2;
+      color: #FFF;
+      @include hvrBrt(1.3);
+      &:disabled{
+        background-color: #aaaaaa;
+        opacity: .6;
+      }
+    }
+    &.clr5{
+      background-color: $brown3;
+      color: #FFF;
+      @include hvrBrt(1.5);
+      &:disabled{
+        background-color: #aaaaaa;
+        opacity: .6;
       }
     }
   }//btn1
@@ -112,4 +139,14 @@
     display: flex;
     justify-content: center;
   }//btnWrap1
+  &btnsWrap{
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    > li{
+      + li{
+        margin-left: 34px;
+      }
+    }
+  }//btnsWrap
 }
