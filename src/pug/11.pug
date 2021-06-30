@@ -6,7 +6,7 @@ block varsEdit
     //↓編集領域↓
     var pageName = "このページのファイル名(.html付けない)"
     var pageUrl = pageName + ".html"
-    var pageTitle = "02_アカウント 登録メール 送信完了"
+    var pageTitle = "11_先生用ログイン情報再設定完了"
     var pageClass = "pageOther"
     var pageColor = "lBrown"
     //↑編集領域↑
@@ -15,19 +15,22 @@ block header
   include /_include/_header.pug
 
 block content
-  .u-ttlBox1.clr1
+  .u-ttlBox1.clr2
     .u-inner.sz1
       .col.is_L
         .ttl
-          i: +img("icn_chkbox1.svg", "")
-          h1 アカウント登録
-          h2 メールアドレス入力
+          i: +img("icn_unlock1.svg", "")
+          h1 ID・パスワード・秘密の質問の答えを忘れた方
+          h2 ログイン情報再設定
       .col.is_R
         ul.status
           li 入力
           li.here 完了
 
-  p.u-txtLead1 メールアドレスへアカウント登録についての#[br]メールを送信いたしました。#[br]メールの内容をご確認の上、#[br]アカウント登録に進んでください。
+  p.u-txtLead1.c-MB60 再登録完了しました。
+
+  .u-btnWrap1
+    a.u-btn1.sz1.clr2(href="") ログイン画面へ進む
 
 
 

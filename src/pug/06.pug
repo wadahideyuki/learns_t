@@ -6,7 +6,7 @@ block varsEdit
     //↓編集領域↓
     var pageName = "このページのファイル名(.html付けない)"
     var pageUrl = pageName + ".html"
-    var pageTitle = "02_アカウント 登録メール 送信完了"
+    var pageTitle = "06_アカウント登録完了"
     var pageClass = "pageOther"
     var pageColor = "lBrown"
     //↑編集領域↑
@@ -21,13 +21,17 @@ block content
         .ttl
           i: +img("icn_chkbox1.svg", "")
           h1 アカウント登録
-          h2 メールアドレス入力
+          h2 アカウント登録
       .col.is_R
         ul.status
-          li 入力
+          li 登録
+          li 確認
           li.here 完了
 
-  p.u-txtLead1 メールアドレスへアカウント登録についての#[br]メールを送信いたしました。#[br]メールの内容をご確認の上、#[br]アカウント登録に進んでください。
+  p.u-txtLead1.c-MB60 アカウント登録が完了しました。
+
+  .u-btnWrap1
+    a.u-btn1.sz1.clr1(href="") ログイン画面へ進む
 
 
 
