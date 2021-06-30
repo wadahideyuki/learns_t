@@ -13,6 +13,7 @@
     box-sizing: border-box;
     width: 260px;
     height: 40px;
+    font-size: 1.6rem;
     &[disabled]{
       cursor: default;
     }
@@ -50,8 +51,16 @@
       color: #FFF;
       @include hvrBrt(1.3);
       &:disabled{
-        background-color: #aaaaaa;
-        opacity: .6;
+        background-color: #A0A0A0;
+        color: rgba(255,255,255,.6);
+      }
+    }
+    &.clr2{
+      background-color: $blue2;
+      color: #FFF;
+      &:disabled{
+        background-color: #A0A0A0;
+        color: rgba(255,255,255,.6);
       }
     }
     &.clr3{

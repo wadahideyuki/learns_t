@@ -1,0 +1,65 @@
+extends /_include/_layout.pug
+
+block varsEdit
+  -
+    var layer = "other"
+    //↓編集領域↓
+    var pageName = "このページのファイル名(.html付けない)"
+    var pageUrl = pageName + ".html"
+    var pageTitle = "10"
+    var pageClass = "pageOther"
+    var pageColor = "lBrown"
+    //↑編集領域↑
+
+block header
+  include /_include/_header.pug
+
+block content
+  .u-ttlBox1.clr2
+    .u-inner.sz1
+      .col.is_L
+        .ttl
+          i: +img("icn_unlock1.svg", "")
+          h1 ID・パスワード・秘密の質問の答えを忘れた方
+          h2 ログイン情報再設定
+      .col.is_R
+        ul.status
+          li.here 入力
+          li 完了
+  .u-form.width1
+    section
+      dl 
+        dt ログインID
+        dd
+          input(type="text" placeholder="ログインID" )
+          p.notes ※半角英大文字，半角英小文字，半角数字を各1文字ずつ含む，8～16桁で入力してください。
+      dl 
+        dt パスワード
+        dd
+          dl 
+            dt パスワード
+            dd: input(type="password" placeholder="パスワード")
+            dt パスワード(確認用)
+            dd
+              input(type="password" placeholder="パスワード(確認用)")
+              p.notes ※半角英大文字，半角英小文字，半角数字を各1文字ずつ含む，8～16桁で入力してください。
+      dl
+        dt 秘密の質問
+        dd
+          dl.MT0 
+            dt 秘密の質問
+            dd: input(type="text" placeholder="秘密の質問")
+            dt 秘密の質問の答え
+            dd
+              input(type="password" placeholder="秘密の質問の答え")
+
+    .u-btnWrap1 
+      button.u-btn1.clr2 再設定
+
+
+  script.
+    $(function(){
+      console.log("必要なjsはページ毎に個別で記述");
+    });
+
+
