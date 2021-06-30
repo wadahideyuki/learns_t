@@ -1,0 +1,44 @@
+extends /_include/_layout.pug
+
+block varsEdit
+  -
+    var layer = "other"
+    //↓編集領域↓
+    var pageName = "このページのファイル名(.html付けない)"
+    var pageUrl = pageName + ".html"
+    var pageTitle = "26_生徒アカウント登録完了"
+    var pageClass = "pageOther"
+    var pageColor = "lBrown"
+    //↑編集領域↑
+
+block header
+  include /_include/_header.pug
+
+block content
+  .u-ttlBox1.clr4
+    .u-inner.sz1
+      .col.is_L
+        .ttl
+          i: +img("icn_account1.svg", "")
+          h1 ユーザーアカウント
+          h2 生徒アカウント登録
+      .col.is_R
+        ul.status
+          li 登録
+          li 確認
+          li.here 完了
+
+  p.u-txtLead1.c-MB60 アカウント登録が完了いたしました。
+
+  ul.u-btnsWrap
+    li: a.u-btn1.sz2.clr5(href="") TOP
+    li: a.u-btn1.sz2.clr4(href="") アカウント詳細へ
+
+
+
+
+  script.
+    $(function(){
+      console.log("必要なjsはページ毎に個別で記述");
+    });
+
