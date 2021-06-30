@@ -1,0 +1,134 @@
+extends /_include/_layout.pug
+
+block varsEdit
+  -
+    var layer = "other"
+    //↓編集領域↓
+    var pageName = "このページのファイル名(.html付けない)"
+    var pageUrl = pageName + ".html"
+    var pageTitle = "02_アカウント 登録メール 送信完了"
+    var pageClass = "pageOther"
+    var pageColor = "lBrown"
+    //↑編集領域↑
+
+block header
+  include /_include/_header.pug
+
+block content
+  .u-ttlBox1.clr1
+    .u-inner.sz1
+      .col.is_L
+        .ttl
+          i: +img("icn_chkbox1.svg", "")
+          h1 アカウント登録
+          h2 アカウント登録
+      .col.is_R
+        ul.status
+          li 登録
+          li.here 確認
+          li 完了
+
+  .u-ttlBox1.clr2
+    .u-inner.sz1
+      .col.is_L
+        .ttl
+          i: +img("icn_unlock1.svg", "")
+          h1 ID・パスワード・秘密の質問の答えを忘れた方
+          h2 ddメールアドレス入力dd
+      .col.is_R
+        ul.status
+          li.here 入力
+          li 完了
+
+  .u-ttlBox1.clr3
+    .u-inner.sz1
+      .col.is_L
+        .ttl
+          i: +img("icn_user1.svg", "")
+          h1 アカウント(マイページ)
+          h2 アカウント情報変更
+      .col.is_R
+        ul.status
+          li 変更
+          li.here 確認
+          li 完了
+
+  .u-ttlBox1.clr4
+    .u-inner.sz1
+      .col.is_L
+        .ttl
+          i: +img("icn_account1.svg", "")
+          h1 ユーザーアカウント
+          h2 一覧
+      .col.is_R
+        .btnLogout: a(href="") ログアウト
+
+  .u-ttlBox1.clr4
+    .u-inner.sz1
+      .col.is_L
+        .ttl
+          i: +img("icn_account1.svg", "")
+          h1 ユーザーアカウント
+          h2 生徒アカウント登録
+      .col.is_R
+        ul.status
+          li 登録
+          li.here 確認
+          li 完了
+
+  .u-ttlBox1.clr5
+    .u-inner.sz1
+      .col.is_L
+        .ttl
+          i: +img("icn_data1.svg", "")
+          h1 学習情報詳細
+      .col.is_R
+        ul.tabs
+          li
+            a(href="")
+              i: +img("icn_links.svg", "")
+              b Links
+          li
+            span
+              i: +img("icn_items.svg", "")
+              b Items
+          li
+            a(href="")
+              i: +img("icn_trials.svg", "")
+              b Trials
+          li
+            a(href="")
+              i: +img("icn_arms.svg", "")
+              b Arms
+        .btnLogout: a(href="") ログアウト
+
+  .u-ttlBox1.clr6
+    .u-inner.sz1
+      .col.is_L
+        .ttl
+          i: +img("icn_mail1.svg", "")
+          h1 メッセージ管理
+          h2 受信BOX
+      .col.is_R
+        ul.tabs.fz2
+          li
+            a(href="")
+              i: +img("icn_folder_grn.svg", "")
+              b 受信BOX
+          li
+            span
+              i: +img("icn_send.svg", "")
+              b 送信BOX
+          li
+            a(href="")
+              i: +img("icn_circle_plus_grn.svg", "")
+              b 新規登録
+
+
+
+
+  script.
+    $(function(){
+      console.log("必要なjsはページ毎に個別で記述");
+    });
+

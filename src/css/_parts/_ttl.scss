@@ -111,18 +111,19 @@
     .tabs{
       display: flex;
       align-self: flex-end;
+      font-size: 1.8rem;
       > li{
         + li{
           margin-left: 10px;
         }
-        > a{
+        > a,
+        > span{
           display: flex;
           justify-content: center;
           align-items: center;
           width: 145px;
           height: 46px;
           color: #fff;
-          font-size: 1.8rem;
           border-radius: 6px 6px 0 0;
           i{
             margin-right: 10px;
@@ -130,9 +131,15 @@
               display: block;
             }
           }
-          span{
+          b{
           }
         }
+        > a{
+          @include hvrBrt(1.15);
+        }
+      }
+      &.fz2{
+        font-size: 1.6rem;
       }
     }//.tabs
     .btnLogout{
@@ -144,6 +151,7 @@
         height: 34px;
         color: #fff;
         border-radius: 100px;
+        @include hvrBrt(1.1);
         &:before{
           content: "";
           display: block;
@@ -159,6 +167,7 @@
       .ttl h2:before{background-color: $brown2;}
       .status > li.here{
         background-color: $brown2;
+        border-color: $brown2;
         &:after{background-image: url($pathImg + "arw1_r_brwn.svg");}
       }
     }
@@ -167,6 +176,7 @@
       .ttl h2:before{background-color: $blue2;}
       .status > li.here{
         background-color: $blue2;
+        border-color: $blue2;
         &:after{background-image: url($pathImg + "arw1_r_blue.svg");}
       }
     }
@@ -175,6 +185,7 @@
       .ttl h2:before{background-color: $orange2;}
       .status > li.here{
         background-color: $orange2;
+        border-color: $orange2;
         &:after{background-image: url($pathImg + "arw1_r_orng.svg");}
       }
     }
@@ -183,8 +194,15 @@
       .ttl h2:before{background-color: $pink2;}
       .status > li.here{
         background-color: $pink2;
+        border-color: $pink2;
         &:after{background-image: url($pathImg + "arw1_r_pnk.svg");}
       }
+      .btnLogout{
+        margin-left: 30px;
+        a{
+          background-color: $pink3;
+        }
+      }//.btnLogout
     }
     &.clr5{
       background-color: $brown5;
@@ -194,11 +212,9 @@
           background-color: $brown7;
           color: $brown8;
         }
-        &.here{
-          > a{
-            background-color: $grey1;
-            color: $brown4;
-          }
+        > span{
+          background-color: $grey1;
+          color: $brown4;
         }
       }
       .btnLogout{
@@ -216,11 +232,9 @@
           background-color: $green4;
           color: $green5;
         }
-        &.here{
-          > a{
-            background-color: $green2;
-            color: #fff;
-          }
+        > span{
+          background-color: $green2;
+          color: #fff;
         }
       }
     }
