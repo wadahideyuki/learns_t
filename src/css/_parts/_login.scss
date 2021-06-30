@@ -1,0 +1,39 @@
+@charset "UTF-8";
+
+/*--------------------------------------
+  ログイン
+---------------------------------------*/
+.u-{
+  &login{
+    padding-top: 123px;
+    text-align: center;
+    .logo{
+      width: 189px;
+      margin: 0 auto 50px;
+      img{
+        width: 100%;
+      }
+    }
+    li{
+      margin-bottom:20px ;
+    }
+    input{
+      width: 260px;
+    }
+    p{
+      a{
+        text-decoration: underline;
+        &:hover{
+          text-decoration: none;
+        }
+      }
+    }
+    .recapcha{
+      margin: 25px auto 35px;
+      text-align: center;
+      img{
+        max-width: 202px;
+      }
+    }
+  }//login
+}

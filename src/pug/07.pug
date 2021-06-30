@@ -12,22 +12,24 @@ block varsEdit
     //↑編集領域↑
 
 block header
-  include /_include/_header.pug
 
 block content
-  .u-inner.sz1
-    p.u-txtLead1 アカウント情報を登録するために，#[br]メールアドレスとエントリーキーを入力して#[br]送信ください。
+  form.u-login(action="")
+    .u-inner.sz1
+      h1.logo: +img("logo.svg", "")
 
-  form.u-inputsBox1(action="")
-    ul
-      li: input(type="email" placeholder="メールアドレス" )
-      li: input(type="text" placeholder="エントリーキー" )
-    .u-btnWrap1
-      button.u-btn1.clr1(type="submit" onclick="location.href='02.html'") 送信
+      ul
+        li: input(type="text" placeholder="ID" )
+        li: input(type="password" placeholder="パスワード" )
+        li: input(type="text" placeholder="秘密の質問の答え" )
 
-    ul.u-btnsWrap
-      li: a.u-btn1.sz2.clr5(href="") TOP
-      li: a.u-btn1.sz2.clr2(href="") アカウント詳細へ
+      p: a(href="#") ID・パスワード・秘密の質問の答えをお忘れの方はこちら
+
+      .recapcha: +img("dummy_recapcha.png", "")
+
+      .u-btnWrap1
+        button.u-btn1.sz1.clr5(type="submit" onclick="location.href=''") ログイン
+
 
 
   script.
