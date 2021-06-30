@@ -15,13 +15,16 @@
   }//boxError
   &inputsBox1{
     .inputs{
+      margin-bottom: 25px;
+      text-align: center;
       > li{
-        margin-bottom: 25px;
+        + li{
+          margin-top: 25px;
+        }
       }
-    }
-    input{
-      max-width: 260px;
-      margin: auto;
+      input{
+        max-width: 260px;
+      }
     }
   }//inputsBox1
 }
