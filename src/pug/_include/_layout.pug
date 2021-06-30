@@ -15,7 +15,7 @@ html(lang="ja")
     block head
       include /_include/_head.pug
 
-  body(class=(pageColor == "lBrown" ? "u-bgLBrown" : ""))
+  body
     .l-wrapper(class=(layer == "top" ? "pageTop" : pageClass))
       block header
         include /_include/_header.pug
