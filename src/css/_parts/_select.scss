@@ -1,0 +1,40 @@
+@charset "UTF-8";
+
+/*--------------------------------------
+  セレクト
+---------------------------------------*/
+.u- {
+  &selectBox {
+    background-color: #fff;
+    border-radius: 4px;
+    position: relative;
+    &:after {
+      content: "";
+      display: inline-block;
+      position: absolute;
+      width: 8px;
+      height: 8px;
+      border-right: 1px solid $brown3;
+      border-bottom: 1px solid $brown3;
+      transform: rotate(45deg);
+      right: 15px;
+      top: 50%;
+      margin-top: -5px;
+    }
+    select {
+      box-sizing: border-box;
+      width: 100%;
+      padding: 8px 16px;
+      border-radius: 3px;
+      box-sizing: border-box;
+      &:invalid {
+        color: #ccc;
+      }
+
+      &::-ms-expand {
+        //IEで矢印を消す
+        display: none;
+      }
+    }
+  } //inner
+}

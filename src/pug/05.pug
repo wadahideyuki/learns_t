@@ -1,0 +1,113 @@
+extends /_include/_layout.pug
+
+block varsEdit
+  -
+    var layer = "other"
+    //↓編集領域↓
+    var pageName = "このページのファイル名(.html付けない)"
+    var pageUrl = pageName + ".html"
+    var pageTitle = "02_アカウント 登録メール 送信完了"
+    var pageClass = "pageOther"
+    var pageColor = "lBrown"
+    //↑編集領域↑
+
+block header
+  include /_include/_header.pug
+
+block content
+  .u-ttlBox1.clr1
+    .u-inner.sz1
+      .col.is_L
+        .ttl
+          i: +img("icn_chkbox1.svg", "")
+          h1 アカウント登録
+          h2 メールアドレス入力
+      .col.is_R
+        ul.status
+          li.here 登録
+          li 確認
+          li 完了
+
+  .u-confirmBox
+    .col
+      section
+        h2.u-ttl2 学校情報
+        ul.info 
+          li ラーンズ高等学校
+          li 私立
+          li 123-4567東京都渋谷区代々木1-2-3
+          li 普通科コース
+          li 1学年(2021年度)
+      section
+        h2.u-ttl2 アカウント情報
+        dl
+          dt 名前
+          dd 岡山 太郎
+        dl
+          dt メールアドレス
+          dd sample@learn-s.co.jp
+        dl
+          dt ログインID
+          dd Aej8vkeks9m
+        dl
+          dt パスワード
+          dd ＊＊＊＊＊
+        dl
+          dt 秘密の質問
+          dd ＊＊＊＊＊
+        dl
+          dt 秘密の質問の答え
+          dd ＊＊＊＊＊
+    .col
+      section
+        h2.u-ttl2 クラス情報
+        dl
+          dt クラス数(注文時)
+          dd 4クラス
+        dl
+          dt 生徒人数(注文時)
+          dd 38人
+        dl
+          dt クラス数・名称
+          dd 6クラス
+        dl.col1.PB0
+          dt クラス名称
+          dd 
+            ul.className 
+              li  #[span 1]ひまわり組
+              li  #[span 2]さくら組
+              li  #[span 3]ぱんだ組
+              li  #[span 4]きりん組
+              li  #[span 5]うぐいす組
+              li  #[span 6]ゆず組
+      section
+        h2.u-ttl2 学年情報
+        dl.col1
+          dt 担任クラス
+          dd.txtR ひまわり組 / さくら組 / ぱんだ組
+        dl.col1
+          dt 担当教科・科目、科目ごとの担当クラス
+          dd.kyouka
+            dl
+              dt #[span 国語] 
+              dd
+                ul 
+                  li #[span 現代文] ひまわり組 / さくら組 / ぱんだ組
+                  li #[span 古文] ひまわり組 / さくら組 / ぱんだ組
+            dl
+              dt #[span 地歴公民] 
+              dd
+                ul 
+                  li #[span 数学I] ひまわり組 / さくら組 / ぱんだ組
+                  li #[span 数学A] ひまわり組 / さくら組 / ぱんだ組
+
+  .u-btnWrap1
+    button.u-btn1.sz2(href="") 戻る
+    button.u-btn1.sz2.clr1(href="") 登録
+
+
+  script.
+    $(function(){
+      console.log("必要なjsはページ毎に個別で記述");
+    });
+

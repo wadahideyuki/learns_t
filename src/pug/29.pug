@@ -1,0 +1,87 @@
+extends /_include/_layout.pug
+
+block varsEdit
+  -
+    var layer = "other"
+    //↓編集領域↓
+    var pageName = "このページのファイル名(.html付けない)"
+    var pageUrl = pageName + ".html"
+    var pageTitle = "29"
+    var pageClass = "pageOther"
+    var pageColor = "lBrown"
+    //↑編集領域↑
+
+block header
+  include /_include/_header.pug
+
+block content
+
+  .u-ttlBox1.clr4
+    .u-inner.sz1
+      .col.is_L
+        .ttl
+          i: +img("icn_account1.svg", "")
+          h1 ユーザーアカウント
+          h2 一覧
+      .col.is_R
+        ul.status
+          li.here 変更
+          li 確認
+          li 完了
+  .u-form.width1
+    section
+      p.txtMust #[em.c-red *]印の入力は必須です。
+      dl 
+        dt 名前#[em.c-red *]
+        dd
+          .col2
+            dl 
+              dt 姓
+              dd: input(type="text" placeholder="姓" value="岡山")
+            dl 
+              dt 名
+              dd: input(type="text" placeholder="名"  value="花子")
+      dl 
+        dt メールアドレス#[em.c-red *]
+        dd
+          input(type="email" placeholder="sample@learn-s.co.jp"  value="sample@learn-s.co.jp")
+      dl 
+        dt ログインID#[em.c-red *]
+        dd
+          input(type="text" placeholder="ログインID"  value="Aej8vkeks9m")
+          p.notes ※半角英大文字，半角英小文字，半角数字を各1文字ずつ含む，8～16桁で入力してください。
+      dl 
+        dt パスワード
+        dd
+          label
+            input(type="checkbox" checked)
+            span パスワードを変更する
+          dl 
+            dt パスワード#[em.c-red *]
+            dd: input(type="password" placeholder="パスワード")
+            dt パスワード(確認用)#[em.c-red *]
+            dd
+              input(type="password" placeholder="パスワード(確認用)")
+              p.notes ※半角英大文字，半角英小文字，半角数字を各1文字ずつ含む，8～16桁で入力してください。
+
+
+    section
+      h2.u-ttl2 学年情報
+      dl.bdB
+        dt 出席番号*
+        dd
+          input(type="text" placeholder="出席番号" value="32" )
+        
+      include _include/_kamoku2.pug
+      
+    .u-btnWrap1 
+      // diabledをとると色が変わる
+      button.u-btn1.clr4 変更確認
+
+
+  script.
+    $(function(){
+      console.log("必要なjsはページ毎に個別で記述");
+    });
+
+

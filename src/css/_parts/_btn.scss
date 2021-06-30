@@ -14,8 +14,14 @@
     width: 260px;
     height: 40px;
     font-size: 1.6rem;
+    background-color: #A0A0A0;
+    margin: 0 15px;
+    @include hvrBrt(1.3);
+    color: #FFF;
     &[disabled]{
       cursor: default;
+      background-color: #aaaaaa;
+      color: rgba(255,255,255,.6);
     }
     span{
       display: block;
@@ -39,28 +45,32 @@
     }
     &.clr1{
       background-color: $brown2;
-      color: #FFF;
-      @include hvrBrt(1.3);
       &:disabled{
         background-color: #aaaaaa;
-        opacity: .6;
       }
     }
     &.clr2{
       background-color: $blue2;
-      color: #FFF;
-      @include hvrBrt(1.3);
       &:disabled{
-        background-color: #A0A0A0;
-        color: rgba(255,255,255,.6);
+        background-color: #aaaaaa;
       }
     }
-    &.clr2{
-      background-color: $blue2;
-      color: #FFF;
+    &.clr3{
+      background-color: $orange2;
       &:disabled{
-        background-color: #A0A0A0;
-        color: rgba(255,255,255,.6);
+        background-color: #aaaaaa;
+      }
+    }
+    &.clr4{
+      background-color: $pink2;
+      &:disabled{
+        background-color: #aaaaaa;
+      }
+    }
+    &.clr5{
+      background-color: $green2;
+      &:disabled{
+        background-color: #aaaaaa;
       }
     }
   }//btn1

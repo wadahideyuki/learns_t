@@ -1,0 +1,72 @@
+extends /_include/_layout.pug
+
+block varsEdit
+  -
+    var layer = "other"
+    //↓編集領域↓
+    var pageName = "このページのファイル名(.html付けない)"
+    var pageUrl = pageName + ".html"
+    var pageTitle = "14"
+    var pageClass = "pageOther"
+    var pageColor = "lBrown"
+    //↑編集領域↑
+
+block header
+  include /_include/_header.pug
+
+block content
+
+  .u-ttlBox1.clr2
+    .u-inner.sz1
+      .col.is_L
+        .ttl
+          i: +img("icn_unlock1.svg", "")
+          h1 アカウント変更
+          h2 ログイン時アカウント変更
+
+  .u-confirmBox
+    .col
+      section  
+        dl
+          dt 名前
+          dd 岡山 太郎
+        dl
+          dt メールアドレス
+          dd sample@learn-s.co.jp
+        dl
+          dt ログインID
+          dd Aej8vkeks9m
+        dl
+          dt パスワード
+          dd ＊＊＊＊＊
+    .col
+      section  
+        dl
+          dt 秘密の質問
+          dd ＊＊＊＊＊
+        dl
+          dt 秘密の質問の答え
+          dd ＊＊＊＊＊
+    .col
+      section
+        include _include/_gakunen.pug 
+    .col
+      section
+        include _include/_gakunen.pug 
+    .col
+      section
+        include _include/_gakunen.pug 
+    .col
+      section
+        include _include/_gakunen.pug 
+
+  .u-btnWrap1
+    button.u-btn1.sz2(href="") 戻る
+    button.u-btn1.sz2.clr2(href="") 登録
+
+
+  script.
+    $(function(){
+      console.log("必要なjsはページ毎に個別で記述");
+    });
+

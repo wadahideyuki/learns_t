@@ -161,7 +161,7 @@ input[type="password"],
 input[type="email"],
 textarea{
   background-color: #fff;
-  border: 1px solid #ccc;
+  border: 0px solid #fff;
   border-radius: 3px;
   &:focus{
     border-color: #aaa;
@@ -203,12 +203,7 @@ input[type="number"]{
     -webkit-appearance: none;
   }
 }
-select{
-  box-sizing: border-box;
-  &::-ms-expand {//IEで矢印を消す
-    display: none;
-  }
-}
+
 textarea{
   padding: 16px;
   vertical-align: baseline;

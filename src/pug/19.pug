@@ -6,7 +6,7 @@ block varsEdit
     //↓編集領域↓
     var pageName = "このページのファイル名(.html付けない)"
     var pageUrl = pageName + ".html"
-    var pageTitle = "02_アカウント 登録メール 送信完了"
+    var pageTitle = "19"
     var pageClass = "pageOther"
     var pageColor = "lBrown"
     //↑編集領域↑
@@ -15,13 +15,19 @@ block header
   include /_include/_header.pug
 
 block content
-  .u-ttlBox1.clr2
+
+  .u-ttlBox1.clr3
     .u-inner.sz1
       .col.is_L
         .ttl
-          i: +img("icn_unlock1.svg", "")
-          h1 アカウント変更
-          h2 ログイン時アカウント変更
+          i: +img("icn_user1.svg", "")
+          h1 アカウント(マイページ)
+          h2 アカウント情報変更
+      .col.is_R
+        ul.status
+          li.here 変更
+          li 確認
+          li 完了
   .u-form.width1
     section
       p.txtMust #[em.c-red *]印の入力は必須です。
@@ -111,7 +117,7 @@ block content
 
     .u-btnWrap1 
     
-      button.u-btn1.clr2  登録確認
+      button.u-btn1.clr3  登録確認
 
 
   script.

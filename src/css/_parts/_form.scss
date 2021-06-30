@@ -85,6 +85,10 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    &.bdB{
+      border-bottom: 1px solid rgba(112, 112, 112, 0.3);
+      margin-bottom: 16px;
+    }
     dt {
       width: 200px;
       font-weight: bold;
@@ -120,6 +124,19 @@
         max-height: 173px;
         overflow-y: auto;
       }
+      .col3List {
+        display: flex;
+        flex-wrap: wrap;
+        margin-left: -2.5%;
+        li {
+          width: 30.8%;
+          margin-left: 2.5%;
+          margin-top: 2.5%;
+          span{
+            text-align: right;
+          }
+        }
+      }
     }
 
     &.tannin {
@@ -132,16 +149,7 @@
       dd {
         width: 100%;
       }
-      ul {
-        display: flex;
-        flex-wrap: wrap;
-        margin-left: -2.5%;
-        li {
-          width: 30.8%;
-          margin-left: 2.5%;
-          margin-top: 2.5%;
-        }
-      }
+      
       label {
         span {
           text-align: right;
@@ -152,7 +160,6 @@
       display: block;
       dt{
         width: auto;
-        margin-bottom: 30px;
       }
       dd{
         width: auto;
@@ -160,7 +167,7 @@
     }
     .kamoku {
       display: block;
-      margin-bottom: 35px;
+      margin-top: 25px;
       &:last-of-type{
         margin-bottom: 0px;
       }
@@ -169,7 +176,7 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        margin-bottom: 20px;
+        margin-bottom: 10px;
         .ttl{
           background-color: $brown2;
           color: #FFF;
@@ -197,7 +204,7 @@
           }
         }
       }
-      dd {
+      dd.kamokuList {
         width: 100%;
         label{
           border-bottom: 1px solid rgba(112, 112, 112, 0.3);
