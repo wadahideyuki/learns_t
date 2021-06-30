@@ -21,7 +21,7 @@
     margin-bottom: 12px;
   }
   &ttlBox1{
-    margin-bottom: 30px;
+    margin-bottom: 40px;
     .u-inner{
       display: flex;
       justify-content: space-between;
@@ -124,6 +124,14 @@
           color: #fff;
           font-size: 1.8rem;
           border-radius: 6px 6px 0 0;
+          i{
+            margin-right: 10px;
+            img{
+              display: block;
+            }
+          }
+          span{
+          }
         }
       }
     }//.tabs
@@ -202,9 +210,18 @@
     }
     &.clr6{
       background-color: $green1;
-      .ttl h2:before{background-color: $brown2;}
-      .tabs > li.here > a{
-        background-color: $brown2;
+      .ttl h2:before{background-color: $green3;}
+      .tabs > li{
+        > a{
+          background-color: $green4;
+          color: $green5;
+        }
+        &.here{
+          > a{
+            background-color: $green2;
+            color: #fff;
+          }
+        }
       }
     }
   }//ttlBox1
