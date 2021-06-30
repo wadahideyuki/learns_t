@@ -3,6 +3,27 @@
 /*--------------------------------------
   フォーム
 ---------------------------------------*/
+.u-confirmHead{
+  display: flex;
+  max-width: 920px;
+  width: 100%;
+  margin: 0 auto 30px auto;
+  justify-content: space-between;
+  align-items: flex-end;
+  .txt1{
+    font-weight: bold;
+    font-size: 2.6rem;
+    span{
+      font-size:1.6rem ;
+    }
+  }
+  .type{
+    border:2px solid rgba(204, 204, 204, 1);
+    border-radius: 50px;
+    padding: .6em 1em;
+    line-height: 1;
+  }
+}
 .u-confirmBox {
   h2,
   h3,
@@ -43,9 +64,11 @@
       }
     }
   }
-
   .col {
     width: 430px;
+    &.w100{
+      width: 100%;
+    }
     section {
       margin-bottom: 40px;
     }
@@ -99,6 +122,14 @@
             }
           }
         }
+        &.isType2{
+          dl{
+            border: 0px;
+            margin-top: 0px;
+            padding-bottom: 0px;
+            margin-bottom: 10px;
+          }
+        }
       }
     }
     &.col1 {
@@ -115,6 +146,37 @@
       }
       dd {
         margin-top: 10px;
+      }
+    }
+  }
+  .keyUrl{
+    text-decoration: underline;
+  }
+  .entryList{
+    margin-top: 20px;
+    li{
+      background-color: #FFF;
+      padding:6px 16px;
+      margin-bottom: 2px;
+      display: flex;
+      span{
+        flex-shrink: 0;
+        display: inline-block;
+      }
+      .who{
+        font-weight: bold;
+        color: $brown3;
+        width: 90px;
+      }
+      .key{
+        font-weight: bold;
+        color: #E58707;
+        width: 100px;
+      }
+      .date{
+        width: 210px;
+        text-align: right;
+        color: $brown4;
       }
     }
   }

@@ -161,4 +161,14 @@
       margin: 0;
     }
   }//btnsWrap
+  &btnWrap2{
+    text-align: center;
+    display: flex;
+    justify-content: flex-start;
+    .u-btn1{
+      margin-left: 0px;
+      margin-bottom: 35px;
+      margin-right: 30px;
+    }
+  }//btnWrap1
 }

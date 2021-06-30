@@ -1,0 +1,86 @@
+extends /_include/_layout.pug
+
+block varsEdit
+  -
+    var layer = "other"
+    //↓編集領域↓
+    var pageName = "このページのファイル名(.html付けない)"
+    var pageUrl = pageName + ".html"
+    var pageTitle = "21"
+    var pageClass = "pageOther"
+    var pageColor = "lBrown"
+    //↑編集領域↑
+
+block header
+  include /_include/_header.pug
+
+block content
+
+  .u-ttlBox1.clr4
+    .u-inner.sz1
+      .col.is_L
+        .ttl
+          i: +img("icn_account1.svg", "")
+          h1 ユーザーアカウント
+          h2 アカウント詳細
+
+  .u-confirmBox
+    .col
+      .u-confirmHead
+        .txt1 岡山 太郎 #[span 先生]
+        .type  生徒
+      section  
+        dl
+          dt メールアドレス
+          dd sample@learn-s.co.jp
+        dl
+          dt ログインID
+          dd Aej8vkeks9m
+        dl
+          dt パスワード
+          dd ＊＊＊＊＊
+      .u-btnWrap2
+        button.u-btn1.sz2.clr4(href="") 一覧へ戻る
+    .col
+      section  
+        .u-btnWrap2
+          button.u-btn1.sz2(href="") 戻る
+          button.u-btn1.sz2.clr4(href="") 登録
+
+        h2.u-ttl2 学年情報
+        dl
+          dt 学科コース
+          dd 普通科
+        dl
+          dt 入学年度
+          dd 2021年度(1年生)
+        dl
+          dt 担任クラス
+          dd 1組/2組
+        dl
+          dt 履修教科・科目
+          dd.kyouka.isType2
+            dl
+              dt #[span 国語] 
+              dd
+                ul 
+                  li #[span 現代文] 
+            dl
+              dt #[span 地歴公民] 
+              dd
+                ul 
+                  li #[span 数学I] 
+            dl
+              dt #[span 地歴公民] 
+              dd
+                ul 
+                  li #[span 数学I] 
+
+  
+
+
+  script.
+    $(function(){
+      console.log("必要なjsはページ毎に個別で記述");
+    });
+
