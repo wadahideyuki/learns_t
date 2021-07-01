@@ -60,6 +60,13 @@
   span {
     transform: rotate(0.1deg);
   }
+  &.colSingle{
+    flex-direction: column;
+    .col{
+      margin: 0 auto;
+      padding-bottom: 30px;
+    }
+  }
   .txtR {
     text-align: right;
   }
