@@ -109,6 +109,11 @@
       color: #FFF;
       @include hvrBrt(1.2);
     }
+    &.clr7{
+      background-color: $grey2;
+      color: #FFF;
+      @include hvrBrt(1.2);
+    }
   }//btn1
   &btn2{
     display: inline-block;
