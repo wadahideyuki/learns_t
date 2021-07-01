@@ -35,6 +35,34 @@
       bottom: 0;
       right: 6px;
     }
+    .iconDel{
+      display: flex;
+      align-items: center;
+      &:before{
+        margin-right: 10px;
+        content: "";
+        display: inline-block;
+        width: 15px;
+        height: 15px;
+        background-image: url($pathImg + "icn_delete.svg");
+        background-size: 100%;
+        background-repeat: no-repeat;
+      }
+    }
+    .iconEdit{
+      display: flex;
+      align-items: center;
+      &:before{
+        margin-right: 10px;
+        content: "";
+        display: inline-block;
+        width: 15px;
+        height: 15px;
+        background-image: url($pathImg + "icn_edit_white.svg");
+        background-size: 100%;
+        background-repeat: no-repeat;
+      }
+    }
     &.sz1{
       height: 36px;
     }
@@ -146,6 +174,28 @@
     }
     &.clr1{
     }
+  }
+  &btnBack{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    background-color: #FFF;
+    width:180px ;
+    height: 34px;
+    border-radius: 50px;
+    &:before{
+      content: "";
+      width: .6em;
+      height: .6em;
+      border-top: 1px solid $brown3;
+      border-left: 1px solid $brown3;
+      transform: rotate(-45deg);
+      position: absolute;
+      left: 15px;
+      top: 50%;
+      margin-top: -.3em;
+    }
   }//btn1
   /* ボタン包み */
   &btnWrap1{
@@ -175,5 +225,16 @@
       margin-bottom: 35px;
       margin-right: 30px;
     }
-  }//btnWrap1
+  }//btnWrap2
+  &btnWrap3{
+    text-align: center;
+    display: flex;
+    padding-bottom: 30px;
+    justify-content: space-between;
+    .u-btn1{
+      margin: 0px;
+      width: 200px;
+    }
+  }//btnWrap3
+  
 }

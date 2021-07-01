@@ -6,7 +6,7 @@ block varsEdit
     //↓編集領域↓
     var pageName = "このページのファイル名(.html付けない)"
     var pageUrl = pageName + ".html"
-    var pageTitle = "27"
+    var pageTitle = "28"
     var pageClass = "pageOther"
     var pageColor = "lBrown"
     //↑編集領域↑
@@ -23,13 +23,21 @@ block content
           i: +img("icn_account1.svg", "")
           h1 ユーザーアカウント
           h2 アカウント詳細
-
+  .u-confirmHead
+    .colL
+      .txt1 岡山 太郎 #[span 先生/管理者]
+      .type  生徒
+    .u-btnWrap3
+        button.u-btn1.sz2(href="") #[em.iconDel 戻る]
+        button.u-btn1.sz2.clr4(href="") #[em.iconEdit 登録]
+      
   .u-confirmBox
+    
     .col
-      .u-confirmHead
-        .txt1 岡山 太郎 #[span 先生]
-        .type  生徒
       section  
+        dl
+          dt 名前
+          dd 岡山 太郎
         dl
           dt メールアドレス
           dd sample@learn-s.co.jp
@@ -43,38 +51,19 @@ block content
           button.u-btnBack.sz2.clr4(href="") 一覧へ戻る
     .col
       section  
-        .u-btnWrap3
-          button.u-btn1.sz2(href="") #[em.iconDel 戻る]
-          button.u-btn1.sz2.clr4(href="") #[em.iconEdit 登録]
+        dl
+          dt 秘密の質問
+          dd ＊＊＊＊＊
+        dl
+          dt 秘密の質問の答え
+          dd ＊＊＊＊＊
 
-        h2.u-ttl2 学年情報
-        dl
-          dt 学科コース
-          dd 普通科
-        dl
-          dt 入学年度
-          dd 2021年度(1年生)
-        dl
-          dt 担任クラス
-          dd 1組/2組
-        dl
-          dt 履修教科・科目
-          dd.kyouka.isType2
-            dl
-              dt #[span 国語] 
-              dd
-                ul 
-                  li #[span 現代文] 
-            dl
-              dt #[span 地歴公民] 
-              dd
-                ul 
-                  li #[span 数学I] 
-            dl
-              dt #[span 地歴公民] 
-              dd
-                ul 
-                  li #[span 数学I] 
+    .col
+      section
+        include _include/_gakunen.pug 
+    .col
+      section
+        include _include/_gakunen.pug 
 
   
 
