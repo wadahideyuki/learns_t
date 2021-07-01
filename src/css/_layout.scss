@@ -96,6 +96,53 @@
 }//.l-footer
 
 
+.l-modal{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0,0,0,0.6);
+  width: 100vw;
+  height: 100vh;
+  opacity: 0;
+  visibility: hidden;
+  position: fixed;
+  top: 0;
+  left: 0;
+  transition: 0.3s;
+  &[data-show="show"]{
+    opacity: 1;
+    visibility: visible;
+    .in{
+      transform: translateX(0);
+    }
+  }
+  .cont{
+    background-color: $grey1;
+    width: 730px;
+    height: 688px;
+    padding-top: 75px;
+    border-radius: 10px;
+    box-sizing: border-box;
+    position: relative;
+  }
+  .btnMdlCls{
+    position: absolute;
+    top: 23px;
+    right: 26px;
+    @include hvr(0.4);
+  }
+  .mdlTtlBox{
+    padding-bottom: 13px;
+    border-bottom: 1px solid $grey5;
+    text-align: center;
+    h2{
+      font-size: 2.0rem;
+    }
+  }
+}//.l-modal
+
+
 .l-loading{
   display: flex;
   flex-direction: column;

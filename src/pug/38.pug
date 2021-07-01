@@ -1,0 +1,157 @@
+extends /_include/_layout.pug
+
+block varsEdit
+  -
+    var layer = "other"
+    //↓編集領域↓
+    var pageName = "このページのファイル名(.html付けない)"
+    var pageUrl = pageName + ".html"
+    var pageTitle = "38_アカウント登録_クラス数・名称設定"
+    var pageClass = "pageOther"
+    var pageColor = "lBrown"
+    //↑編集領域↑
+
+block header
+  include /_include/_header.pug
+
+block content
+  .u-ttlBox1.clr1
+    .u-inner.sz1
+      .col.is_L
+        .ttl
+          i: +img("icn_chkbox1.svg", "")
+          h1 アカウント登録
+          h2 アカウント登録
+      .col.is_R
+        ul.status
+          li.here 登録
+          li 確認
+          li 完了
+  .u-form.width1
+    .u-boxError
+      ul 
+        li ・エラーメッセージを表示 
+        li ・エラーメッセージを表示エラーメッセージを表示 
+        li ・エラーメッセージを表示エラーメッセージを表示エラーメッセージを表示
+    section
+      h2.u-ttl2 学校情報
+      ul.info 
+        li ラーンズ高等学校
+        li 私立
+        li 123-4567東京都渋谷区代々木1-2-3
+        li 普通科コース
+        li 1学年(2021年度)
+    section
+      h2.u-ttl2 アカウント情報
+      dl 
+        dt 名前#[em.c-red *]
+        dd
+          .col2
+            dl 
+              dt 姓
+              dd: input(type="text" placeholder="姓")
+            dl 
+              dt 名
+              dd: input(type="text" placeholder="名")
+      dl 
+        dt メールアドレス#[em.c-red *]
+        dd
+          .txtR sample@learn-s.co.jp
+      dl 
+        dt ログインID#[em.c-red *]
+        dd
+          input(type="text" placeholder="ログインID" )
+          p.notes ※半角英大文字，半角英小文字，半角数字を各1文字ずつ含む，8～16桁で入力してください。
+      dl 
+        dt パスワード
+        dd
+          label
+            input(type="checkbox")
+            span パスワードを変更する
+          dl 
+            dt パスワード#[em.c-red *]
+            dd: input(type="password" placeholder="パスワード")
+            dt パスワード(確認用)#[em.c-red *]
+            dd
+              input(type="password" placeholder="パスワード(確認用)")
+              p.notes ※半角英大文字，半角英小文字，半角数字を各1文字ずつ含む，8～16桁で入力してください。
+      dl
+        dt 秘密の質問#[em.c-red *]
+        dd
+          dl
+            dt 秘密の質問
+            dd: input(type="text" placeholder="秘密の質問")
+            dt 秘密の質問の答え
+            dd
+              input(type="password" placeholder="秘密の質問の答え")
+      dl 
+        dt ニックネーム#[em.c-red *]
+        dd: input(type="text" placeholder="ニックネーム" value="イースト")
+
+    section
+      h2.u-ttl2 クラス情報
+      dl.col4
+        dt クラス数(注文時)
+        dd 4クラス
+        dt クラス数(注文時)
+        dd 38人
+      dl.col1
+        dt クラス数(注文時)#[em.c-red *]
+        dd 
+          span.classNum クラス数 6
+          span.className  クラス名称
+          ul 
+            li  #[span 1]ひまわり組
+            li  #[span 2]さくら組
+            li  #[span 3]ぱんだ組
+            li  #[span 4]きりん組
+            li  #[span 5]うぐいす組
+            li  #[span 6]ゆず組
+          .txtR 
+            a.u-btn2(href="#")  
+              span  クラス数・名称を設定する
+
+    section
+      h2.u-ttl2 学年情報
+      include _include/_kamoku.pug
+      dl.kiyakuBox
+        dt 利用規約
+        dd
+          .kiyaku 
+            p 利用規約の文言が入ります利用規約の文言が入ります利用規約の文言が入ります利用規約の文言が入ります利用規約の文言が入ります利用規約の文言が入ります利用規約の文言が入ります利用規約の文言が入ります利用規約の文言が入ります利用規約の文言が入ります利用規約の文言が入ります利用規約の文言が入ります利用規約の文言が入ります利用規約の文言が入ります利用規約の文言が入ります利用規約の文言が入ります利用規約の文言が入ります
+          .douiBox
+            label
+              input(type="checkbox")
+              span 
+                em  同意する
+      dl.kiyakuBox.MB0
+        dt メールアドレスについて
+        dd
+          p ご入力いただいたメールアドレスに，今後，当社からご案内メールをお送りさせていただいてもよろしいでしょうか？
+          .douiBox
+            label
+              input(type="checkbox")
+              span  はい
+
+    .u-btnWrap1 
+      // diabledをとると色が変わる
+      button.u-btn1.clr1(disabled) 登録確認
+
+
+block modal
+  +modal("1")
+    .u-inner.sz3
+      .mdlTtlBox
+        h2 クラス数・名称
+      p.u-txtLead1 クラス数を選択し、クラス名称を入力してください。
+
+      .u-btnWrap1
+        button.u-btn1.sz1.clr1(type="submit" onclick="") OK
+
+
+  script.
+    $(function(){
+      console.log("必要なjsはページ毎に個別で記述");
+    });
+
+

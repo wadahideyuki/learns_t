@@ -45,6 +45,25 @@ $(".l-sidenav .in").click(function(e){
 
 
 /*--------------------
+       モーダル
+--------------------*/
+//閉じる
+$(".l-modal").click(function(){
+  $(this).attr("data-show", "");
+  return false;
+});
+//閉じる
+$(".btnMdlCls").click(function(){
+  $(".l-modal").attr("data-show", "");
+  return false;
+});
+//イベント伝播を阻止
+$(".l-modal .cont").click(function(e){
+  e.stopPropagation();
+});
+
+
+/*--------------------
      ローディング
 --------------------*/
 $(".btnLoadCancel").click(function(){

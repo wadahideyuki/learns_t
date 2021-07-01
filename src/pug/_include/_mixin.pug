@@ -100,12 +100,11 @@ mixin chk1(name, txt, val, chk)
 
 
 //- ローディング
-mixin loading(txt, show)
-  .l-loading(data-show=show == 1 ? "show" : "")
-    +fig("loading.svg", "")
-    p #{txt}
-    .btnWrap
-      button.btnLoadCancel.u-btn2.clr3.sz3 キャンセル
+mixin modal(show)
+  .l-modal(data-show=show == 1 ? "show" : "")
+    .cont
+      a.btnMdlCls(href=""): +img("icn_x.svg", "")
+      block
     
     
 
