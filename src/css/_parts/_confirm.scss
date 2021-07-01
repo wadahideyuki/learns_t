@@ -10,6 +10,16 @@
   margin: 0 auto 30px auto;
   justify-content: space-between;
   align-items: flex-end;
+  .colL{
+    width: 430px;
+    display: flex;
+    justify-content: space-between;
+  }
+  .u-btnWrap3{
+    padding-bottom: 0px;
+    width: 430px;
+
+  }
   .txt1{
     font-weight: bold;
     font-size: 2.6rem;
@@ -31,6 +41,8 @@
   p,
   dt,
   dl,
+  button,
+  a,
   span {
     transform: rotate(0.1deg);
   }
@@ -71,6 +83,9 @@
     }
     section {
       margin-bottom: 40px;
+      .u-btnWrap2{
+        margin-top: 30px;
+      }
     }
   }
 
