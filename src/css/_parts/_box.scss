@@ -204,4 +204,44 @@
       }
     }//.menu2
   }//topBox
+  &colBox1{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    &.col3{
+      > li{
+        width: percentage(190/$innerW3);
+        margin-right: percentage(14/$innerW3);
+        &:nth-child(3n){
+          margin-right: 0;
+        }
+        &:nth-child(n + 4){
+          margin-top: percentage(12/$innerW3);
+        }
+      }
+    }
+  }//.u-colBox1
+  &classBox{//モーダルで使用
+    margin-bottom: 190px;
+    .grp{
+      + .grp{
+        margin-top: 40px;
+      }
+      > dt{
+        color: $brown3_a80;
+      }
+      > dd{
+        margin-top: 7px;
+        .u-selectBox{
+          width: 187px;
+          &:after{
+            border-color: #000;
+          }
+          select{
+            color: inherit;
+          }
+        }
+      }
+    }
+  }//classBox
 }
