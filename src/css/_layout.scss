@@ -139,6 +139,30 @@
     h2{
       font-size: 2.0rem;
     }
+    .lbls{
+      display: flex;
+      align-items: center;
+      font-size: 1.6rem;
+      line-height: 1;
+      dt{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: $blue3;
+        width: 59px;
+        height: 32px;
+        margin-right: 14px;
+        color: #fff;
+        border-radius: 100px;
+      }
+      dd{
+      }
+    }
+    &.is_type2{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
   }
 }//.l-modal
 

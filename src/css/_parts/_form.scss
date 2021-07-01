@@ -440,4 +440,67 @@
       }
     }
   }
-}
+}//.u-form
+.u-chk1{
+  display: block;
+  input {
+    position: absolute;
+    opacity: 0;
+    &:checked + span {
+      background-color: $brown9;
+      &:before {
+        background-color: $brown3;
+      }
+    }
+  }
+  span {
+    display: block;
+    background-color: #fff;
+    padding: 8px 14px 8px 40px;
+    text-align: right;
+    border-radius: 4px;
+    position: relative;
+    &:before {
+      content: "";
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      border: 1px solid #BEBBB5;
+      position: absolute;
+      left: 10px;
+      top: 50%;
+      margin-top: -10px;
+      background-color: #fff;
+    }
+    &:after {
+      content: "";
+      display: inline-block;
+      width: 12px;
+      height: 6px;
+      border-bottom: 2px solid #fff;
+      border-left: 2px solid #fff;
+      position: absolute;
+      transform: rotate(-45deg);
+      left: 14px;
+      top: 50%;
+      margin-top: -6px;
+    }
+  }
+}//.u-chk1
+.u-chks1{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  &.col3{
+    > li{
+      width: percentage(190/$innerW3);
+      margin-right: percentage(14/$innerW3);
+      &:nth-child(3n){
+        margin-right: 0;
+      }
+      &:nth-child(n + 4){
+        margin-top: percentage(12/$innerW3);
+      }
+    }
+  }
+}//.u-chks1

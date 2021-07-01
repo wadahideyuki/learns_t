@@ -141,11 +141,29 @@ block content
 block modal
   +modal("1")
     .u-inner.sz3
-      .mdlTtlBox
-        h2 ddd
+      .mdlTtlBox.is_type2
+        h2 科目ごとの担当クラス
+        dl.lbls
+          dt 国語
+          dd 現代文
       p.u-txtLead1 担当クラスを選択してください。
 
-      .u-btnWrap1
+      ul.u-chks1.col3
+        -for (var i = 1; i <= 7; i++)
+          li
+            label.u-chk1
+              input(type="checkbox" checked)
+              span クラス2
+          li
+            label.u-chk1
+              input(type="checkbox" checked)
+              span クラス3
+          li
+            label.u-chk1
+              input(type="checkbox")
+              span クラス1
+
+      .u-btnWrap1.c-MT85
         button.u-btn1.sz1.clr1(type="submit" onclick="") OK
 
 
