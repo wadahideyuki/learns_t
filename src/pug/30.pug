@@ -1,0 +1,80 @@
+extends /_include/_layout.pug
+
+block varsEdit
+  -
+    var layer = "other"
+    //↓編集領域↓
+    var pageName = "このページのファイル名(.html付けない)"
+    var pageUrl = pageName + ".html"
+    var pageTitle = "30"
+    var pageClass = "pageOther"
+    var pageColor = "lBrown"
+    //↑編集領域↑
+
+block header
+  include /_include/_header.pug
+
+block content
+
+  .u-ttlBox1.clr4
+    .u-inner.sz1
+      .col.is_L
+        .ttl
+          i: +img("icn_account1.svg", "")
+          h1 ユーザーアカウント
+          h2 ユーザーアカウント変更
+      .col.is_R
+        ul.status
+          li 変更
+          li.here 確認
+          li 完了
+  p.u-confirmTxt 以下の内容でアカウント情報を変更します。
+  .u-confirmBox.colSingle
+    .col
+      dl
+        dt 名前
+        dd 岡山 太郎
+      dl
+        dt メールアドレス
+        dd sample@learn-s.co.jp
+      dl
+        dt ログインID
+        dd Aej8vkeks9m
+      dl
+        dt パスワード
+        dd ＊＊＊＊＊
+      dl
+        dt 出席番号
+        dd 32
+      dl.bd0
+          dt 履修教科・科目
+          dd.kyouka.isType2
+            dl
+              dt #[span 国語] 
+              dd
+                ul 
+                  li #[span 現代文] 
+            dl
+              dt #[span 地歴公民] 
+              dd
+                ul 
+                  li #[span 数学I] 
+            dl
+              dt #[span 地歴公民] 
+              dd
+                ul 
+                  li #[span 数学I] 
+
+  .u-btnWrap1
+    button.u-btn1.sz2 戻る
+    button.u-btn1.sz2.clr4  変更完了
+
+
+
+  script.
+    $(function(){
+      console.log("必要なjsはページ毎に個別で記述");
+    });
+
+
+

@@ -7,6 +7,7 @@
   text-align: center;
   font-size: 1.8rem;
   margin-bottom: 30px;
+  transform: rotate(.1deg);
 }
 .u-confirmWrap{
   width:1080px ;
@@ -58,6 +59,13 @@
   a,
   span {
     transform: rotate(0.1deg);
+  }
+  &.colSingle{
+    flex-direction: column;
+    .col{
+      margin: 0 auto;
+      padding-bottom: 30px;
+    }
   }
   .txtR {
     text-align: right;
