@@ -6,7 +6,7 @@ block varsEdit
     //↓編集領域↓
     var pageName = "このページのファイル名(.html付けない)"
     var pageUrl = pageName + ".html"
-    var pageTitle = "32"
+    var pageTitle = "34"
     var pageClass = "pageOther"
     var pageColor = "lBrown"
     //↑編集領域↑
@@ -36,7 +36,6 @@ block content
         .type  生徒
       
     .u-confirmBox
-    
       .col
         section  
           dl
@@ -51,11 +50,18 @@ block content
           dl
             dt パスワード
             dd ＊＊＊＊＊
-
-
+          .u-btnWrap2
+            button.u-btnBack.sz2.clr4(href="") 一覧へ戻る
       .col
         section  
-
+          dl
+            dt 秘密の質問
+            dd ＊＊＊＊＊
+          dl
+            dt 秘密の質問の答え
+            dd ＊＊＊＊＊
+      .col
+        section
           h2.u-ttl2 学年情報
           dl
             dt 学科コース
@@ -64,33 +70,60 @@ block content
             dt 入学年度
             dd 2021年度(1年生)
           dl
-            dt クラス
-            dd 2組
-          dl
-            dt 出席番号
-            dd 32
-          dl.bd0
-            dt 履修教科・科目
-            dd.kyouka.isType2
-              dl
+            dt 担任クラス
+            dd 1組/2組
+          dl.col1.bd0
+            dt 担当教科・科目、教科科目ごとのクラス
+            dd.kyouka
+              dl.bd0
                 dt #[span 国語] 
                 dd
                   ul 
-                    li #[span 現代文] 
-              dl
+                    li #[span 現代文] ひまわり組 / さくら組 / ぱんだ組
+              dl.bd0
                 dt #[span 地歴公民] 
                 dd
                   ul 
-                    li #[span 数学I] 
-              dl
+                    li #[span 数学I] ひまわり組 / さくら組 / ぱんだ組
+              dl.bd0
                 dt #[span 地歴公民] 
                 dd
                   ul 
-                    li #[span 数学I] 
+                    li #[span 数学I] ひまわり組 / さくら組 / ぱんだ組
+      .col
+        section
+          h2.u-ttl2 学年情報
+          dl
+            dt 学科コース
+            dd 普通科
+          dl
+            dt 入学年度
+            dd 2021年度(1年生)
+          dl
+            dt 担任クラス
+            dd 1組/2組
+          dl.col1.bd0
+            dt 担当教科・科目、教科科目ごとのクラス
+            dd.kyouka
+              dl.bd0
+                dt #[span 国語] 
+                dd
+                  ul 
+                    li #[span 現代文] ひまわり組 / さくら組 / ぱんだ組
+              dl.bd0
+                dt #[span 地歴公民] 
+                dd
+                  ul 
+                    li #[span 数学I] ひまわり組 / さくら組 / ぱんだ組
+              dl.bd0
+                dt #[span 地歴公民] 
+                dd
+                  ul 
+                    li #[span 数学I] ひまわり組 / さくら組 / ぱんだ組
 
   ul.u-btnsWrap
     li: button.u-btn1.sz2 キャンセル
-    li: button.u-btn1.sz2.clr4 削除
+    li: button.u-btn1.sz2.clr4 停止
 
     
 
