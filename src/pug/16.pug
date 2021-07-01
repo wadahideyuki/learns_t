@@ -1,0 +1,112 @@
+extends /_include/_layout.pug
+
+block varsEdit
+  -
+    var layer = "other"
+    //↓編集領域↓
+    var pageName = "このページのファイル名(.html付けない)"
+    var pageUrl = pageName + ".html"
+    var pageTitle = "16_先生用 TOP"
+    var pageClass = "pageOther"
+    var pageColor = "lBrown"
+    //↑編集領域↑
+
+block header
+  include /_include/_header.pug
+
+block content
+  .u-topBox
+    .u-inner.sz1
+      .cols
+        .col
+          ul.menu1
+            li
+              a.layer1(href="")
+                i: +img("icn_flag.svg", "")
+                p 学年別学習履歴
+            li
+              a.layer1(href="")
+                i: +img("icn_layer.svg", "")
+                p クラス別学習履歴
+            li
+              a.layer1(href="")
+                i: +img("icn_badge.svg", "")
+                p 個人別学習履歴
+            li
+              a.layer1(href="")
+                i: +img("icn_graph.svg", "")
+                p 集計表
+        .col
+          ul.menu1
+            li
+              span.layer1
+                i: +img("icn_data1_grn.svg", "")
+                p 学習状況詳細
+                .layer2
+                  ul.layerIn
+                    li
+                      a(href="")
+                        i: +img("icn_links_wht.svg", "")
+                        p Links
+                    li
+                      a(href="")
+                        i: +img("icn_items_wht.svg", "")
+                        p Items
+                    li
+                      a(href="")
+                        i: +img("icn_trials_wht.svg", "")
+                        p Trials
+                    li
+                      a(href="")
+                        i: +img("icn_arms_wht.svg", "")
+                        p Arms
+            li
+              a.layer1(href="")
+                i: +img("icn_edit.svg", "")
+                p 学習コンテンツ
+            li
+              a.layer1(href="")
+                i: +img("icn_play.svg", "")
+                p コンテンツ配信
+            li
+              a.layer1(href="")
+                i: +img("icn_bulb.svg", "")
+                p 管理者メニュー
+        .col
+          dl.menu2
+            dt メッセージ管理
+            dd
+              ul
+                li
+                  a(href="")
+                    i: +img("icn_folder_brwn.svg", "")
+                    p 受信BOX
+                    span 1
+                li
+                  a(href="")
+                    i: +img("icn_send_brwn.svg", "")
+                    p 送信BOX
+                li
+                  a(href="")
+                    i: +img("icn_circle_plus_brwn.svg", "")
+                    p 新規制作
+          dl.menu2
+            dt ユーザーアカウント管理
+            dd
+              ul
+                li
+                  a(href="")
+                    i: +img("icn_account1_brwn.svg", "")
+                    p アカウント一覧
+                li
+                  a(href="")
+                    i: +img("icn_circle_plus_brwn.svg", "")
+                    p アカウント新規登録
+
+
+
+  script.
+    $(function(){
+      console.log("必要なjsはページ毎に個別で記述");
+    });
+

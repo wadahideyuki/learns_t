@@ -27,4 +27,181 @@
       }
     }
   }//inputsBox1
+  &topBox{
+    padding-top: 40px;
+    .cols{
+      display: flex;
+      justify-content: space-between;
+    }
+    .col{
+      width: percentage(340/$innerW);
+    }
+    .menu1{
+      > li{
+        + li{
+          margin-top: 22px;
+        }
+      }
+      .layer1{
+        display: flex;
+        align-items: center;
+        height: 92px;
+        padding: 0 36px;
+        font-size: 1.6rem;
+        border-radius: 8px;
+        transition: 0.3s;
+      }
+      a.layer1{
+        background-color: $grey3;
+        color: $grey4;
+      }
+      span.layer1{
+        background-color: #fff;
+        position: relative;
+        &:hover{
+          background-color: #e8e7e2;
+          .layer2{
+            opacity: 1;
+            visibility: inherit;
+          }
+        }
+      }
+      i{
+        width: 55px;
+        margin-right: 25px;
+        text-align: center;
+      }
+      p{
+      }
+      .layer2{
+        opacity: 0;
+        visibility: hidden;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        transition: 0.3s;
+        .layerIn{
+          position: absolute;
+          top: 0;
+          right: 0;
+          > li{
+            border-top: 1px solid #fff;
+            a{
+              display: flex;
+              align-items: center;
+              width: 199px;
+              height: 41px;
+              padding: 0 32px;
+              color: #fff;
+              font-size: 1.3rem;
+              box-sizing: border-box;
+              i{
+                width: 36px;
+                margin-right: 27px;
+                text-align: center;
+              }
+              p{
+              }
+            }
+            &:nth-child(1){
+              a{
+                background-color: $orange3;
+                @include hvrBrt(1.2);
+              }
+              img{width: 24px;}
+            }
+            &:nth-child(2){
+              a{
+                background-color: $pink2;
+                @include hvrBrt(1.2);
+              }
+              img{width: 30px;}
+            }
+            &:nth-child(3){
+              a{
+                background-color: $green3;
+                @include hvrBrt(1.2);
+              }
+              img{width: 26px;}
+            }
+            &:nth-child(4){
+              a{
+                background-color: $purple1;
+                @include hvrBrt(1.3);
+              }
+              img{width: 36px;}
+            }
+          }
+        }
+      }//.layer2
+    }//.menu1
+    .menu2{
+      + .menu2{
+        margin-top: 33px;
+      }
+      > dt{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: $brown3;
+        height: 36px;
+        color: #fff;
+        text-align: center;
+        border-radius: 6px 6px 0 0;
+      }
+      > dd{
+        background-color: #fff;
+        border-radius: 0 0 6px 6px;
+      }
+      ul{
+        padding: 0 0 15px 30px;
+      }
+      li{
+        border-bottom: 1px solid rgba(112,112,112,0.5);
+      }
+      a{
+        display: flex;
+        align-items: center;
+        height: 60px;
+        padding: 0 62px 0 2px;
+        position: relative;
+        @include hvrL($grey3);
+        &:after{
+          content: "";
+          display: block;
+          background: url($pathImg + "arw1_r_brwn2.svg") 0 0 no-repeat;
+          width: 8.5px;
+          height: 15px;
+          margin: auto;
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          right: 10px;
+        }
+        i{
+          width: 31px;
+          margin-right: 5px;
+          text-align: center;
+        }
+        p{
+        }
+        span{
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          background-color: $red2;
+          width: 20px;
+          height: 20px;
+          margin: auto;
+          color: #fff;
+          font-size: 0.9rem;
+          border-radius: 50%;
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          right: 27px;
+        }
+      }
+    }//.menu2
+  }//topBox
 }

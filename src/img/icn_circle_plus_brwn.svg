@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+  <g id="icn_circle_plus_brwn" transform="translate(-874 -274)">
+    <g id="楕円形_2" data-name="楕円形 2" transform="translate(874 274)" fill="none" stroke="#49412f" stroke-width="1.8">
+      <circle cx="14" cy="14" r="14" stroke="none"/>
+      <circle cx="14" cy="14" r="13.1" fill="none"/>
+    </g>
+    <path id="plus001_-_E03F" data-name="plus001 - E03F" d="M8-16.8H.8V-24H-.8v7.2H-8v1.6H-.8V-8H.8v-7.2H8Z" transform="translate(888 304)" fill="#4b412d"/>
+  </g>
+</svg>
