@@ -87,16 +87,14 @@ mixin rdo1(name, txt, val, chk)
       input(type="radio" name=name value=val checked)
     else
       input(type="radio" name=name value=val)
-    span.wrap
-      span.txt!= txt
+    span!= txt
 mixin chk1(name, txt, val, chk)
   label.u-chk1
     if chk == 1
       input(type="checkbox" name=name value=val checked)
     else
       input(type="checkbox" name=name value=val)
-    span.wrap
-      span.txt!= txt
+    span!= txt
 
 
 //- ローディング

@@ -441,6 +441,55 @@
     }
   }
 }//.u-form
+.u-form2{//23で使用
+  display: flex;
+  justify-content: space-between;
+  .rdos{
+    display: flex;
+    margin-bottom: 27px;
+    > li{
+      width: 120px;
+      margin-right: 25px;
+    }
+  }//.rdos
+  .inputs{
+    display: flex;
+    align-items: center;
+    margin-bottom: 42px;
+    > dt{
+    }
+    > dd{
+      width: 140px;
+      margin-left: 16px;
+      + dt{
+        margin-left: 26px;
+      }
+    }
+  }
+  .btns1{
+    display: flex;
+    > li{
+      margin-right: 13px;
+    }
+    .u-btn1{
+      margin: 0;
+    }
+  }
+  .btns2{
+    background-color: #fff;
+    padding: 18px 16px;
+    border: 2px solid $brown3;
+    border-radius: 6px;
+    > li{
+      + li{
+        margin-top: 16px;
+      }
+    }
+    .u-btn1{
+      margin: 0;
+    }
+  }
+}//.u-form2
 .u-chk1{
   display: block;
   input {
@@ -487,4 +536,40 @@
     }
   }
 }//.u-chk1
+.u-rdo1{
+  display: block;
+  input {
+    position: absolute;
+    opacity: 0;
+    &:checked + span {
+      background-color: $brown9;
+      &:before {
+        background-color: $brown3;
+      }
+    }
+  }
+  span {
+    display: block;
+    background-color: #fff;
+    padding: 8px 14px 8px 40px;
+    text-align: right;
+    border-radius: 100px;
+    position: relative;
+    &:before {
+      content: "";
+      display: inline-block;
+      width: 16px;
+      height: 16px;
+      border: 1px solid $brown10;
+      border-radius: 50%;
+      box-shadow: 0 0 0 2px #fff inset;
+      box-sizing: border-box;
+      position: absolute;
+      left: 12px;
+      top: 50%;
+      margin-top: -8px;
+      background-color: #fff;
+    }
+  }
+}//.u-rdo1
 

@@ -25,7 +25,42 @@ block content
       .col.is_R
         .btnLogout: a(href="") ログアウト
 
-  .u-inner.sz1
+  .u-inner.sz4
+    form.u-form2
+      .colL
+        ul.rdos
+          li: +rdo1("rdo1", "先生", "1", "")
+          li: +rdo1("rdo1", "生徒", "2", "1")
+        dl.inputs
+          dt 入学年度
+          dd
+            .u-selectBox
+              select(required)
+                option(value="2020") 2020
+                option(value="2021" selected) 2021
+          dt 学科コース
+          dd: input(type="text" placeholder="学科コース")
+          dt 名前
+          dd: input(type="text" placeholder="名前")
+        ul.btns1
+          li: a.u-btn1.sz4.clr7(href="") クリア
+          li: button.u-btn1.sz4.clr4(type="submit"): em.iconSearch 検索
+      .colR
+        ul.btns2
+          li: a.u-btn1.sz4.clr5(href=""): em.iconCirclePlus 新規登録
+          li: a.u-btn1.sz4.clr8.withArw(href="") クラス人数確定
+          li: a.u-btn1.sz4.clr8.withArw(href="") 最終人数確定
+
+    .u-Tbl1
+      table
+        thead
+          th aaa
+          th aaa
+          th aaa
+        tbody
+          td aaa
+          td aaa
+          td aaa
 
 
   script.

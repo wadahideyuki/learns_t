@@ -151,17 +151,11 @@ block modal
       ul.u-colBox1.col3
         -for (var i = 1; i <= 7; i++)
           li
-            label.u-chk1
-              input(type="checkbox" checked)
-              span クラス2
+            +chk1("", "クラス2", "", "1")
           li
-            label.u-chk1
-              input(type="checkbox" checked)
-              span クラス3
+            +chk1("", "クラス3", "", "1")
           li
-            label.u-chk1
-              input(type="checkbox")
-              span クラス1
+            +chk1("", "クラス1", "", "")
 
       .u-btnWrap1.c-MT85
         button.u-btn1.sz1.clr1(type="submit" onclick="") OK
