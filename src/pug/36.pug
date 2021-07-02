@@ -1,0 +1,51 @@
+extends /_include/_layout.pug
+
+block varsEdit
+  -
+    var layer = "other"
+    //↓編集領域↓
+    var pageName = "このページのファイル名(.html付けない)"
+    var pageUrl = pageName + ".html"
+    var pageTitle = "36_学習情報詳細 Links"
+    var pageClass = "pageOther"
+    var pageColor = "lBrown"
+    //↑編集領域↑
+
+block header
+  include /_include/_header.pug
+
+block content
+  .u-ttlBox1.clr5
+    .u-inner.sz1
+      .col.is_L
+        .ttl
+          i: +img("icn_data1.svg", "")
+          h1 学習情報詳細
+      .col.is_R
+        ul.tabs
+          li
+            span
+              i: +img("icn_links.svg", "")
+              b Links
+          li
+            a(href="")
+              i: +img("icn_items.svg", "")
+              b Items
+          li
+            a(href="")
+              i: +img("icn_trials.svg", "")
+              b Trials
+          li
+            a(href="")
+              i: +img("icn_arms.svg", "")
+              b Arms
+        .btnLogout: a(href="") ログアウト
+
+  .u-inner.sz1
+
+
+  script.
+    $(function(){
+      console.log("必要なjsはページ毎に個別で記述");
+    });
+

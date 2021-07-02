@@ -1,0 +1,35 @@
+extends /_include/_layout.pug
+
+block varsEdit
+  -
+    var layer = "other"
+    //↓編集領域↓
+    var pageName = "このページのファイル名(.html付けない)"
+    var pageUrl = pageName + ".html"
+    var pageTitle = "23_ユーザーアカウント一覧"
+    var pageClass = "pageOther"
+    var pageColor = "lBrown"
+    //↑編集領域↑
+
+block header
+  include /_include/_header.pug
+
+block content
+  .u-ttlBox1.clr4
+    .u-inner.sz1
+      .col.is_L
+        .ttl
+          i: +img("icn_account1.svg", "")
+          h1 ユーザーアカウント
+          h2 一覧
+      .col.is_R
+        .btnLogout: a(href="") ログアウト
+
+  .u-inner.sz1
+
+
+  script.
+    $(function(){
+      console.log("必要なjsはページ毎に個別で記述");
+    });
+
