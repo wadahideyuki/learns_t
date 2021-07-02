@@ -1,0 +1,85 @@
+extends /_include/_layout.pug
+
+block varsEdit
+  -
+    var layer = "other"
+    //↓編集領域↓
+    var pageName = "このページのファイル名(.html付けない)"
+    var pageUrl = pageName + ".html"
+    var pageTitle = "37_メッセージ管理"
+    var pageClass = "pageOther"
+    var pageColor = "lBrown"
+    var type = "full"
+    //↑編集領域↑
+
+block header
+  include /_include/_header.pug
+
+block content
+  .u-ttlBox1.clr6
+    .u-inner.sz1
+      .col.is_L
+        .ttl
+          i: +img("icn_mail1.svg", "")
+          h1 メッセージ管理
+          h2 受信BOX
+      .col.is_R
+        ul.tabs.fz2
+          li
+            span
+              i: +img("icn_folder.svg", "")
+              b 受信BOX
+          li
+            a(href="")
+              i: +img("icn_send_grn.svg", "")
+              b 送信BOX
+          li
+            a(href="")
+              i: +img("icn_circle_plus_grn.svg", "")
+              b 新規登録
+
+
+  .u-msgBox1
+    section.secList
+      ul
+        -for(var i = 1; i <= 9; i++)
+          li(data-status=(i <= 2 ? "unread": "") class=(i == 3 ? "show": ""))
+            a(href="")
+              h2 メンテナンスのお知らせ
+              .info
+                .who
+                  i: +img("icn_user_grn.svg", "")
+                  p ラーンズ
+                .date 2021/04/19 12:00
+
+
+    section.secDtl
+      .in
+        h2 メンテナンスのお知らせ
+        .info
+          .who
+            i: +img("icn_user_grn.svg", "")
+            p ラーンズ
+          .date 2021/04/19 12:00
+        .txt
+          -for(var i = 1; i <= 1; i++)
+            p 2021/5/1（土）の１９時００分よりシステムメンテナンスを行います。#[br]メンテナンス中はサービスがご利用いただけませんので予めご了承ください。
+
+
+  script.
+    $(function(){
+      $(".u-msgBox1 .secList a").click(function(){
+        if($(this).parent().hasClass("show")){
+        }else{
+          if($(this).parent().attr("data-status") == "unread"){
+            $(this).parent().attr("data-status", "");
+          }
+          $(".u-msgBox1 .secList li").removeClass("show");
+          $(this).parent().addClass("show");
+        }
+        return false;
+      });
+    });
+
+
+

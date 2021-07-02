@@ -16,7 +16,7 @@ html(lang="ja")
       include /_include/_head.pug
 
   body
-    .l-wrapper(class=(layer == "top" ? "pageTop" : pageClass))
+    .l-wrapper(class=(type == "full" ? "fullScreen" : ""))
       block header
         include /_include/_header.pug
 

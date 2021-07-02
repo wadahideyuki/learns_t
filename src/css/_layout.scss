@@ -7,6 +7,11 @@
   display: flex;
   flex-direction: column;
   min-height: 86.5vh;
+  &.fullScreen{
+    @include ie{
+      height: 86.5vh;
+    }
+  }
 }
 
 
@@ -78,6 +83,10 @@
 .l-cont{
   flex-grow: 1;
   padding-bottom: 40px;
+  .fullScreen &{
+    display: flex;
+    flex-direction: column;
+  }
 }//.l-cont
 
 
