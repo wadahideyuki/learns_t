@@ -167,10 +167,10 @@
       &:nth-child(7){width: percentage(71/865);}
     }
     thead{
-      position: sticky;
-      top: 0;
       th{
         font-size: 1.2rem;
+        position: sticky;
+        top: 0;
         &:not(:first-child){
           background-color: $brown3;
           padding: 6px 9px;
