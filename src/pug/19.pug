@@ -54,9 +54,9 @@ block content
         dt パスワード
         dd
           label
-            input(type="checkbox")
+            input(type="checkbox").passCheck
             span パスワードを変更する
-          dl 
+          dl.passBox
             dt パスワード#[em.c-red *]
             dd: input(type="password" placeholder="パスワード")
             dt パスワード(確認用)#[em.c-red *]
@@ -129,6 +129,14 @@ block content
         $(this).parent().prev().removeClass("open");
       })
 
+      $(".passCheck").change(function(){
+        //パスワードの表示切り替え
+        if($(this).prop("checked") == true){
+          $(".passBox").addClass("show");
+        }else{
+          $(".passBox").removeClass("show");
+        }
+      })
 
       console.log("必要なjsはページ毎に個別で記述");
     });

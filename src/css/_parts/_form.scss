@@ -27,8 +27,27 @@
     text-align: right;
     color: rgba(75, 65, 45, 0.7);
   }
+  .mailBox{
+    padding-top: 10px;
+  }
+  .passBox,.mailBox{
+    display: none;
+    &.show{
+      display: block;
+    }
+  }
   label {
     display: block;
+    .passCheck,.mailCheck{
+      & + span{
+        background-color: #EDE9DF;
+      }
+      &:checked{
+        & + span{
+          background-color: #D8D0BD;
+        }
+      }
+    }
     & + dl{
       margin-top: 16px;
     }
