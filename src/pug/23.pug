@@ -56,16 +56,52 @@ block content
           li: a.u-btn1.sz4.clr8.withArw(href="") クラス人数確定
           li: a.u-btn1.sz4.clr8.withArw(href="") 最終人数確定
 
-    .u-Tbl1
-      table
-        thead
-          th aaa
-          th aaa
-          th aaa
-        tbody
-          td aaa
-          td aaa
-          td aaa
+    table.u-tbl1
+      thead
+        tr
+          th 
+          th ログインID
+          th 名前
+          th 権限
+          th 入学年度
+          th クラス
+          th 教科係
+          th 利用状況
+          th 
+      tbody
+        -for (var i = 1; i <= 16; i = i + 2)
+          tr
+            td #{i}
+            td 129h76
+            td 東京太郎さん
+            td 生徒
+            td 2021
+            td 2組
+            td
+              .status.is_kyoka(data-status="")
+                p -
+                a.btn(href="") 任命
+            td
+              .status.is_riyo(data-status="on")
+                p 利用中
+                a.btn(href="") 停止
+            td: a.u-btn1.btnDtl.clr4.withArw(href="") 詳細
+          tr
+            td #{i + 1}
+            td 9di4kcl
+            td 岡山花子さん
+            td 生徒
+            td 2021
+            td 4組
+            td
+              .status.is_kyoka(data-status="on")
+                p 教科係
+                a.btn(href="") 解除
+            td
+              .status.is_riyo(data-status="")
+                p 停止中
+                a.btn(href="") 再開
+            td: a.u-btn1.btnDtl.clr4.withArw(href="") 詳細
 
 
   script.

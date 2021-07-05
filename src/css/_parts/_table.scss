@@ -1,0 +1,124 @@
+@charset "UTF-8";
+
+/*--------------------------------------
+  テーブル
+---------------------------------------*/
+.u-{
+  &tbl1{
+    width: 100%;
+    tr{
+      border-bottom: 2px solid $grey1;
+    }
+    th,
+    td{
+      &:nth-child(1){width: percentage(42/$innerW4);}
+      &:nth-child(2){width: percentage(90/$innerW4);}
+      &:nth-child(3){width: percentage(138/$innerW4);}
+      &:nth-child(4){width: percentage(106/$innerW4);}
+      &:nth-child(5){width: percentage(65/$innerW4);}
+      &:nth-child(6){width: percentage(108/$innerW4);}
+      &:nth-child(7){width: percentage(139/$innerW4);}
+      &:nth-child(8){width: percentage(136/$innerW4);}
+      &:nth-child(9){width: percentage(116/$innerW4);}
+    }
+    * {
+      + th,
+      + td{
+        border-left: 2px solid $grey1;
+      }
+    }
+    thead{
+      th{
+        background-color: $brown3;
+        padding: 9px 3px;
+        color: #fff;
+        font-size: 1.2rem;
+        text-align: center;
+        &:first-child{border-radius: 4px 0 0 0;}
+        &:last-child{border-radius: 0 4px 0 0;}
+      }
+    }
+    tbody{
+      tr{
+        &:nth-child(odd){
+          background-color: #fff;
+        }
+        &:nth-child(even){
+          background-color: $grey7;
+        }
+      }
+      td{
+        padding: 6px 10px;
+        &:nth-child(1),
+        &:nth-child(5),
+        &:nth-child(6){
+          text-align: center;
+        }
+      }
+    }
+    .status{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      p{
+        width: 3.0em;
+        text-align: center;
+      }
+      .btn{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 60px;
+        height: 26px;
+        margin-left: 12px;
+        border-radius: 100px;
+      }
+      &.is_kyoka{
+        .btn{
+          background-color: $brown11;
+          @include hvrBrt(0.85);
+        }
+        &[data-status="on"]{
+          p{
+            color: $brown12;
+          }
+          .btn{
+            background-color: $brown12;
+            color: #fff;
+            @include hvrBrt;
+          }
+        }
+      }
+      &.is_riyo{
+        .btn{
+          background-color: $brown3;
+          color: #fff;
+          @include hvrBrt;
+        }
+        &[data-status="on"]{
+          p{
+            color: $brown3_a50;
+          }
+          .btn{
+            background-color: $brown11;
+            color: $brown3;
+            @include hvrBrt(0.85);
+          }
+        }
+      }
+    }//.status
+    .btnDtl{
+      justify-content: center;
+      width: 90px;
+      height: 26px;
+      margin: 0 auto;
+      font-size: 1.3rem;
+      &:after{
+        width: 6px;
+        height: 10px;
+        margin: 0 0 0 13px;
+        position: static;
+      }
+    }//.btnDtl
+  }//tbl1
+}

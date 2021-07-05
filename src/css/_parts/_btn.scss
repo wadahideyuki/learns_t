@@ -175,6 +175,9 @@
         background-color: #aaaaaa;
         opacity: .6;
       }
+      &:after{
+        background-image: url($pathImg + "arw1_r_wht.svg");
+      }
     }
     &.clr5{
       background-color: $brown3;
