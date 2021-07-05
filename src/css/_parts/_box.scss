@@ -251,19 +251,9 @@
     width: 100%;
     margin: auto;
     position: relative;
-    /*スクロールバー全体*/
-    ::-webkit-scrollbar {
-      width: 6px;
-    }
     /*スクロールバーの軌道*/
     ::-webkit-scrollbar-track {
       background-color: #fff;
-      border-radius: 100px;
-    }
-    /*スクロールバーの動く部分*/
-    ::-webkit-scrollbar-thumb {
-      background-color: $grey4;
-      border-radius: 100px;
     }
     section{
       height: 100%;
@@ -383,6 +373,9 @@
     margin-bottom: 20px;
     padding: 30px 55px 34px;
     border-radius: 10px;
+    .ttlBox{
+      
+    }
   }//whtBox1
 }
 

@@ -80,23 +80,66 @@ block content
             li: small マーク集計Plus 集計ツールに#[br]取り込むためのCSVが出力されます。
 
     section.u-whtBox1
-      h3.u-ttl3
-        i: +img("icn_data1_orng.svg", "")
-        span 学習情報
-      table.u-tbl2
-        thead
-          tr
-            th aaaa
-        tbody
-          -for (var i = 1; i <= 4; i = i + 2)
+      .u-ttlBox2
+        h3.ttl
+          i: +img("icn_data1_orng.svg", "")
+          span 学習情報
+
+      .u-infoDtlTbl1
+        //- ここから
+          スクロールバーの位置はデザインとはズレていても、スクロールする要素が同じなら良い
+        table
+          thead
             tr
-              td #{i}
+              th 
+              th 大単元
+              th 中単元
+              th 小単元
+              th コンテンツ名
+              th Lv.
+              th 人数
+          tbody
+            -for (var i = 1; i <= 12; i++)
+              tr
+                td #{i}
+                td 帝国主義とアジア諸地域の動揺帝国主義とアジア諸地域の動揺
+                td 句法③(比較/選択/仮定/限定/抑句法③(比較/選択/仮定/限定/抑
+                td 1
+                td 
+                td 
+                td 
 
 
     section.u-whtBox1
-      h3.u-ttl3
-        i: +img("icn_box_blue.svg", "")
-        span My Box ランキング
+      .u-ttlBox2.hasSelect
+        h3.ttl
+          i: +img("icn_box_blue.svg", "")
+          span My Box ランキング
+        .u-selectBox2
+          select(required)
+            option(value="") 実施回
+
+      .u-rankTbl1
+        table
+          thead
+            tr
+              th 
+              th 大単元
+              th 中単元
+              th 小単元
+              th コンテンツ名
+              th Lv.
+              th 人数
+          tbody
+            -for (var i = 1; i <= 12; i++)
+              tr
+                td #{i}
+                td 帝国主義とアジア諸地域の動揺帝国主義とアジア諸地域の動揺
+                td 句法③(比較/選択/仮定/限定/抑句法③(比較/選択/仮定/限定/抑
+                td 1
+                td 
+                td 
+                td 
 
 
   script.

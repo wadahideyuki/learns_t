@@ -19,18 +19,6 @@
     padding: 6px 10px;
     margin-bottom: 12px;
   }
-  &ttl3{
-    display: flex;
-    align-items: center;
-    margin-bottom: 30px;
-    padding-bottom: 18px;
-    border-bottom: 1px solid $brown3;
-    i{
-      flex-shrink: 0;
-      width: 32px;
-      margin-right: 12px;
-    }
-  }
   &ttlBox1{
     margin-bottom: 40px;
     .u-inner{
@@ -250,4 +238,25 @@
       }
     }
   }//ttlBox1
+  &ttlBox2{
+    margin-bottom: 30px;
+    padding-bottom: 18px;
+    border-bottom: 1px solid $brown3;
+    .ttl{
+      display: flex;
+      align-items: center;
+      font-size: 1.8rem;
+      i{
+        flex-shrink: 0;
+        width: 32px;
+        margin-right: 12px;
+      }
+    }
+    &.hasSelect{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-right: 26px;
+    }
+  }//ttlBox2
 }

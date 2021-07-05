@@ -121,4 +121,87 @@
       }
     }//.btnDtl
   }//tbl1
+  &infoDtlTbl1{
+    height: 400px;
+    overflow: scroll;
+    table{
+      width: 150%;
+    }
+    thead{
+      position: sticky;
+      top: 0;
+    }
+    th,
+    td{
+      width: 15%;
+      &:nth-child(1){
+        position: sticky;
+        left: 0;
+      }
+    }
+    th{
+      background-color: $brown3;
+      color: #fff;
+    }
+  }//infoDtlTbl1
+  &rankTbl1{
+    max-height: 480px;
+    margin: 0 20px;
+    padding-right: 18px;
+    overflow-y: scroll;
+    table{
+      table-layout: fixed;
+      width: 100%;
+      margin: -8px 0;
+      border-collapse: separate;
+      border-spacing: 2px 8px;
+    }
+    th,
+    td{
+      &:nth-child(1){width: percentage(43/865);}
+      &:nth-child(2){width: percentage(216/865);}
+      &:nth-child(3){width: percentage(232/865);}
+      &:nth-child(4){width: percentage(101/865);}
+      &:nth-child(5){width: percentage(172/865);}
+      &:nth-child(6){width: percentage(65/865);}
+      &:nth-child(7){width: percentage(71/865);}
+    }
+    thead{
+      position: sticky;
+      top: 0;
+      th{
+        font-size: 1.2rem;
+        &:not(:first-child){
+          background-color: $brown3;
+          padding: 6px 9px;
+          color: #fff;
+        }
+        &:nth-child(1){
+          background-color: #fff;
+        }
+        &:nth-child(2){
+          border-radius: 6px 0 0 0;
+        }
+        &:last-child{
+          border-radius: 0 6px 0 0;
+        }
+      }
+    }
+    tbody{
+      td{
+        &:not(:first-child){
+          background-color: $grey8;
+          padding: 10px 9px;
+          overflow: hidden;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+        }
+        &:nth-child(1){
+          color: $blue3;
+          font-size: 2.0rem;
+          text-align: center;
+        }
+      }
+    }
+  }//rankTbl1
 }
