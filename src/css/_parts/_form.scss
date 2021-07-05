@@ -502,7 +502,7 @@
     dd{
       margin-left: 12px;
     }
-  }
+  }//.row2
   .row3{
     display: flex;
     justify-content: space-between;
@@ -516,7 +516,7 @@
         }
       }
     }
-  }
+  }//.row3
   .btns2{
     background-color: #fff;
     padding: 18px 16px;
@@ -529,6 +529,65 @@
     }
   }
 }//.u-form2
+.u-form3{//36で使用
+  margin-bottom: 20px;
+  .u-selectBox{
+    select{
+      padding-top: 6.5px;
+      padding-bottom: 6.5px;
+    }
+  }
+  .u-btn1{
+    margin: 0;
+  }
+  dl{
+    display: flex;
+    align-items: center;
+    width: percentage(243/$innerW);
+    + dl{
+      margin-left: percentage(36/$innerW);
+    }
+    dt{
+      width: 80px;
+    }
+    dd{
+      width: 160px;
+    }
+  }
+  .row1{
+    display: flex;
+    margin-bottom: 20px;
+  }//.row1
+  .row2{
+    display: flex;
+    margin-bottom: 26px;
+  }//.row2
+  .row3{
+    ul{
+      display: flex;
+      justify-content: center;
+    }
+    li{
+      &:nth-child(1){
+      }
+      &:nth-child(2){
+        margin-left: 26px;
+      }
+      &:nth-child(3){
+        margin-left: 21px;
+        position: relative;
+        small{
+          font-size: 1.2rem;
+          line-height: (16/12);
+          white-space: nowrap;
+          position: absolute;
+          top: 2px;
+          left: 0;
+        }
+      }
+    }
+  }//.row3
+}//.u-form3
 .u-chk1{
   display: block;
   input {

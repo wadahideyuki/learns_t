@@ -128,6 +128,11 @@
         padding: 0 40px 0 27px;
       }
     }
+    &.sz5{
+      width: 203px;
+      height: 36px;
+      font-size: 1.4rem;
+    }
     &.clr1{
       background-color: $brown2;
       &:disabled{
@@ -136,24 +141,6 @@
     }
     &.clr2{
       background-color: $blue2;
-      &:disabled{
-        background-color: #aaaaaa;
-      }
-    }
-    &.clr3{
-      background-color: $orange2;
-      &:disabled{
-        background-color: #aaaaaa;
-      }
-    }
-    &.clr4{
-      background-color: $pink2;
-      &:disabled{
-        background-color: #aaaaaa;
-      }
-    }
-    &.clr5{
-      background-color: $green2;
       &:disabled{
         background-color: #aaaaaa;
       }
@@ -177,6 +164,13 @@
       }
       &:after{
         background-image: url($pathImg + "arw1_r_wht.svg");
+      }
+    }
+    //.clr5が重複している、緑のボタンはどこで使っているか
+    &.clr5{
+      background-color: $green2;
+      &:disabled{
+        background-color: #aaaaaa;
       }
     }
     &.clr5{
@@ -204,6 +198,13 @@
       @include hvrBrt(0.9);
       &:after{
         background-image: url($pathImg + "arw1_r_brwn3.svg");
+      }
+    }
+    &.clr9{
+      background-color: $orange3;
+      @include hvrBrt(1.2);
+      &:disabled{
+        background-color: #aaaaaa;
       }
     }
   }//btn1

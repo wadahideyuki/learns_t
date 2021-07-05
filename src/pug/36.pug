@@ -41,7 +41,62 @@ block content
               b Arms
         .btnLogout: a(href="") ログアウト
 
+  //- mixin
+  mixin select(val, txt)
+    .u-selectBox
+      select(required)
+        option(value=val)!= txt 
+
   .u-inner.sz1
+    form.u-form3
+      .colL
+        .row1
+          dl
+            dt 学年
+            dd: +select("", "学年")
+          dl
+            dt 学科コース
+            dd: +select("", "コース")
+          dl
+            dt クラス
+            dd: +select("", "クラス")
+        .row2
+          dl
+            dt 教材
+            dd: +select("", "直前演習")
+          dl
+            dt 教科
+            dd: +select("", "教科")
+          dl
+            dt 科目
+            dd: +select("", "科目")
+          dl
+            dt 回
+            dd: +select("", "回")
+        .row3
+          ul
+            li: button.u-btn1.sz5.clr9(type="submit"): em.iconSearch 検索
+            li: a.u-btn1.sz5.clr9(href="") CSV出力
+            li: small マーク集計Plus 集計ツールに#[br]取り込むためのCSVが出力されます。
+
+    section.u-whtBox1
+      h3.u-ttl3
+        i: +img("icn_data1_orng.svg", "")
+        span 学習情報
+      table.u-tbl2
+        thead
+          tr
+            th aaaa
+        tbody
+          -for (var i = 1; i <= 4; i = i + 2)
+            tr
+              td #{i}
+
+
+    section.u-whtBox1
+      h3.u-ttl3
+        i: +img("icn_box_blue.svg", "")
+        span My Box ランキング
 
 
   script.
