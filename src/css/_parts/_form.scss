@@ -444,35 +444,55 @@
 .u-form2{//23で使用
   display: flex;
   justify-content: space-between;
-  .rdos{
-    display: flex;
-    margin-bottom: 27px;
-    > li{
-      width: 120px;
-      margin-right: 25px;
+  margin-bottom: 35px;
+  .u-btn1{
+    margin: 0;
+  }
+  .colL{
+    ul{
+      display: flex;
     }
-  }//.rdos
-  .inputs{
-    display: flex;
-    align-items: center;
-    margin-bottom: 42px;
-    > dt{
-    }
-    > dd{
-      width: 140px;
-      margin-left: 16px;
-      + dt{
-        margin-left: 26px;
+    dl{
+      display: flex;
+      align-items: center;
+      dt{
+      }
+      dd{
+        width: 136px;
+        &.szL{
+          width: 184px;
+        }
+        + dt{
+          margin-left: 16px;
+        }
       }
     }
   }
-  .btns1{
-    display: flex;
-    > li{
-      margin-right: 13px;
+  .row1{
+    margin-bottom: 30px;
+    li{
+      width: 120px;
+      margin-right: 25px;
     }
-    .u-btn1{
-      margin: 0;
+  }//.row1
+  .row2{
+    margin-bottom: 36px;
+    dd{
+      margin-left: 12px;
+    }
+  }
+  .row3{
+    display: flex;
+    justify-content: space-between;
+    dd{
+      margin-left: 40px;
+    }
+    .btns1{
+      > li{
+        + li{
+          margin-left: 13px;
+        }
+      }
     }
   }
   .btns2{
@@ -484,9 +504,6 @@
       + li{
         margin-top: 16px;
       }
-    }
-    .u-btn1{
-      margin: 0;
     }
   }
 }//.u-form2
